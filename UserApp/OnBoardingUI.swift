@@ -7,12 +7,12 @@ struct OnBoardingStep {
 }
 
 private let OnBoardingSteps = [
-    OnBoardingStep(image: "Screen_1", title: "Enable Smart login.It's quick \n& secure", description: "You can log into the app the same way you unlock your device"),
-    OnBoardingStep(image: "Screen_2", title: "Book Taxi", description: "You can log into the app the same way you unlock your device"),
-    OnBoardingStep(image: "Screen_3", title: "Package Delivery", description: "You can log into the app the same way you unlock your device"),
-    OnBoardingStep(image: "Screen_4", title: "Package Delivery", description: "You can log into the app the same way you unlock your device"),
-    OnBoardingStep(image: "Screen_5", title: "Package Delivery", description: "You can log into the app the same way you unlock your device"),
-    OnBoardingStep(image: "Screen_6", title: "Package Delivery", description: "You can log into the app the same way you unlock your device")
+    OnBoardingStep(image: "Screen_1", title: "Enable Smart login.It's quick \n& secure", description: "You can log into the app the same way you unlock your device."),
+    OnBoardingStep(image: "Screen_2", title: "Book Taxi", description: "Need a pick me up? Book your car quickly, pay in-app easly and arrive safely."),
+    OnBoardingStep(image: "Screen_3", title: "Package Delivery", description: "Send or receive packages with delivery Genie...A convenient courier at your finger tips!"),
+    OnBoardingStep(image: "Screen_4", title: "Car Wash", description: "The easiest way to get your car sparkling inside and out. Book a CAR WASH today."),
+    OnBoardingStep(image: "Screen_5", title: "Beauty & Wellness Services", description: "Get hair,nail,spa,and other beauty treatments on the go with your favorite service provider."),
+    OnBoardingStep(image: "Screen_6", title: "Home Cleaning", description: "Home cleaning services offers affordable daily or more regular home cleaning packages. ")
     
 ]
 struct RoundedCorner: Shape {
@@ -62,13 +62,12 @@ struct BackButtonView: View {
                     .resizable()
                     .foregroundColor(.white)
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 25, height: 25)
+                    .frame(width: 20, height: 20)
                     .background(
                         Circle()
-                            .fill(Color.cyan)
-                            .stroke(Color.cyan, lineWidth: 2.0)
+                            .fill(Color(red: 0.285, green: 0.662, blue: 0.84))
                             .shadow(radius: 5)
-                            .frame(width: 60, height: 60)
+                            .frame(width: 70, height: 70)
                     )
             }
         }
@@ -139,15 +138,20 @@ struct ViewText: View {
                         VStack {
                             Text(OnBoardingSteps[it].title)
                                 .bold()
-                                .foregroundColor(.blue)
-                                .font(.system(size: 25, weight: .bold))
-                                .frame(maxWidth: .infinity)
-                                .padding(.horizontal, 16)
+                                .foregroundColor(Color(red: 0.287, green: 0.665, blue: 0.844))
+                                .font(.system(size: 22, weight: .bold))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.horizontal, 26)
                             
                             Text(OnBoardingSteps[it].description)
-                                .padding(10)
-                                .foregroundColor(.gray)
+                                .font(.system(size: 16, weight: .regular))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.horizontal, 20)
+                                .padding(8)
+                                .foregroundColor(.black)
                             Spacer()
+                                .frame(height: 170)
+                                
                         }
                         
                         .tag(it)
