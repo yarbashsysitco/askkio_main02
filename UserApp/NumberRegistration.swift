@@ -124,7 +124,7 @@ struct CountryCode: View {
                     
                     Text("+1242")
                         .font(.system(size: 14))
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                 }
             })
             Spacer()
