@@ -8,10 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showSplsh = true
+
     var body: some View {
-        OnBoardingUI()
+        ZStack {
+            if showSplsh {
+                SplashScreen()
+                    .transition(.opacity)
+            } else {
+                OnBoardingUI()
+            }
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                withAnimation(.easeOut(duration: 0.6)) {
+                    self.showSplsh = false
+                }
+            }
+        }
     }
 }
+
+
 
 #Preview {
     ContentView()
