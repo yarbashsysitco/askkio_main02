@@ -7,11 +7,14 @@ struct OnBoardingStep {
 }
 
 private let OnBoardingSteps = [
-    OnBoardingStep(image: "delivery", title: "Enable Smart login. It's quick \n& secure", description: "You can log into the app the same way you unlock your device"),
-    OnBoardingStep(image: "ic_takeaway_help", title: "Book Taxi", description: "You can log into the app the same way you unlock your device"),
-    OnBoardingStep(image: "ic_taxi_bg", title: "Package Delivery", description: "You can log into the app the same way you unlock your device")
+    OnBoardingStep(image: "Screen_1", title: "Enable Smart login.It's quick \n& secure", description: "You can log into the app the same way you unlock your device"),
+    OnBoardingStep(image: "Screen_2", title: "Book Taxi", description: "You can log into the app the same way you unlock your device"),
+    OnBoardingStep(image: "Screen_3", title: "Package Delivery", description: "You can log into the app the same way you unlock your device"),
+    OnBoardingStep(image: "Screen_4", title: "Package Delivery", description: "You can log into the app the same way you unlock your device"),
+    OnBoardingStep(image: "Screen_5", title: "Package Delivery", description: "You can log into the app the same way you unlock your device"),
+    OnBoardingStep(image: "Screen_6", title: "Package Delivery", description: "You can log into the app the same way you unlock your device")
+    
 ]
-
 struct RoundedCorner: Shape {
     var radius: CGFloat
     var corners: UIRectCorner
@@ -109,7 +112,7 @@ struct ImageView: View {
                         VStack {
                             Image(OnBoardingSteps[it].image)
                                 .resizable()
-                                .frame(width: 250, height: 250)
+                                .frame(width: 350, height: 250)
                         }
                         .tag(it)
                     }
@@ -118,7 +121,7 @@ struct ImageView: View {
             }
         }
         .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 700)
-        .background(Color.blue.opacity(0.5))
+        .background(Color(red: 0.835, green: 0.937, blue: 0.947))
         .clipShape(RoundedCorner(radius: 20, corners: [.bottomLeft]))
         .edgesIgnoringSafeArea(.all)
     }
@@ -146,6 +149,7 @@ struct ViewText: View {
                                 .foregroundColor(.gray)
                             Spacer()
                         }
+                        
                         .tag(it)
                     }
                 }
