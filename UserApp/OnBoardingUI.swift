@@ -35,14 +35,11 @@ struct OnBoardingUI: View {
         NavigationView {
             VStack {
                 ImageView(currentStep: $currentStep)
-                Spacer()
                 ViewText(currentStep: $currentStep)
-                Spacer()
+
                 
-                HStack {
-                    BackButtonView()
-                }
             }
+            .background(Color.white)
         }
         .navigationViewStyle(.stack)
     }
@@ -67,17 +64,19 @@ struct BackButtonView: View {
                         Circle()
                             .fill(Color(red: 0.285, green: 0.662, blue: 0.84))
                             .shadow(radius: 5)
-                            .frame(width: 70, height: 70)
+                            .frame(width: 70, height: 71)
                     )
             }
         }
         .padding([.trailing], 50)
-        .padding([.bottom], 30)
+        .padding([.bottom], 70)
+        
     }
 }
 
 struct ImageView: View {
     @Binding var currentStep: Int
+    @State var showingbuttonSheet = false
     var body: some View {
         ZStack {
             Spacer()
@@ -86,23 +85,37 @@ struct ImageView: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        
-                    }, label: {
-                        Image("ic_pf_noti")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 50, height: 50)
-                    })
-                    HStack {
+                        showingbuttonSheet.toggle()
+                            }) {
+                                ZStack {
+                                    Circle()
+                                        .fill(Color.pink)
+                                        .frame(width: 50, height: 50)
+                                    
+                                    Text("EN")
+                                        .foregroundColor(.white)
+                                        .font(.system(size: 18, weight: .bold))
+                                }
+                            }
+                            .sheet(isPresented: $showingbuttonSheet){
+                              LanguageSelectionUI()
+                            }
+                    Spacer()
+                        .frame(width: 20)
                         Button(action: {
                             
-                        }, label: {
-                            Image("ic_pf_noti")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 50, height: 50)
-                        })
-                    }
+                        }) {
+                            ZStack{
+                                Circle()
+                                    .fill(Color.purple)
+                                    .frame(width: 50, height: 50)
+                                
+                                Text("EUR")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 18, weight: .bold))
+                            }
+                        }
+                    
                 }
                 .padding()
                 .offset(y: 30)
@@ -130,7 +143,7 @@ struct ViewText: View {
     @Binding var currentStep: Int
     
     var body: some View {
-        Spacer()
+
         ZStack {
             VStack {
                 TabView(selection: $currentStep) {
@@ -150,7 +163,7 @@ struct ViewText: View {
                                 .padding(8)
                                 .foregroundColor(.black)
                             Spacer()
-                                .frame(height: 170)
+                                .frame(height: 110)
                                 
                         }
                         
@@ -158,10 +171,17 @@ struct ViewText: View {
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                
+                HStack {
+                    BackButtonView()
+                }
             }
         }
-        .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 350)
+        .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 700)
+        .background(Color.white)
         .clipShape(RoundedCorner(radius: 20, corners: [.topRight]))
-        .edgesIgnoringSafeArea(.bottom)
+        .edgesIgnoringSafeArea(.all)
+        
+        
     }
 }

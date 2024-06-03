@@ -18,6 +18,7 @@
 		84A6B4FC2BFDBC6500E46248 /* UserAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6B4FB2BFDBC6500E46248 /* UserAppUITestsLaunchTests.swift */; };
 		84A6B5092BFDC40A00E46248 /* OnBoardingUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6B5082BFDC40A00E46248 /* OnBoardingUI.swift */; };
 		A83E5ACF2BFE191A009BDCB1 /* NumberRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E5ACE2BFE191A009BDCB1 /* NumberRegistration.swift */; };
+		A89E5AE62C0DA44C00627E00 /* LanguageSelectionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89E5AE52C0DA44C00627E00 /* LanguageSelectionUI.swift */; };
 		D3F08177119E44BCD0C67152 /* Pods_UserApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4E6F6E630010F0A010C269E /* Pods_UserApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		84A6B5082BFDC40A00E46248 /* OnBoardingUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingUI.swift; sourceTree = "<group>"; };
 		89776AA83B9C8690B91D5F25 /* Pods-UserApp-UserAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserApp-UserAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-UserApp-UserAppUITests/Pods-UserApp-UserAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A83E5ACE2BFE191A009BDCB1 /* NumberRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRegistration.swift; sourceTree = "<group>"; };
+		A89E5AE52C0DA44C00627E00 /* LanguageSelectionUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageSelectionUI.swift; sourceTree = "<group>"; };
 		B4E6F6E630010F0A010C269E /* Pods_UserApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UserApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69E4990457E7C844C3F70E3 /* Pods-UserApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserApp.debug.xcconfig"; path = "Target Support Files/Pods-UserApp/Pods-UserApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 				84A6B4E02BFDBC6300E46248 /* ContentView.swift */,
 				84A6B5082BFDC40A00E46248 /* OnBoardingUI.swift */,
 				A83E5ACE2BFE191A009BDCB1 /* NumberRegistration.swift */,
+				A89E5AE52C0DA44C00627E00 /* LanguageSelectionUI.swift */,
 				84A6B4E22BFDBC6500E46248 /* Assets.xcassets */,
 				84A6B4E42BFDBC6500E46248 /* Preview Content */,
 			);
@@ -377,6 +380,7 @@
 			files = (
 				84A6B5092BFDC40A00E46248 /* OnBoardingUI.swift in Sources */,
 				84A6B4E12BFDBC6300E46248 /* ContentView.swift in Sources */,
+				A89E5AE62C0DA44C00627E00 /* LanguageSelectionUI.swift in Sources */,
 				84A6B4DF2BFDBC6300E46248 /* UserAppApp.swift in Sources */,
 				A83E5ACF2BFE191A009BDCB1 /* NumberRegistration.swift in Sources */,
 			);

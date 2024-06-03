@@ -31,6 +31,7 @@ struct NumberRegistration: View {
                 TermsAbdConditionsLbl()
                 Spacer()
                 }
+        
              VStack {
                 Spacer()
                   HStack {
