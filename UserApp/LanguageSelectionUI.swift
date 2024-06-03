@@ -36,10 +36,8 @@ struct LanguageSelectionUI: View {
             .padding(.leading, 30)
             .frame(width: UIScreen.main.bounds.width, height: 80,alignment: .leading)
             
-            List{
-                
-                
-            }
+             Spacer()
+            LanguageSelectionCellUI()
         }
     }
     

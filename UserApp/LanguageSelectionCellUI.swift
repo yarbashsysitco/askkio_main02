@@ -24,21 +24,33 @@ struct LanguageSelectionCellUI: View {
         User(langCode: "IT", language: "italiano"),
     ]
     var body: some View {
-        HStack{
-            ZStack{
-                Circle()
-                    .fill(Color.pink)
-                    .frame(width: 50, height: 50)
-                
-                Text(users[0].langCode)
-                    .foregroundColor(.white)
-                    .font(.system(size: 18, weight: .bold))
+        List(0 ..< 15){ item in
+            HStack{
+                ZStack{
+                    Circle()
+                        .fill(Color.pink)
+                        .frame(width: 50, height: 50)
+                    
+                    Text(users[0].langCode)
+                        .foregroundColor(.white)
+                        .font(.system(size: 18, weight: .bold))
+                }
+                Spacer()
+                    .frame(width: 20)
+                Text(users[0].language)
+                    .font(.system(size: 20,weight: .semibold))
+                Spacer()
+                    
+                Button(action: {
+                    
+                }, label: {
+                    Image("circle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 35,height: 35)
+                    
+                })
             }
-            Spacer()
-                .frame(width: 20)
-            Text(users[0].language)
-                .font(.system(size: 20,weight: .semibold))
-            Spacer()
             
         }
     }
