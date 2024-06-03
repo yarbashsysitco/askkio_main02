@@ -50,8 +50,10 @@ struct OnBoardingUI: View {
 }
 
 struct BackButtonView: View {
+    @Binding var currentStep: Int
     var body: some View {
         HStack {
+            currentStepIndicator
             Spacer()
             NavigationLink(destination: NumberRegistration()) {
                 Image("nextBarButton")
@@ -67,12 +69,33 @@ struct BackButtonView: View {
                             .frame(width: 70, height: 71)
                     )
             }
+            
         }
         .padding([.trailing], 50)
         .padding([.bottom], 70)
         
     }
-}
+
+    var currentStepIndicator: some View {
+            HStack {
+                ForEach(0..<OnBoardingSteps.count, id: \.self) { it in
+                    if it == currentStep {
+                        Rectangle()
+                            .frame(width: 28, height: 10)
+                            .cornerRadius(10)
+                            .foregroundColor(Color(red: 0.286, green: 0.662, blue: 0.84))
+                    } else {
+                        Circle()
+                            .frame(width: 10, height: 15)
+                            .foregroundColor(Color(red: 0.753, green: 0.753, blue: 0.753))
+                    }
+                }
+            }
+            .padding(.leading, 25)
+        }
+
+    }
+    
 
 struct ImageView: View {
     @Binding var currentStep: Int
@@ -173,7 +196,7 @@ struct ViewText: View {
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                 
                 HStack {
-                    BackButtonView()
+                    BackButtonView(currentStep: $currentStep)
                 }
             }
         }
