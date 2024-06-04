@@ -1,9 +1,3 @@
-//
-//  LanguageSelectionCellUI.swift
-//  UserApp
-//
-//  Created by jizan k on 03/06/24.
-//
 import SwiftUI
 
 struct User: Identifiable {
@@ -19,43 +13,51 @@ struct LanguageSelectionCellUI: View {
         User(langCode: "ID", language: "bahasa indonesia"),
         User(langCode: "DE", language: "German"),
         User(langCode: "BN", language: "Bengali"),
-        User(langCode: "ES", language: "Espamol"),
+        User(langCode: "ES", language: "Español"),
         User(langCode: "FA", language: "Persian"),
         User(langCode: "IT", language: "italiano"),
     ]
+    
     var body: some View {
-        List(0 ..< 15){ item in
-            HStack{
-                ZStack{
-                    Circle()
-                        .fill(Color.pink)
-                        .frame(width: 50, height: 50)
-                    
-                    Text(users[0].langCode)
-                        .foregroundColor(.white)
-                        .font(.system(size: 18, weight: .bold))
+        ScrollView {
+            VStack(spacing: 20) {
+                ForEach(users) { user in
+                    HStack {
+                        ZStack {
+                            Circle()
+                                .fill(Color.pink)
+                                .frame(width: 50, height: 50)
+                            
+                            Text(user.langCode)
+                                .foregroundColor(.white)
+                                .font(.system(size: 18, weight: .bold))
+                        }
+                        Spacer()
+                            .frame(width: 20)
+                        Text(user.language)
+                            .font(.system(size: 20, weight: .semibold))
+                        Spacer()
+                        Button(action: {
+                            // Add button action here
+                        }, label: {
+                            Image("circle")
+                                .renderingMode(.original)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 35, height: 35)
+                        })
+                    }
+                    .padding(.horizontal)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.clear)
                 }
-                Spacer()
-                    .frame(width: 20)
-                Text(users[0].language)
-                    .font(.system(size: 20,weight: .semibold))
-                Spacer()
-                    
-                Button(action: {
-                    
-                }, label: {
-                    Image("circle")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 35,height: 35)
-                    
-                })
             }
-            
+            .background(Color.clear)
+            .padding([.leading,.trailing],10)
         }
+        .background(Color.clear)
     }
 }
-
 
 #Preview {
     LanguageSelectionCellUI()
