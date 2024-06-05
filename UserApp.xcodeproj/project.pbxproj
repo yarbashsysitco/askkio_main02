@@ -21,6 +21,8 @@
 		A898267E2C0DE4D100A2997D /* LanguageSelectionCellUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898267D2C0DE4D100A2997D /* LanguageSelectionCellUI.swift */; };
 		A89E5AE62C0DA44C00627E00 /* LanguageSelectionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89E5AE52C0DA44C00627E00 /* LanguageSelectionUI.swift */; };
 		A89E5AE82C0DB46F00627E00 /* SplashScreenUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89E5AE72C0DB46F00627E00 /* SplashScreenUI.swift */; };
+		A8BF6E872C1074D400F54855 /* CurrencySelectionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF6E862C1074D400F54855 /* CurrencySelectionUI.swift */; };
+		A8BF6E892C10782F00F54855 /* CurrencySelectionCellUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF6E882C10782F00F54855 /* CurrencySelectionCellUI.swift */; };
 		D3F08177119E44BCD0C67152 /* Pods_UserApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4E6F6E630010F0A010C269E /* Pods_UserApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,8 @@
 		A898267D2C0DE4D100A2997D /* LanguageSelectionCellUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionCellUI.swift; sourceTree = "<group>"; };
 		A89E5AE52C0DA44C00627E00 /* LanguageSelectionUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageSelectionUI.swift; sourceTree = "<group>"; };
 		A89E5AE72C0DB46F00627E00 /* SplashScreenUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenUI.swift; sourceTree = "<group>"; };
+		A8BF6E862C1074D400F54855 /* CurrencySelectionUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectionUI.swift; sourceTree = "<group>"; };
+		A8BF6E882C10782F00F54855 /* CurrencySelectionCellUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectionCellUI.swift; sourceTree = "<group>"; };
 		B4E6F6E630010F0A010C269E /* Pods_UserApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UserApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69E4990457E7C844C3F70E3 /* Pods-UserApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserApp.debug.xcconfig"; path = "Target Support Files/Pods-UserApp/Pods-UserApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +131,8 @@
 				A83E5ACE2BFE191A009BDCB1 /* NumberRegistration.swift */,
 				A89E5AE52C0DA44C00627E00 /* LanguageSelectionUI.swift */,
 				A898267D2C0DE4D100A2997D /* LanguageSelectionCellUI.swift */,
+				A8BF6E862C1074D400F54855 /* CurrencySelectionUI.swift */,
+				A8BF6E882C10782F00F54855 /* CurrencySelectionCellUI.swift */,
 				A89E5AE72C0DB46F00627E00 /* SplashScreenUI.swift */,
 				84A6B4E22BFDBC6500E46248 /* Assets.xcassets */,
 				84A6B4E42BFDBC6500E46248 /* Preview Content */,
@@ -387,7 +393,9 @@
 				A89E5AE82C0DB46F00627E00 /* SplashScreenUI.swift in Sources */,
 				84A6B5092BFDC40A00E46248 /* OnBoardingUI.swift in Sources */,
 				84A6B4E12BFDBC6300E46248 /* ContentView.swift in Sources */,
+				A8BF6E872C1074D400F54855 /* CurrencySelectionUI.swift in Sources */,
 				A89E5AE62C0DA44C00627E00 /* LanguageSelectionUI.swift in Sources */,
+				A8BF6E892C10782F00F54855 /* CurrencySelectionCellUI.swift in Sources */,
 				84A6B4DF2BFDBC6300E46248 /* UserAppApp.swift in Sources */,
 				A898267E2C0DE4D100A2997D /* LanguageSelectionCellUI.swift in Sources */,
 				A83E5ACF2BFE191A009BDCB1 /* NumberRegistration.swift in Sources */,

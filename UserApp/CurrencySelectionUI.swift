@@ -1,13 +1,13 @@
 //
-//  LanguageSelectionUI.swift
+//  CurrencySelectionUI.swift
 //  UserApp
 //
-//  Created by jizan k on 30/05/24.
+//  Created by jizan k on 05/06/24.
 //
 
 import SwiftUI
 
-struct LanguageSelectionUI: View {
+struct CurrencySelectionUI: View {
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         ZStack {
@@ -30,13 +30,13 @@ struct LanguageSelectionUI: View {
                 }
                 .background(Color(hue: 1.0, saturation: 0.019, brightness: 0.736, opacity: 0.015))
                 .frame(width: UIScreen.main.bounds.width)
-//                .padding([.top, .trailing], 20)
+
                 
                 VStack(alignment: .leading) {
-                    titleText
+                    TitleText
                     Spacer()
                         .frame(height: 7)
-                    bottomText
+                    BottomText
                     Spacer()
                         .frame(height: 10)
                 }
@@ -51,17 +51,18 @@ struct LanguageSelectionUI: View {
     }
 }
 
-var titleText: some View {
-    Text("select language".capitalized)
+var TitleText: some View {
+    Text("select Currency".capitalized)
         .font(.system(size: 20,weight: .semibold))
 }
 
-var bottomText: some View {
-    Text("Which language do you prefer?")
+var BottomText: some View {
+    Text("Which currency do you prefer?")
         .font(.system(size: 16,weight: .regular))
 }
 
 
 #Preview {
-    LanguageSelectionUI()
+    CurrencySelectionUI()
 }
+

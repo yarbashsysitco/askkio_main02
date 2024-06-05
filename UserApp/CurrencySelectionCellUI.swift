@@ -1,41 +1,41 @@
 import SwiftUI
 
-struct User: Identifiable {
+struct CurrencyItems: Identifiable {
     var id = UUID()
     var langCode: String
     var language: String
     let color: Color
 }
 
-struct LanguageSelectionCellUI: View {
+struct CurrencySelectionCellUI: View {
     let users = [
-        User(langCode: "EN", language: "English", color: .gray),
-        User(langCode: "TL", language: "Filipino", color: .black),
-        User(langCode: "ID", language: "bahasa indonesia", color: .blue),
-        User(langCode: "DE", language: "German", color: .purple),
-        User(langCode: "BN", language: "Bengali", color: .pink),
-        User(langCode: "ES", language: "Español", color: .cyan),
-        User(langCode: "FA", language: "Persian", color: .orange),
-        User(langCode: "IT", language: "italiano", color: .yellow),
+        CurrencyItems(langCode: "EN", language: "English", color: .gray),
+        CurrencyItems(langCode: "TL", language: "Filipino", color: .black),
+        CurrencyItems(langCode: "ID", language: "bahasa indonesia", color: .blue),
+        CurrencyItems(langCode: "DE", language: "German", color: .purple),
+        CurrencyItems(langCode: "BN", language: "Bengali", color: .pink),
+        CurrencyItems(langCode: "ES", language: "Español", color: .cyan),
+        CurrencyItems(langCode: "FA", language: "Persian", color: .orange),
+        CurrencyItems(langCode: "IT", language: "italiano", color: .yellow),
     ]
     
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                ForEach(users) { user in
+                ForEach(users) { CurrencyItems in
                     HStack {
                         ZStack {
                             Circle()
-                                .fill(user.color)
+                                .fill(CurrencyItems.color)
                                 .frame(width: 50, height: 50)
                             
-                            Text(user.langCode)
+                            Text(CurrencyItems.langCode)
                                 .foregroundColor(.white)
                                 .font(.system(size: 18, weight: .bold))
                         }
                         Spacer()
                             .frame(width: 20)
-                        Text(user.language)
+                        Text(CurrencyItems.language)
                             .font(.system(size: 20, weight: .semibold))
                         Spacer()
                         Button(action: {
@@ -61,5 +61,5 @@ struct LanguageSelectionCellUI: View {
 }
 
 #Preview {
-    LanguageSelectionCellUI()
+    CurrencySelectionCellUI()
 }
