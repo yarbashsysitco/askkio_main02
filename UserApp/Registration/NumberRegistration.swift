@@ -111,11 +111,12 @@ struct CountryLbl: View {
 }
 
 struct CountryCode: View {
+    @State private var showSheet = false
     @State private var MobileText: String = ""
     var body: some View {
         HStack{
             Button(action: {
-                
+                showSheet.toggle()
             }, label: {
                 HStack {
                     Image("CountryFlag")
@@ -128,6 +129,9 @@ struct CountryCode: View {
                         .foregroundColor(.black)
                 }
             })
+            .sheet(isPresented: $showSheet) {
+                        CountrySelectionUI()
+                    }
             Spacer()
                 .frame(width: 50)
                     TextField("Mobile", text: $MobileText)

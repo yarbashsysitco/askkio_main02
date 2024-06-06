@@ -22,7 +22,7 @@ struct LanguageSelectionUI: View {
                                 .fill(Color.white)
                                 .frame(width: 50, height: 50)
                             
-                            Image("Close")
+                            Image("close")
                             
                         }
                     }
