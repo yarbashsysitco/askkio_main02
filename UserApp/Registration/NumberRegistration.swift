@@ -21,7 +21,7 @@ struct NumberRegistration: View {
                     .frame(height: 1)
                 CountryCode()
                 Spacer()
-                    .frame(height: 1)
+                    .frame(height: 0)
                 Underline()
                 Spacer()
                     .frame(height: 20)
@@ -40,6 +40,8 @@ struct NumberRegistration: View {
                        }
                    }
              .padding([.bottom, .trailing], 20)
+        
+        
             }
 
         }
@@ -128,6 +130,7 @@ struct CountryCode: View {
                         .foregroundColor(.black)
                 }
             })
+            
             .sheet(isPresented: $showSheet) {
                         CountrySelectionUI()
                     .frame(width: min(UIScreen.main.bounds.width, 600))
@@ -164,6 +167,7 @@ struct Underline: View {
 }
 
 struct ChooseOptionLbl: View {
+    @State var logpage: Bool = false
     var body: some View {
         HStack(spacing:2){
             Text("Or choose other login options")
@@ -172,7 +176,7 @@ struct ChooseOptionLbl: View {
                 .foregroundColor(.cyan)
             
             Button(action: {
-                
+                logpage.toggle()
             }, label: {
                 HStack {
                     Image("RightArrow")
@@ -184,6 +188,15 @@ struct ChooseOptionLbl: View {
                 }
             })
             Spacer()
+            ZStack{
+                if logpage {
+                    LoginOptionsUI( showlogScreen: $logpage)
+                        .padding(.top,200)
+                        .transition(.move(edge: .bottom))
+                        .animation(.spring())
+                }
+            }
+            .zIndex(10.0)
         }
         .padding(.top,10)
         .padding(.leading,20)

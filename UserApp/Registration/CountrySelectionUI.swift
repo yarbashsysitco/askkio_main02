@@ -10,12 +10,15 @@ import SwiftUI
 struct CountrySelectionUI: View {
     @State private var SearchCountryText: String = ""
     @State private var isEditing: Bool = false
+    var columns = [GridItem(.adaptive(minimum: UIScreen.main.bounds.width),spacing: 10)]
     var body: some View {
         VStack{
             Spacer()
             
             VStack(spacing: 18){
                 VStack(alignment: .leading) {
+                    Spacer()
+                        .frame(height: 20)
                     Text("Select Country")
                         .font(.system(size: 22))
                     .fontWeight(.bold)
@@ -46,13 +49,14 @@ struct CountrySelectionUI: View {
                     
                 }
                 .padding([.leading,.trailing],15)
-                
-                ScrollView(.vertical, showsIndicators: false, content: {
-                    
-                    VStack(){
-                         
+                Spacer()
+                ScrollView {
+                    LazyVGrid(columns: columns,spacing: 20) {
+                        ForEach(0..<10) { _ in
+                            CountryCell()
+                        }
                     }
-                })
+                }
             }
         }
         

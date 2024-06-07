@@ -26,7 +26,7 @@ struct CountryCell: View {
                         .font(.custom("Roboto-Regular", size: 20))
                 }
                 .padding()
-                .frame(width: UIScreen.main.bounds.width,height: 50)
+                .frame(width: UIScreen.main.bounds.width,height: 40)
                 
                 Rectangle()
                     .foregroundColor(.gray)
@@ -34,6 +34,7 @@ struct CountryCell: View {
             }
             .padding()
         }
+        .frame(height: 55)
     }
 }
 
