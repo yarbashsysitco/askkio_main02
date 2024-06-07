@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CountrySelectionUI: View {
     @State private var SearchCountryText: String = ""
+    @State private var isEditing: Bool = false
     var body: some View {
         VStack{
             Spacer()
@@ -26,7 +27,7 @@ struct CountrySelectionUI: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 5)
                             .foregroundColor(Color(hex: "#D0D0D5"))
-                            .opacity(0.4)
+                            .opacity(0.3)
                         .frame(height: 50)
                         
                         HStack {
@@ -36,7 +37,8 @@ struct CountrySelectionUI: View {
                                 .font(.system(size: 20))
                             
                             TextField("Search Country", text: $SearchCountryText)
-                                .font(.custom("Poppins-Bold", size: 20))
+                                .font(.custom("Roboto-Bold", size: 23))
+                                
                                 .fontWeight(.semibold)
                         }
                         .padding()

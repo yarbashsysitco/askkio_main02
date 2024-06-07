@@ -33,7 +33,6 @@ struct OnBoardingUI: View {
     @State private var currentStep = 0
     
     var body: some View {
-        NavigationView{
             ZStack {
                 HStack(spacing: 0) {
                     Rectangle()
@@ -67,8 +66,7 @@ struct OnBoardingUI: View {
                 
                 BackButtonView(currentStep: $currentStep)
             }
-        }
-        .navigationViewStyle(.stack)
+
     }
 }
 
@@ -161,8 +159,9 @@ struct LanguageButton: View {
                     .font(.system(size: 18, weight: .bold))
             }
         }
-        .sheet(isPresented: $showSheet) {
+        .fullScreenCover(isPresented: $showSheet) {
                     LanguageSelectionUI()
+                .frame(width: min(UIScreen.main.bounds.width, 700))
                 }
     }
 }
@@ -170,6 +169,7 @@ struct LanguageButton: View {
 //MARK: -BackButtonView
 struct BackButtonView: View {
     @Binding var currentStep: Int
+    @State private var isNumberRegistrationPresented = false
     var body: some View {
         VStack {
             Spacer()
@@ -178,26 +178,33 @@ struct BackButtonView: View {
                     .padding(.leading, 20)
                     .padding(.bottom, 20)
                 Spacer()
-                NavigationLink(destination: NumberRegistration()) {
-                    Image("nextBarButton")
-                        .renderingMode(.template)
-                        .resizable()
-                        .foregroundColor(.white)
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 20, height: 20)
-                        .background(
-                            Circle()
-                                .fill(Color(red: 0.285, green: 0.662, blue: 0.84))
-                                .shadow(radius: 5)
-                                .frame(width: 70, height: 71)
-                        )
+                Button(action: {
+                    isNumberRegistrationPresented = true
                 }
-                .padding(.trailing, 40)
-                .padding(.bottom, 40)
+                       , label: {
+                    
+                    Circle()
+                        .fill(Color(red: 0.285, green: 0.662, blue: 0.84))
+                        .shadow(radius: 5)
+                        .frame(width: 70, height: 71)
+                        .overlay(
+                            Image("nextBarButton")
+                                .renderingMode(.template)
+                                .resizable()
+                                .foregroundColor(.white)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20, height: 20)
+                        )
+                })
+                .padding(.trailing, 30)
+                .padding(.bottom, 20)
             }
         }
         .padding(.bottom,40)
         .edgesIgnoringSafeArea(.bottom)
+        .fullScreenCover(isPresented: $isNumberRegistrationPresented) {
+            NumberRegistration()
+        }
     }
     
     var currentStepIndicator: some View {

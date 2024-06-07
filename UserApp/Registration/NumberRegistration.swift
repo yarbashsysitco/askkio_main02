@@ -40,7 +40,6 @@ struct NumberRegistration: View {
                        }
                    }
              .padding([.bottom, .trailing], 20)
-             .navigationBarBackButtonHidden(true)
             }
 
         }
@@ -131,7 +130,10 @@ struct CountryCode: View {
             })
             .sheet(isPresented: $showSheet) {
                         CountrySelectionUI()
+                    .frame(width: min(UIScreen.main.bounds.width, 600))
                     }
+            
+            
             Spacer()
                 .frame(width: 50)
                     TextField("Mobile", text: $MobileText)
