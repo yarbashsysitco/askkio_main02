@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NumberRegistration: View {
     var body: some View {
+        NavigationView{
             VStack{
                 BackButtonClick()
                 Spacer()
@@ -30,21 +31,18 @@ struct NumberRegistration: View {
                     .frame(height: 20)
                 TermsAbdConditionsLbl()
                 Spacer()
-                }
-        
-             VStack {
+                HStack {
                 Spacer()
-                  HStack {
-                    Spacer()
-                        NavigateButtonClick()
-                       }
-                   }
-             .padding([.bottom, .trailing], 20)
-        
-        
+                NavigateButtonClick()
+                    
+                }
+                .padding([.bottom, .trailing], 20)
             }
-
         }
+        .navigationBarHidden(true)
+    }
+
+}
     
     
 
@@ -57,11 +55,11 @@ struct NumberRegistration: View {
 
 
 struct BackButtonClick: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         HStack{
             Button(action: {
-                self.presentationMode.wrappedValue.dismiss()
+                dismiss()
             }, label: {
                 Image("ic_nav_bar_back")
                     .resizable()
@@ -176,7 +174,7 @@ struct ChooseOptionLbl: View {
                 .foregroundColor(.cyan)
             
             Button(action: {
-                logpage.toggle()
+              
             }, label: {
                 HStack {
                     Image("RightArrow")
@@ -188,15 +186,6 @@ struct ChooseOptionLbl: View {
                 }
             })
             Spacer()
-            ZStack{
-                if logpage {
-                    LoginOptionsUI( showlogScreen: $logpage)
-                        .padding(.top,200)
-                        .transition(.move(edge: .bottom))
-                        .animation(.spring())
-                }
-            }
-            .zIndex(10.0)
         }
         .padding(.top,10)
         .padding(.leading,20)
@@ -205,57 +194,51 @@ struct ChooseOptionLbl: View {
 
 struct TermsAbdConditionsLbl: View {
     var body: some View {
-        HStack {
-            Button(action: {
-                // Action here
-            }, label: {
+            NavigationLink(destination: PrivacyPolicyUI()) {
                 HStack {
                     Text("By proceeding, I accept the ")
                         .font(.system(size: 14))
                         .fontWeight(.regular)
                         .foregroundColor(.black)
-                        + Text("Terms and Conditions & Privacy Policy")
+                    +
+                    Text("Terms and Conditions & Privacy Policy")
                         .font(.system(size: 14))
                         .fontWeight(.regular)
                         .foregroundColor(.cyan)
                 }
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            })
-            Spacer()
-        }
-        .padding(.leading, 20)
-
+            }
+            .padding(.leading, 20)
         }
 
 }
 
 struct NavigateButtonClick: View {
     var body: some View {
-        VStack {
-            Spacer()
-            HStack {
+        NavigationLink(destination: CreatePasswordUI()) {
+            VStack {
                 Spacer()
-                Button(action: {
-                    // Your action here
-                }, label: {
-                    Image("nextBarButton")
-                        .renderingMode(.template)
-                        .resizable()
-                        .foregroundColor(.white)
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 25, height: 25)
-                        .background(
-                            Circle()
-                                .fill(Color.cyan)
-                                .stroke(Color.cyan, lineWidth: 2.0)
-                                .shadow(radius: 5)
-                                .frame(width: 60, height: 60)
+                HStack {
+                    Spacer()
+                    Circle()
+                        .fill(Color.cyan)
+                        .stroke(Color.cyan, lineWidth: 2.0)
+                        .shadow(radius: 5)
+                        .frame(width: 70, height: 70)
+                        .overlay(
+                            Image("nextBarButton")
+                                .renderingMode(.template)
+                                .resizable()
+                                .foregroundColor(.white)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 25, height: 25)
                         )
-                })
-                .padding(.trailing, 32)
-                .padding(.bottom, 20)
+                }
+                .padding(.trailing, 10)
             }
         }
     }
 }
+
+

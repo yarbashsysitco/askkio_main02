@@ -8,47 +8,67 @@
 import SwiftUI
 
 struct LoginOptionsUI: View {
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
     @Binding var showlogScreen: Bool
     var body: some View {
-        ZStack {
+        VStack {
             VStack{
-                VStack(alignment: .leading) {
+                HStack {
                     Spacer()
-                        .frame(height: 20)
-                    Text("Choose an account")
-                        .font(.system(size: 22))
-                        .fontWeight(.bold)
-                        .frame(width: UIScreen.main.bounds.width,height: 25,alignment: .leading)
-                }
-                .padding(.leading,40)
+                    Button {
+                        dismiss()
+                    } label: {
+                        Circle()
+                            .foregroundColor(Color.white)
+                            .shadow(color: .gray, radius: 4)
+                            .opacity(5)
+                            .frame(width: 50,height: 60)
+                            .overlay(
+                                Image("Close")
+                                    .resizable()
+                                    .frame(width: 20,height: 25)
+                            )
+                      }
+                    
+                  }
+                .padding(.trailing,30)
+
                 
-                Spacer().frame(height: 35)
-                Applelogo()
-                Spacer().frame(height: 35)
-                Googlelogo()
-                Spacer().frame(height: 35)
-                Facebooklogo()
-                Spacer().frame(height: 15)
-                Rectangle()
-                    .frame(height: 1)
-                    .foregroundColor(.gray)
-                    .padding([.leading,.trailing],20)
-                Spacer().frame(height: 15)
-                Idview()
-                HStack{
-                    Text("This option will be activated once you logged into an application")
+                    VStack(alignment: .leading) {
+                        Spacer()
+                            .frame(height: 20)
+                        Text("Choose an account")
+                            .font(.system(size: 22))
+                            .fontWeight(.bold)
+                            .frame(width: UIScreen.main.bounds.width,height: 25,alignment: .leading)
+                    }
+                    .padding(.leading,40)
+                    
+                    Spacer().frame(height: 35)
+                    Applelogo()
+                    Spacer().frame(height: 35)
+                    Googlelogo()
+                    Spacer().frame(height: 35)
+                    Facebooklogo()
+                    Spacer().frame(height: 15)
+                    Rectangle()
+                        .frame(height: 1)
                         .foregroundColor(.gray)
-                        .font(.custom("Poppins-Medium", size: 14))
-                        .opacity(0.8)
+                        .padding([.leading,.trailing],20)
+                    Spacer().frame(height: 15)
+                    Idview()
+                    HStack{
+                        Text("This option will be activated once you logged into an application")
+                            .foregroundColor(.gray)
+                            .font(.custom("Poppins-Medium", size: 14))
+                            .opacity(0.8)
+                    }
+                    .padding([.leading,.trailing],25)
                 }
-                .padding([.leading,.trailing],25)
-            }
-            
+//            .offset(y: UIScreen.main.bounds.height / 8)
+//        .frame(width: UIScreen.main.bounds.width)
+   
         }
-        .background(Color.white)
-        .offset(y: UIScreen.main.bounds.height / 8)
-    .frame(width: UIScreen.main.bounds.width)
     }
 }
 

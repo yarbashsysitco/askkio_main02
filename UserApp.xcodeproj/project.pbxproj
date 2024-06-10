@@ -23,8 +23,15 @@
 		A898267E2C0DE4D100A2997D /* LanguageSelectionCellUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898267D2C0DE4D100A2997D /* LanguageSelectionCellUI.swift */; };
 		A89E5AE62C0DA44C00627E00 /* LanguageSelectionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89E5AE52C0DA44C00627E00 /* LanguageSelectionUI.swift */; };
 		A89E5AE82C0DB46F00627E00 /* SplashScreenUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89E5AE72C0DB46F00627E00 /* SplashScreenUI.swift */; };
+		A8A9BA682C16B7E1003D736B /* ReferralCodeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A9BA632C16B7E0003D736B /* ReferralCodeUI.swift */; };
+		A8A9BA692C16B7E1003D736B /* EmailAddressUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A9BA642C16B7E1003D736B /* EmailAddressUI.swift */; };
+		A8A9BA6A2C16B7E1003D736B /* ChooseProfileUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A9BA652C16B7E1003D736B /* ChooseProfileUI.swift */; };
+		A8A9BA6B2C16B7E1003D736B /* PrivacyPolicyUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A9BA662C16B7E1003D736B /* PrivacyPolicyUI.swift */; };
+		A8A9BA6C2C16B7E1003D736B /* CreatePasswordUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A9BA672C16B7E1003D736B /* CreatePasswordUI.swift */; };
 		A8BF6E872C1074D400F54855 /* CurrencySelectionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF6E862C1074D400F54855 /* CurrencySelectionUI.swift */; };
 		A8BF6E892C10782F00F54855 /* CurrencySelectionCellUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BF6E882C10782F00F54855 /* CurrencySelectionCellUI.swift */; };
+		A8C77CDA2C170B3700EBC0B4 /* EnterNameUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C77CD92C170B3700EBC0B4 /* EnterNameUI.swift */; };
+		A8C77CDD2C171AFD00EBC0B4 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C77CDC2C171AFD00EBC0B4 /* HomePage.swift */; };
 		A8C7E4B42C11796D00ABF5BC /* CountrySelectionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C7E4B32C11796D00ABF5BC /* CountrySelectionUI.swift */; };
 		A8C7E4B72C117E0F00ABF5BC /* ColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C7E4B62C117E0F00ABF5BC /* ColorExtention.swift */; };
 		A8E430362C11BB5300A31364 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8E430242C11BB5300A31364 /* Poppins-Bold.ttf */; };
@@ -89,8 +96,15 @@
 		A898267D2C0DE4D100A2997D /* LanguageSelectionCellUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionCellUI.swift; sourceTree = "<group>"; };
 		A89E5AE52C0DA44C00627E00 /* LanguageSelectionUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageSelectionUI.swift; sourceTree = "<group>"; };
 		A89E5AE72C0DB46F00627E00 /* SplashScreenUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenUI.swift; sourceTree = "<group>"; };
+		A8A9BA632C16B7E0003D736B /* ReferralCodeUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferralCodeUI.swift; sourceTree = "<group>"; };
+		A8A9BA642C16B7E1003D736B /* EmailAddressUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailAddressUI.swift; sourceTree = "<group>"; };
+		A8A9BA652C16B7E1003D736B /* ChooseProfileUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseProfileUI.swift; sourceTree = "<group>"; };
+		A8A9BA662C16B7E1003D736B /* PrivacyPolicyUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyUI.swift; sourceTree = "<group>"; };
+		A8A9BA672C16B7E1003D736B /* CreatePasswordUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePasswordUI.swift; sourceTree = "<group>"; };
 		A8BF6E862C1074D400F54855 /* CurrencySelectionUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectionUI.swift; sourceTree = "<group>"; };
 		A8BF6E882C10782F00F54855 /* CurrencySelectionCellUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectionCellUI.swift; sourceTree = "<group>"; };
+		A8C77CD92C170B3700EBC0B4 /* EnterNameUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNameUI.swift; sourceTree = "<group>"; };
+		A8C77CDC2C171AFD00EBC0B4 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		A8C7E4B32C11796D00ABF5BC /* CountrySelectionUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionUI.swift; sourceTree = "<group>"; };
 		A8C7E4B62C117E0F00ABF5BC /* ColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtention.swift; sourceTree = "<group>"; };
 		A8E430242C11BB5300A31364 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
@@ -175,6 +189,7 @@
 				A8C7E4B52C117DC900ABF5BC /* Extensions */,
 				A8C7E4B12C11784400ABF5BC /* Onboarding */,
 				A8C7E4B22C1178F600ABF5BC /* Registration */,
+				A8C77CDB2C171A9800EBC0B4 /* New Group */,
 				84A6B4E22BFDBC6500E46248 /* Assets.xcassets */,
 				A8E430352C11BB5300A31364 /* fonts */,
 				84A6B4E42BFDBC6500E46248 /* Preview Content */,
@@ -220,6 +235,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A8C77CDB2C171A9800EBC0B4 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				A8C77CDC2C171AFD00EBC0B4 /* HomePage.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		A8C7E4B12C11784400ABF5BC /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +262,12 @@
 				A8C7E4B32C11796D00ABF5BC /* CountrySelectionUI.swift */,
 				A81B3F092C12CEB700AF2E5C /* CountryCell.swift */,
 				A81B3F0B2C12E47500AF2E5C /* LoginOptionsUI.swift */,
+				A8A9BA662C16B7E1003D736B /* PrivacyPolicyUI.swift */,
+				A8A9BA672C16B7E1003D736B /* CreatePasswordUI.swift */,
+				A8C77CD92C170B3700EBC0B4 /* EnterNameUI.swift */,
+				A8A9BA652C16B7E1003D736B /* ChooseProfileUI.swift */,
+				A8A9BA642C16B7E1003D736B /* EmailAddressUI.swift */,
+				A8A9BA632C16B7E0003D736B /* ReferralCodeUI.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -504,19 +533,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8A9BA6A2C16B7E1003D736B /* ChooseProfileUI.swift in Sources */,
 				A89E5AE82C0DB46F00627E00 /* SplashScreenUI.swift in Sources */,
 				A8C7E4B42C11796D00ABF5BC /* CountrySelectionUI.swift in Sources */,
 				84A6B5092BFDC40A00E46248 /* OnBoardingUI.swift in Sources */,
 				84A6B4E12BFDBC6300E46248 /* ContentView.swift in Sources */,
+				A8A9BA692C16B7E1003D736B /* EmailAddressUI.swift in Sources */,
 				A8BF6E872C1074D400F54855 /* CurrencySelectionUI.swift in Sources */,
+				A8C77CDA2C170B3700EBC0B4 /* EnterNameUI.swift in Sources */,
 				A81B3F0C2C12E47500AF2E5C /* LoginOptionsUI.swift in Sources */,
 				A89E5AE62C0DA44C00627E00 /* LanguageSelectionUI.swift in Sources */,
 				A8BF6E892C10782F00F54855 /* CurrencySelectionCellUI.swift in Sources */,
+				A8A9BA6C2C16B7E1003D736B /* CreatePasswordUI.swift in Sources */,
+				A8A9BA6B2C16B7E1003D736B /* PrivacyPolicyUI.swift in Sources */,
 				84A6B4DF2BFDBC6300E46248 /* UserAppApp.swift in Sources */,
 				A81B3F0A2C12CEB700AF2E5C /* CountryCell.swift in Sources */,
+				A8C77CDD2C171AFD00EBC0B4 /* HomePage.swift in Sources */,
 				A898267E2C0DE4D100A2997D /* LanguageSelectionCellUI.swift in Sources */,
 				A8C7E4B72C117E0F00ABF5BC /* ColorExtention.swift in Sources */,
 				A83E5ACF2BFE191A009BDCB1 /* NumberRegistration.swift in Sources */,
+				A8A9BA682C16B7E1003D736B /* ReferralCodeUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
