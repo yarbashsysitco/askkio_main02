@@ -12,30 +12,30 @@ struct LanguageSelectionUI: View {
     var body: some View {
         ZStack {
             
-            Color.black.opacity(0.1)
+            Color.white
                 .edgesIgnoringSafeArea(.all)
-            VStack {
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                            
-                    }) {
-                        ZStack {
-                            Circle()
-                                .fill(Color.white)
-                                .frame(width: 50, height: 50)
-                            
-                            Image("Close")
-                            
-                        }
-                    }
-                    .padding([.top, .trailing], 20)
-                    
-                }
-                
-                .background(Color(hue: 1.0, saturation: 0.019, brightness: 0.736, opacity: 0.015))
-                .frame(width: UIScreen.main.bounds.width)
+//            VStack {
+//                HStack {
+//                    Spacer()
+//                    Button(action: {
+//                        presentationMode.wrappedValue.dismiss()
+//                            
+//                    }) {
+//                        ZStack {
+//                            Circle()
+//                                .fill(Color.white)
+//                                .frame(width: 50, height: 50)
+//                            
+//                            Image("Close")
+//                            
+//                        }
+//                    }
+//                    .padding([.top, .trailing], 20)
+//                    
+//                }
+//                
+//                .background(Color(hue: 1.0, saturation: 0.019, brightness: 0.736, opacity: 0.015))
+//                .frame(width: UIScreen.main.bounds.width)
                 
                 VStack {
                     
@@ -53,7 +53,7 @@ struct LanguageSelectionUI: View {
                     Spacer()
                     LanguageSelectionCellUI()
                 }
-                .background(Color.gray)
+                .background(Color.white)
                 .padding(.top,10)
                 .clipShape(RoundedCorner(radius: 30, corners: [.topLeft]))
                 .clipShape(RoundedCorner(radius: 30, corners: [.topRight]))
@@ -63,7 +63,7 @@ struct LanguageSelectionUI: View {
         }
         
     }
-}
+//}
 
 var titleText: some View {
     Text("select language".capitalized)

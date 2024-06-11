@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_pf_donation.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

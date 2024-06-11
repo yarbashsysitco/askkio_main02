@@ -143,6 +143,7 @@ struct LanguageButton: View {
     var language: String
     var color: Color
     @State private var showSheet = false
+
     var body: some View {
         Button(action: {
             withAnimation {
@@ -159,10 +160,10 @@ struct LanguageButton: View {
                     .font(.system(size: 18, weight: .bold))
             }
         }
-        .fullScreenCover(isPresented: $showSheet) {
-                    LanguageSelectionUI()
+        .sheet(isPresented: $showSheet) {
+            LanguageSelectionUI()
                 .frame(width: min(UIScreen.main.bounds.width, 700))
-                }
+        }
     }
 }
 

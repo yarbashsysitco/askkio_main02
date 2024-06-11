@@ -61,24 +61,21 @@ struct BackButtonClick: View {
             Button(action: {
                 dismiss()
             }, label: {
-                Image("ic_nav_bar_back")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 20,height: 30)
-                    .background(
-                        Circle()
-                            .fill(Color.white)
-                            .stroke(Color.gray, lineWidth: 2.0)
-                            .shadow(color: Color.black, radius: 1)
-                            .opacity(0.2)
-                            .frame(width: 50,height: 60)
-                        
+                Circle()
+                    .foregroundColor(Color.white)
+                    .shadow(color: .gray, radius: 4)
+                    .opacity(5)
+                    .frame(width: 50,height: 60)
+                    .overlay(
+                        Image("ic_nav_bar_back")
+                            .resizable()
+                            .frame(width: 20,height: 25)
                     )
             })
             Spacer()
         }
         .padding(.top,20)
-        .padding(.leading,32)
+        .padding(.leading,20)
     }
 }
 
@@ -90,7 +87,7 @@ struct TextLbl: View {
                 .fontWeight(.regular)
             Spacer()
         }
-        .padding(.top,20)
+        .padding(.top,10)
         .padding(.leading,20)
     }
 }

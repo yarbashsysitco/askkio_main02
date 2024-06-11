@@ -17,9 +17,15 @@
 		84A6B4FA2BFDBC6500E46248 /* UserAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6B4F92BFDBC6500E46248 /* UserAppUITests.swift */; };
 		84A6B4FC2BFDBC6500E46248 /* UserAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6B4FB2BFDBC6500E46248 /* UserAppUITestsLaunchTests.swift */; };
 		84A6B5092BFDC40A00E46248 /* OnBoardingUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6B5082BFDC40A00E46248 /* OnBoardingUI.swift */; };
+		A80E07C52C18146100875BB1 /* BookingHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80E07C42C18146100875BB1 /* BookingHomePage.swift */; };
+		A80E07C82C1814A100875BB1 /* WalletHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80E07C72C1814A100875BB1 /* WalletHomePage.swift */; };
+		A80E07CB2C1814BD00875BB1 /* ProfileHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80E07CA2C1814BD00875BB1 /* ProfileHomePage.swift */; };
+		A80E07CE2C1815C700875BB1 /* TabHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80E07CD2C1815C700875BB1 /* TabHomePage.swift */; };
 		A81B3F0A2C12CEB700AF2E5C /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81B3F092C12CEB700AF2E5C /* CountryCell.swift */; };
 		A81B3F0C2C12E47500AF2E5C /* LoginOptionsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81B3F0B2C12E47500AF2E5C /* LoginOptionsUI.swift */; };
 		A83E5ACF2BFE191A009BDCB1 /* NumberRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E5ACE2BFE191A009BDCB1 /* NumberRegistration.swift */; };
+		A85B06742C1870B400D66B19 /* ProfileSettingsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B06732C1870B400D66B19 /* ProfileSettingsUI.swift */; };
+		A85B06762C18711700D66B19 /* ProfileSettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B06752C18711700D66B19 /* ProfileSettingsData.swift */; };
 		A898267E2C0DE4D100A2997D /* LanguageSelectionCellUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898267D2C0DE4D100A2997D /* LanguageSelectionCellUI.swift */; };
 		A89E5AE62C0DA44C00627E00 /* LanguageSelectionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89E5AE52C0DA44C00627E00 /* LanguageSelectionUI.swift */; };
 		A89E5AE82C0DB46F00627E00 /* SplashScreenUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89E5AE72C0DB46F00627E00 /* SplashScreenUI.swift */; };
@@ -90,9 +96,15 @@
 		84A6B4FB2BFDBC6500E46248 /* UserAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		84A6B5082BFDC40A00E46248 /* OnBoardingUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingUI.swift; sourceTree = "<group>"; };
 		89776AA83B9C8690B91D5F25 /* Pods-UserApp-UserAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserApp-UserAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-UserApp-UserAppUITests/Pods-UserApp-UserAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A80E07C42C18146100875BB1 /* BookingHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingHomePage.swift; sourceTree = "<group>"; };
+		A80E07C72C1814A100875BB1 /* WalletHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHomePage.swift; sourceTree = "<group>"; };
+		A80E07CA2C1814BD00875BB1 /* ProfileHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHomePage.swift; sourceTree = "<group>"; };
+		A80E07CD2C1815C700875BB1 /* TabHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabHomePage.swift; sourceTree = "<group>"; };
 		A81B3F092C12CEB700AF2E5C /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		A81B3F0B2C12E47500AF2E5C /* LoginOptionsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOptionsUI.swift; sourceTree = "<group>"; };
 		A83E5ACE2BFE191A009BDCB1 /* NumberRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRegistration.swift; sourceTree = "<group>"; };
+		A85B06732C1870B400D66B19 /* ProfileSettingsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsUI.swift; sourceTree = "<group>"; };
+		A85B06752C18711700D66B19 /* ProfileSettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsData.swift; sourceTree = "<group>"; };
 		A898267D2C0DE4D100A2997D /* LanguageSelectionCellUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionCellUI.swift; sourceTree = "<group>"; };
 		A89E5AE52C0DA44C00627E00 /* LanguageSelectionUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageSelectionUI.swift; sourceTree = "<group>"; };
 		A89E5AE72C0DB46F00627E00 /* SplashScreenUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenUI.swift; sourceTree = "<group>"; };
@@ -189,7 +201,10 @@
 				A8C7E4B52C117DC900ABF5BC /* Extensions */,
 				A8C7E4B12C11784400ABF5BC /* Onboarding */,
 				A8C7E4B22C1178F600ABF5BC /* Registration */,
-				A8C77CDB2C171A9800EBC0B4 /* New Group */,
+				A80E07C22C18143000875BB1 /* Homepage */,
+				A80E07C32C18144A00875BB1 /* BookingPage */,
+				A80E07C62C18146700875BB1 /* WalletPage */,
+				A80E07C92C1814A600875BB1 /* ProfilePage */,
 				84A6B4E22BFDBC6500E46248 /* Assets.xcassets */,
 				A8E430352C11BB5300A31364 /* fonts */,
 				84A6B4E42BFDBC6500E46248 /* Preview Content */,
@@ -235,12 +250,38 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		A8C77CDB2C171A9800EBC0B4 /* New Group */ = {
+		A80E07C22C18143000875BB1 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
+				A80E07CD2C1815C700875BB1 /* TabHomePage.swift */,
 				A8C77CDC2C171AFD00EBC0B4 /* HomePage.swift */,
 			);
-			path = "New Group";
+			path = Homepage;
+			sourceTree = "<group>";
+		};
+		A80E07C32C18144A00875BB1 /* BookingPage */ = {
+			isa = PBXGroup;
+			children = (
+				A80E07C42C18146100875BB1 /* BookingHomePage.swift */,
+			);
+			path = BookingPage;
+			sourceTree = "<group>";
+		};
+		A80E07C62C18146700875BB1 /* WalletPage */ = {
+			isa = PBXGroup;
+			children = (
+				A80E07C72C1814A100875BB1 /* WalletHomePage.swift */,
+			);
+			path = WalletPage;
+			sourceTree = "<group>";
+		};
+		A80E07C92C1814A600875BB1 /* ProfilePage */ = {
+			isa = PBXGroup;
+			children = (
+				A80E07CA2C1814BD00875BB1 /* ProfileHomePage.swift */,
+				A85B06732C1870B400D66B19 /* ProfileSettingsUI.swift */,
+			);
+			path = ProfilePage;
 			sourceTree = "<group>";
 		};
 		A8C7E4B12C11784400ABF5BC /* Onboarding */ = {
@@ -276,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				A8C7E4B62C117E0F00ABF5BC /* ColorExtention.swift */,
+				A85B06752C18711700D66B19 /* ProfileSettingsData.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -536,10 +578,14 @@
 				A8A9BA6A2C16B7E1003D736B /* ChooseProfileUI.swift in Sources */,
 				A89E5AE82C0DB46F00627E00 /* SplashScreenUI.swift in Sources */,
 				A8C7E4B42C11796D00ABF5BC /* CountrySelectionUI.swift in Sources */,
+				A85B06742C1870B400D66B19 /* ProfileSettingsUI.swift in Sources */,
+				A80E07C52C18146100875BB1 /* BookingHomePage.swift in Sources */,
 				84A6B5092BFDC40A00E46248 /* OnBoardingUI.swift in Sources */,
 				84A6B4E12BFDBC6300E46248 /* ContentView.swift in Sources */,
+				A80E07C82C1814A100875BB1 /* WalletHomePage.swift in Sources */,
 				A8A9BA692C16B7E1003D736B /* EmailAddressUI.swift in Sources */,
 				A8BF6E872C1074D400F54855 /* CurrencySelectionUI.swift in Sources */,
+				A80E07CE2C1815C700875BB1 /* TabHomePage.swift in Sources */,
 				A8C77CDA2C170B3700EBC0B4 /* EnterNameUI.swift in Sources */,
 				A81B3F0C2C12E47500AF2E5C /* LoginOptionsUI.swift in Sources */,
 				A89E5AE62C0DA44C00627E00 /* LanguageSelectionUI.swift in Sources */,
@@ -547,8 +593,10 @@
 				A8A9BA6C2C16B7E1003D736B /* CreatePasswordUI.swift in Sources */,
 				A8A9BA6B2C16B7E1003D736B /* PrivacyPolicyUI.swift in Sources */,
 				84A6B4DF2BFDBC6300E46248 /* UserAppApp.swift in Sources */,
+				A85B06762C18711700D66B19 /* ProfileSettingsData.swift in Sources */,
 				A81B3F0A2C12CEB700AF2E5C /* CountryCell.swift in Sources */,
 				A8C77CDD2C171AFD00EBC0B4 /* HomePage.swift in Sources */,
+				A80E07CB2C1814BD00875BB1 /* ProfileHomePage.swift in Sources */,
 				A898267E2C0DE4D100A2997D /* LanguageSelectionCellUI.swift in Sources */,
 				A8C7E4B72C117E0F00ABF5BC /* ColorExtention.swift in Sources */,
 				A83E5ACF2BFE191A009BDCB1 /* NumberRegistration.swift in Sources */,

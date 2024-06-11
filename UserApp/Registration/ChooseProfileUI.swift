@@ -25,11 +25,11 @@ import SwiftUI
                                     .foregroundColor(Color.white)
                                     .shadow(color: .gray, radius: 4)
                                     .opacity(5)
-                                    .frame(width: 60,height: 60)
+                                    .frame(width: 50,height: 60)
                                     .overlay(
                                         Image("ic_nav_bar_back")
                                             .resizable()
-                                            .frame(width: 30,height: 30)
+                                            .frame(width: 25,height: 30)
                                     )
                             }
                             Spacer()
@@ -86,7 +86,7 @@ import SwiftUI
                                 Circle()
                                     .fill(Color.cyan)
                                     .shadow(radius: 5)
-                                    .frame(width: 85, height: 85)
+                                    .frame(width: 75, height: 75)
                                     .overlay(
                                         Image("nextBarButton")
                                             .renderingMode(.template)

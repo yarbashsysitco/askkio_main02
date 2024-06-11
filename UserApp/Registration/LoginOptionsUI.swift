@@ -26,7 +26,7 @@ struct LoginOptionsUI: View {
                             .overlay(
                                 Image("Close")
                                     .resizable()
-                                    .frame(width: 20,height: 25)
+                                    .frame(width: 25,height: 25)
                             )
                       }
                     
@@ -84,7 +84,7 @@ struct Applelogo: View {
                     .overlay(
                         Image("applelogo")
                             .resizable()
-                            .frame(width: 30,height: 32)
+                            .frame(width: 50,height: 50)
                     )
                     .frame(width: 55,height: 55)
                 
@@ -108,7 +108,7 @@ struct Googlelogo: View {
                     .overlay(
                         Image("googlelogo")
                             .resizable()
-                        .frame(width: 30,height: 30)
+                        .frame(width: 50,height: 50)
                     )
                     .foregroundColor(Color(red: 0.252, green: 0.545, blue: 0.824))
                     .frame(width: 55,height: 55)
@@ -133,9 +133,9 @@ struct Facebooklogo: View {
                     .overlay(
                         Image("facebooklogo")
                             .resizable()
-                        .frame(width: 40,height: 40)
+                        .frame(width: 50,height: 50)
                     )
-                    .foregroundColor(Color(red: 0.137, green: 0.309, blue: 0.507))
+                    .foregroundColor(Color(red: 0.27, green: 0.342, blue: 0.571))
                     .frame(width: 55,height: 55)
                 
                 Spacer()
@@ -154,8 +154,10 @@ struct Idview: View {
     var body: some View {
         HStack(alignment: .center){
             HStack{
-                Image("fingerprint")
+                Image("ic_biometric")
                     .resizable()
+                    .renderingMode(.template)
+                    .foregroundColor(Color(red: 0.838, green: 0.838, blue: 0.842))
                     .frame(width: 60,height: 60)
                 Spacer()
                     .frame(width: 20)

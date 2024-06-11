@@ -50,6 +50,8 @@ struct ReferralCodeUI: View {
                         
                         Image("optional")
                             .resizable()
+                            .renderingMode(.template)
+                            .foregroundColor(Color.accentColor)
                             .frame(width: 30,height: 30)
                             .padding(.trailing,30)
                     }

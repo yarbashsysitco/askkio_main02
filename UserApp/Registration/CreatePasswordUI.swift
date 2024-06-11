@@ -61,6 +61,8 @@ struct CreatePasswordUI: View {
                             isTextFieldEmpty = PasswordText.isEmpty
                         } label: {
                             Image(isPasswordVisible ? "openeye" : "closeeye")
+                                .resizable()
+                                .frame(width: 30,height: 25)
                         }
                         .padding(.trailing,25)
                         
