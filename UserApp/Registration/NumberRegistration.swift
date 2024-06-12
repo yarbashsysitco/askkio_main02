@@ -129,6 +129,7 @@ struct CountryCode: View {
             .sheet(isPresented: $showSheet) {
                         CountrySelectionUI()
                     .frame(width: min(UIScreen.main.bounds.width, 600))
+                    .presentationDetents([.height(UIScreen.main.bounds.height - 200)])
                     }
             
             

@@ -223,22 +223,22 @@ struct TopBar: View {
                     .foregroundColor(Color.accentColor)
                     .overlay(
                         HStack {
-                            Image("ic_profile_user")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .padding(.top, 50)
-                                .background(
-                                    Circle()
-                                        .foregroundColor(.gray)
-                                        .overlay(
-                                            Circle()
-                                                .stroke(Color.white, lineWidth: 2)
-                                        )
-                                        .frame(width: 42, height: 42)
-                                        .padding(.top, 50)
-                                )
-                            Spacer().frame(width: 15)
                             if isScrolling {
+                                Image("ic_profile_user")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .padding(.top, 50)
+                                    .background(
+                                        Circle()
+                                            .foregroundColor(.gray)
+                                            .overlay(
+                                                Circle()
+                                                    .stroke(Color.white, lineWidth: 2)
+                                            )
+                                            .frame(width: 42, height: 42)
+                                            .padding(.top, 50)
+                                    )
+                                Spacer().frame(width: 15)
                                 Text("Deepika Padkon")
                                     .foregroundColor(.white)
                                     .font(.custom("Poppins-Regular", size: 18))

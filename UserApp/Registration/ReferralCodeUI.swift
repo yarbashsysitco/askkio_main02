@@ -69,7 +69,7 @@ struct ReferralCodeUI: View {
                         .padding(.leading,50)
                         .padding(.top,10)
                     Spacer()
-                    NavigationLink(destination: HomePage()){
+                    NavigationLink(destination: TabHomePage()){
                         HStack{
                             Spacer()
                             Circle()
