@@ -34,6 +34,7 @@ struct ProfileSettingsUI: View {
                                 .renderingMode(.template)
                                 .foregroundColor(.gray)
                                 .frame(width: 30,height: 30)
+                                .padding(.trailing,15)
                         })
                     }
                 )
