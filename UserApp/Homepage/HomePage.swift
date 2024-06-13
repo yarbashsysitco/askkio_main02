@@ -13,6 +13,7 @@ struct HomePage: View {
             .foregroundColor(.yellow)
             .edgesIgnoringSafeArea(.top
             )
+        
     }
 }
 

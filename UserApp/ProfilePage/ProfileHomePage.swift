@@ -30,10 +30,10 @@ struct ProfileHomePage: View {
                                     }
                                 }
                         }
-                        .frame(height: 0) // Ensure the GeometryReader doesn't take up space
+                        .frame(height: 0)
                         
                         VStack(spacing: 0) {
-                            Spacer().frame(height: 120) // To push the content down
+                            Spacer().frame(height: 120)
                             
                             Userdetails()
                             WalletbalanceView()
@@ -201,7 +201,7 @@ struct ProfileHomePage: View {
                     TopBar(isScrolling: $isScrolling)
                         .frame(height: 120)
                         .background(Color.accentColor)
-                        .zIndex(1) // Ensure the TopBar is above the ScrollView
+                        .zIndex(1) 
                 }
                 Spacer()
             }
@@ -266,6 +266,7 @@ struct TopBar: View {
 
 
 struct Userdetails: View {
+    @State private var popscreen = false
     var body: some View {
         VStack{
             Rectangle()
@@ -311,7 +312,7 @@ struct Userdetails: View {
                             .frame(width: 2)
                         VStack{
                             Button(action: {
-                                
+                                popscreen = true
                             }, label: {
                                 Image("ic_error")
                                     .resizable()
@@ -319,6 +320,17 @@ struct Userdetails: View {
                                     .cornerRadius(11)
                                     .frame(width: 20,height: 20)
                             })
+                            .alert(isPresented: $popscreen) {
+                                        Alert(
+                                            title: Text("Alert Title"),
+                                            message: Text("This is the alert message."),
+                                            primaryButton: .default(Text("OK")),
+                                            secondaryButton: .cancel()
+                                        )
+                                    }
+//                            if popscreen{
+//                                VerifyEmailPopUp()
+//                            }
                             Spacer()
                                 .frame(height: 95)
                         }
@@ -416,3 +428,27 @@ struct WalletbalanceView: View {
         }
     }
 }
+
+struct CustomAlertModifier<AlertContent: View>: ViewModifier {
+    @Binding var isPresented: Bool
+    let alertContent: () -> AlertContent
+
+    func body(content: Content) -> some View {
+        ZStack {
+            content
+                .blur(radius: isPresented ? 2 : 0)
+
+            if isPresented {
+                alertContent()
+                    .transition(.scale)
+            }
+        }
+    }
+}
+
+extension View {
+    func customAlert<AlertContent: View>(isPresented: Binding<Bool>, @ViewBuilder alertContent: @escaping () -> AlertContent) -> some View {
+        self.modifier(CustomAlertModifier(isPresented: isPresented, alertContent: alertContent))
+    }
+}
+
