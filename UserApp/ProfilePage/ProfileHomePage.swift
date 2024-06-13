@@ -12,200 +12,202 @@ struct ProfileHomePage: View {
     @State private var isswitchOn = false
     @State private var isScrolling = false
     var body: some View {
-           VStack(spacing: 0) {
-               ZStack(alignment: .top) {
-                   ScrollView {
-                       GeometryReader { geometry in
-                           Color.clear
-                               .onChange(of: geometry.frame(in: .global).minY) { minY in
-                                   if minY < 0 {
-                                       withAnimation {
-                                           isScrolling = true
-                                       }
-                                   } else {
-                                       withAnimation {
-                                           isScrolling = false
-                                       }
-                                   }
-                               }
-                       }
-                       .frame(height: 0) // Ensure the GeometryReader doesn't take up space
-
-                       VStack(spacing: 0) {
-                           Spacer().frame(height: 120) // To push the content down
-
-                           Userdetails()
-                           WalletbalanceView()
-                           VStack {
-                               HStack {
-                                   Text("General Settings")
-                                       .font(.custom("Poppins-Semibold", size: 18))
-                                   Spacer()
-                               }
-                           }
-                           .offset(y: -50)
-                           .padding(.leading, 25)
-                           VStack {
-                               ForEach(GeneralList, id: \.id) { Glists in
-                                   ProfileSettingsUI(settings: Glists)
-                               }
-                           }
-                           .frame(width: UIScreen.main.bounds.width)
-                           .offset(y: -30)
-
-                           VStack {
-                               HStack {
-                                   Text("Account Setting")
-                                       .font(.custom("Poppins-Semibold", size: 18))
-                                   Spacer()
-                               }
-                           }
-                           .offset(y: -5)
-                           .padding(.leading, 25)
-                           VStack {
-                               ForEach(AccountSettingsList_1, id: \.id) { Glists in
-                                   ProfileSettingsUI(settings: Glists)
-                               }
-                           }
-                           .frame(width: UIScreen.main.bounds.width)
-                           .offset(y: 5)
-
-                           VStack {
-                               Rectangle()
-                                   .foregroundColor(.white)
-                                   .frame(height: 50)
-                                   .overlay(
-                                       HStack {
-                                           Spacer().frame(width: 20)
-                                           Image("ic_pf_finger-print")
-                                               .resizable()
-                                               .frame(width: 40, height: 40)
-                                           Spacer().frame(width: 20)
-                                           Toggle("Enable Face ID/Touch ID", isOn: $isswitchOn)
-                                               .tint(Color.green)
-                                           Spacer().frame(width: 10)
-                                           Image("optional")
-                                               .resizable()
-                                               .renderingMode(.template)
-                                               .foregroundColor(Color.accentColor)
-                                               .frame(width: 30, height: 30)
-                                               .padding(.trailing, 15)
-                                       }
-                                   )
-                           }
-                           .offset(y: 10)
-                           VStack {
-                               ForEach(AccountSettingsList_2, id: \.id) { Glists in
-                                   ProfileSettingsUI(settings: Glists)
-                               }
-                           }
-                           .frame(width: UIScreen.main.bounds.width)
-                           .offset(y: 15)
-
-                           VStack {
-                               HStack {
-                                   Text("Payment")
-                                       .font(.custom("Poppins-Semibold", size: 18))
-                                   Spacer()
-                               }
-                           }
-                           .offset(y: 40)
-                           .padding(.leading, 25)
-                           VStack {
-                               ForEach(PaymentList, id: \.id) { Glists in
-                                   ProfileSettingsUI(settings: Glists)
-                               }
-                           }
-                           .frame(width: UIScreen.main.bounds.width)
-                           .offset(y: 55)
-
-                           VStack {
-                               HStack {
-                                   Text("Favourite Locations")
-                                       .font(.custom("Poppins-Semibold", size: 18))
-                                   Spacer()
-                               }
-                           }
-                           .offset(y: 75)
-                           .padding(.leading, 25)
-                           VStack {
-                               ForEach(FavouriteLocationsList, id: \.id) { Glists in
-                                   ProfileSettingsUI(settings: Glists)
-                               }
-                           }
-                           .frame(width: UIScreen.main.bounds.width)
-                           .offset(y: 85)
-
-                           VStack {
-                               HStack {
-                                   Text("Support")
-                                       .font(.custom("Poppins-Semibold", size: 18))
-                                   Spacer()
-                               }
-                           }
-                           .offset(y: 105)
-                           .padding(.leading, 25)
-                           VStack {
-                               ForEach(SupportList, id: \.id) { Glists in
-                                   ProfileSettingsUI(settings: Glists)
-                               }
-                           }
-                           .frame(width: UIScreen.main.bounds.width)
-                           .offset(y: 115)
-
-                           VStack {
-                               HStack {
-                                   Text("Others")
-                                       .font(.custom("Poppins-Semibold", size: 18))
-                                   Spacer()
-                               }
-                           }
-                           .offset(y: 145)
-                           .padding(.leading, 25)
-
-                           VStack {
-                               Rectangle()
-                                   .foregroundColor(.white)
-                                   .frame(height: 50)
-                                   .overlay(
-                                       HStack {
-                                           Spacer().frame(width: 20)
-                                           Image("ic_pf_logout")
-                                               .resizable()
-                                               .frame(width: 40, height: 40)
-                                           Spacer().frame(width: 20)
-                                           Text("Logout")
-                                           Spacer()
-                                           Button(action: {
-
-                                           }, label: {
-                                               Image("ic_arrow_right 1")
-                                                   .resizable()
-                                                   .renderingMode(.template)
-                                                   .foregroundColor(.gray)
-                                                   .frame(width: 30, height: 30)
-                                                   .padding(.trailing, 15)
-                                           })
-                                       }
-                                   )
-                               Rectangle()
-                                   .foregroundColor(Color(red: 0.946, green: 0.946, blue: 0.946))
-                                   .frame(height: 150)
-
-                           }
-                           .offset(y: 155)
-                       }
-                   }
-
-                   TopBar(isScrolling: $isScrolling)
-                       .frame(height: 120)
-                       .background(Color.accentColor)
-                       .zIndex(1) // Ensure the TopBar is above the ScrollView
-               }
-               Spacer()
-           }
-           .background(Color(red: 0.946, green: 0.946, blue: 0.946))
-           .edgesIgnoringSafeArea(.top)
+        NavigationView{
+            VStack(spacing: 0) {
+                ZStack(alignment: .top) {
+                    ScrollView {
+                        GeometryReader { geometry in
+                            Color.clear
+                                .onChange(of: geometry.frame(in: .global).minY) { minY in
+                                    if minY < 0 {
+                                        withAnimation {
+                                            isScrolling = true
+                                        }
+                                    } else {
+                                        withAnimation {
+                                            isScrolling = false
+                                        }
+                                    }
+                                }
+                        }
+                        .frame(height: 0) // Ensure the GeometryReader doesn't take up space
+                        
+                        VStack(spacing: 0) {
+                            Spacer().frame(height: 120) // To push the content down
+                            
+                            Userdetails()
+                            WalletbalanceView()
+                            VStack {
+                                HStack {
+                                    Text("General Settings")
+                                        .font(.custom("Poppins-Semibold", size: 18))
+                                    Spacer()
+                                }
+                            }
+                            .offset(y: -50)
+                            .padding(.leading, 25)
+                            VStack {
+                                ForEach(GeneralList, id: \.id) { Glists in
+                                    ProfileSettingsUI(settings: Glists)
+                                }
+                            }
+                            .frame(width: UIScreen.main.bounds.width)
+                            .offset(y: -30)
+                            
+                            VStack {
+                                HStack {
+                                    Text("Account Setting")
+                                        .font(.custom("Poppins-Semibold", size: 18))
+                                    Spacer()
+                                }
+                            }
+                            .offset(y: -5)
+                            .padding(.leading, 25)
+                            VStack {
+                                ForEach(AccountSettingsList_1, id: \.id) { Glists in
+                                    ProfileSettingsUI(settings: Glists)
+                                }
+                            }
+                            .frame(width: UIScreen.main.bounds.width)
+                            .offset(y: 5)
+                            
+                            VStack {
+                                Rectangle()
+                                    .foregroundColor(.white)
+                                    .frame(height: 50)
+                                    .overlay(
+                                        HStack {
+                                            Spacer().frame(width: 20)
+                                            Image("ic_pf_finger-print")
+                                                .resizable()
+                                                .frame(width: 40, height: 40)
+                                            Spacer().frame(width: 20)
+                                            Toggle("Enable Face ID/Touch ID", isOn: $isswitchOn)
+                                                .tint(Color.green)
+                                            Spacer().frame(width: 10)
+                                            Image("optional")
+                                                .resizable()
+                                                .renderingMode(.template)
+                                                .foregroundColor(Color.accentColor)
+                                                .frame(width: 30, height: 30)
+                                                .padding(.trailing, 15)
+                                        }
+                                    )
+                            }
+                            .offset(y: 10)
+                            VStack {
+                                ForEach(AccountSettingsList_2, id: \.id) { Glists in
+                                    ProfileSettingsUI(settings: Glists)
+                                }
+                            }
+                            .frame(width: UIScreen.main.bounds.width)
+                            .offset(y: 15)
+                            
+                            VStack {
+                                HStack {
+                                    Text("Payment")
+                                        .font(.custom("Poppins-Semibold", size: 18))
+                                    Spacer()
+                                }
+                            }
+                            .offset(y: 40)
+                            .padding(.leading, 25)
+                            VStack {
+                                ForEach(PaymentList, id: \.id) { Glists in
+                                    ProfileSettingsUI(settings: Glists)
+                                }
+                            }
+                            .frame(width: UIScreen.main.bounds.width)
+                            .offset(y: 55)
+                            
+                            VStack {
+                                HStack {
+                                    Text("Favourite Locations")
+                                        .font(.custom("Poppins-Semibold", size: 18))
+                                    Spacer()
+                                }
+                            }
+                            .offset(y: 75)
+                            .padding(.leading, 25)
+                            VStack {
+                                ForEach(FavouriteLocationsList, id: \.id) { Glists in
+                                    ProfileSettingsUI(settings: Glists)
+                                }
+                            }
+                            .frame(width: UIScreen.main.bounds.width)
+                            .offset(y: 85)
+                            
+                            VStack {
+                                HStack {
+                                    Text("Support")
+                                        .font(.custom("Poppins-Semibold", size: 18))
+                                    Spacer()
+                                }
+                            }
+                            .offset(y: 105)
+                            .padding(.leading, 25)
+                            VStack {
+                                ForEach(SupportList, id: \.id) { Glists in
+                                    ProfileSettingsUI(settings: Glists)
+                                }
+                            }
+                            .frame(width: UIScreen.main.bounds.width)
+                            .offset(y: 115)
+                            
+                            VStack {
+                                HStack {
+                                    Text("Others")
+                                        .font(.custom("Poppins-Semibold", size: 18))
+                                    Spacer()
+                                }
+                            }
+                            .offset(y: 145)
+                            .padding(.leading, 25)
+                            
+                            VStack {
+                                Rectangle()
+                                    .foregroundColor(.white)
+                                    .frame(height: 50)
+                                    .overlay(
+                                        HStack {
+                                            Spacer().frame(width: 20)
+                                            Image("ic_pf_logout")
+                                                .resizable()
+                                                .frame(width: 40, height: 40)
+                                            Spacer().frame(width: 20)
+                                            Text("Logout")
+                                            Spacer()
+                                            Button(action: {
+                                                
+                                            }, label: {
+                                                Image("ic_arrow_right 1")
+                                                    .resizable()
+                                                    .renderingMode(.template)
+                                                    .foregroundColor(.gray)
+                                                    .frame(width: 30, height: 30)
+                                                    .padding(.trailing, 15)
+                                            })
+                                        }
+                                    )
+                                Rectangle()
+                                    .foregroundColor(Color(red: 0.946, green: 0.946, blue: 0.946))
+                                    .frame(height: 150)
+                                
+                            }
+                            .offset(y: 155)
+                        }
+                    }
+                    
+                    TopBar(isScrolling: $isScrolling)
+                        .frame(height: 120)
+                        .background(Color.accentColor)
+                        .zIndex(1) // Ensure the TopBar is above the ScrollView
+                }
+                Spacer()
+            }
+            .background(Color(red: 0.946, green: 0.946, blue: 0.946))
+            .edgesIgnoringSafeArea(.top)
+        }
        }
  }
 
@@ -250,13 +252,11 @@ struct TopBar: View {
 
             HStack {
                 Spacer()
-                Button(action: {
-
-                }, label: {
+                NavigationLink(destination: EditprofileUI()){
                     Image("ic_pf_edit")
                         .renderingMode(.template)
                         .foregroundColor(.white)
-                })
+                }
             }
             .padding(.top, 40)
             .padding(.trailing, 20)

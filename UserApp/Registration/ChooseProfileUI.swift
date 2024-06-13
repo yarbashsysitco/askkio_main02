@@ -50,8 +50,10 @@ import SwiftUI
                             Button {
                                 selection = "Resident"
                             } label: {
-                                Image(selection == "Resident" ? "radiobutton 1" : "circle 1")
+                                Image(selection == "Resident" ? "ic_list_true" : "circle 1")
                                     .resizable()
+                                    .renderingMode(.template)
+                                    .foregroundColor(Color.accentColor)
                                     .foregroundColor(Color.cyan)
                                     .frame(width: 30,height: 30)
                             }
@@ -67,8 +69,10 @@ import SwiftUI
                             Button {
                                 selection = "Tourist"
                             } label: {
-                                Image(selection == "Tourist" ? "radiobutton 1" : "circle 1")
+                                Image(selection == "Tourist" ? "ic_list_true" : "circle 1")
                                     .resizable()
+                                    .renderingMode(.template)
+                                    .foregroundColor(Color.accentColor)
                                     .foregroundColor(Color.cyan)
                                     .frame(width: 30,height: 30)
                             }
