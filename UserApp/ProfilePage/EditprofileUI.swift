@@ -216,7 +216,7 @@ struct EditprofileUI: View {
             .background(Color(red: 0.922, green: 0.922, blue: 0.922))
             .edgesIgnoringSafeArea(.all)
         }
-    
+        
     }
 }
 

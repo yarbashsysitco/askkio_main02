@@ -23,6 +23,8 @@
 		A80E07CE2C1815C700875BB1 /* TabHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80E07CD2C1815C700875BB1 /* TabHomePage.swift */; };
 		A81B3F0A2C12CEB700AF2E5C /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81B3F092C12CEB700AF2E5C /* CountryCell.swift */; };
 		A81B3F0C2C12E47500AF2E5C /* LoginOptionsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81B3F0B2C12E47500AF2E5C /* LoginOptionsUI.swift */; };
+		A8276AEF2C21B212004F0DE9 /* ServiceCellUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8276AEE2C21B212004F0DE9 /* ServiceCellUI.swift */; };
+		A8276AF12C21B37E004F0DE9 /* ServiceDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8276AF02C21B37E004F0DE9 /* ServiceDatas.swift */; };
 		A83E5ACF2BFE191A009BDCB1 /* NumberRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83E5ACE2BFE191A009BDCB1 /* NumberRegistration.swift */; };
 		A85B06742C1870B400D66B19 /* ProfileSettingsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B06732C1870B400D66B19 /* ProfileSettingsUI.swift */; };
 		A85B06762C18711700D66B19 /* ProfileSettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B06752C18711700D66B19 /* ProfileSettingsData.swift */; };
@@ -104,6 +106,8 @@
 		A80E07CD2C1815C700875BB1 /* TabHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabHomePage.swift; sourceTree = "<group>"; };
 		A81B3F092C12CEB700AF2E5C /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		A81B3F0B2C12E47500AF2E5C /* LoginOptionsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginOptionsUI.swift; sourceTree = "<group>"; };
+		A8276AEE2C21B212004F0DE9 /* ServiceCellUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCellUI.swift; sourceTree = "<group>"; };
+		A8276AF02C21B37E004F0DE9 /* ServiceDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDatas.swift; sourceTree = "<group>"; };
 		A83E5ACE2BFE191A009BDCB1 /* NumberRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRegistration.swift; sourceTree = "<group>"; };
 		A85B06732C1870B400D66B19 /* ProfileSettingsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsUI.swift; sourceTree = "<group>"; };
 		A85B06752C18711700D66B19 /* ProfileSettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsData.swift; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 			children = (
 				A80E07CD2C1815C700875BB1 /* TabHomePage.swift */,
 				A8C77CDC2C171AFD00EBC0B4 /* HomePage.swift */,
+				A8276AEE2C21B212004F0DE9 /* ServiceCellUI.swift */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";
@@ -324,6 +329,7 @@
 			children = (
 				A8C7E4B62C117E0F00ABF5BC /* ColorExtention.swift */,
 				A85B06752C18711700D66B19 /* ProfileSettingsData.swift */,
+				A8276AF02C21B37E004F0DE9 /* ServiceDatas.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -588,6 +594,7 @@
 				A80E07C52C18146100875BB1 /* BookingHomePage.swift in Sources */,
 				84A6B5092BFDC40A00E46248 /* OnBoardingUI.swift in Sources */,
 				84A6B4E12BFDBC6300E46248 /* ContentView.swift in Sources */,
+				A8276AF12C21B37E004F0DE9 /* ServiceDatas.swift in Sources */,
 				A80E07C82C1814A100875BB1 /* WalletHomePage.swift in Sources */,
 				A8A9BA692C16B7E1003D736B /* EmailAddressUI.swift in Sources */,
 				A8BF6E872C1074D400F54855 /* CurrencySelectionUI.swift in Sources */,
@@ -596,6 +603,7 @@
 				A81B3F0C2C12E47500AF2E5C /* LoginOptionsUI.swift in Sources */,
 				A89E5AE62C0DA44C00627E00 /* LanguageSelectionUI.swift in Sources */,
 				A8BF6E892C10782F00F54855 /* CurrencySelectionCellUI.swift in Sources */,
+				A8276AEF2C21B212004F0DE9 /* ServiceCellUI.swift in Sources */,
 				A8A9BA6C2C16B7E1003D736B /* CreatePasswordUI.swift in Sources */,
 				A8A9BA6B2C16B7E1003D736B /* PrivacyPolicyUI.swift in Sources */,
 				84A6B4DF2BFDBC6300E46248 /* UserAppApp.swift in Sources */,
