@@ -25,7 +25,7 @@ var ProServiceList = [ServiceDatas(imageName: "ic_postTask", category: "Car Wash
                       ServiceDatas(imageName: "ic_postTask", category: "Hair & MUA Service"),
                       ServiceDatas(imageName: "ic_postTask", category: "Massage, Wax & Facials"),
                       ServiceDatas(imageName: "ic_postTask", category: "Roadside Assistance"),
-                      ServiceDatas(imageName: "ic_postTask", category: "Home leaning"),
+                      ServiceDatas(imageName: "ic_postTask", category: "Home Cleaning"),
                       ServiceDatas(imageName: "ic_postTask", category: "Sanitization Services"),
                       ServiceDatas(imageName: "ic_postTask", category: "More")
                    
@@ -43,4 +43,9 @@ var PostTaskList = [ServiceDatas(imageName: "ic_postTask", category: "Carpenter"
                     ServiceDatas(imageName: "ic_postTask", category: "Handyman"),
                     ServiceDatas(imageName: "ic_postTask", category: "More")
                    
+ ]
+var MoreOptionsList = [ServiceDatas(imageName: "ic_food", category: "Home Food"),
+                       ServiceDatas(imageName: "ic_food", category: "Care Packages"),
+                       ServiceDatas(imageName: "ic_food", category: "Documents"),
+                       ServiceDatas(imageName: "ic_food", category: "Clothes")
  ]

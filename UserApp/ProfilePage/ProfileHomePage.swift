@@ -15,7 +15,7 @@ struct ProfileHomePage: View {
         NavigationView{
             VStack(spacing: 0) {
                 ZStack(alignment: .top) {
-                    ScrollView {
+                    ScrollView(showsIndicators: false) {
                         GeometryReader { geometry in
                             Color.clear
                                 .onChange(of: geometry.frame(in: .global).minY) { minY in

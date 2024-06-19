@@ -15,22 +15,23 @@ struct ServiceCellUI: View {
                 Rectangle()
                     .cornerRadius(10)
                     .foregroundColor(.white)
-                    .shadow(radius: 4)
-                    .frame(width: 130,height: 170)
+                    .shadow(radius: 8)
+                    .frame(width: 120,height: 160)
                     .overlay(
                         VStack{
                             Image(serviceDatas.imageName)
                                 .resizable()
                                 .frame(width: 90,height: 90)
                             Text(serviceDatas.category)
-                                .font(.custom("Poppins-Medium", size: 16))
+                                .font(.custom("Poppins-Semibold", size: 16))
                                 .foregroundColor(.black)
                                 .multilineTextAlignment(.center)
+                                .padding([.leading,.trailing],10)
                         }
                     )
             }
         }
-        .frame(height: 190)
+        .frame(height: 170)
     }
 }
 
