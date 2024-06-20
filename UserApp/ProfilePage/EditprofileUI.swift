@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EditprofileUI: View {
+    @Binding var screenDismiss: Bool
     @State private var showSheet = false
     @State private var firstName: String = ""
     @State private var lastName: String = ""
@@ -17,9 +18,9 @@ struct EditprofileUI: View {
     @State private var currency: String = "DOB"
     var body: some View {
         NavigationView{
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack(spacing: 0){
-                    TopView()
+                    TopView(screenDismiss: $screenDismiss)
                     Spacer()
                         .frame(height: 100)
                     VStack{
@@ -215,18 +216,24 @@ struct EditprofileUI: View {
                 }
             }
             .edgesIgnoringSafeArea(.top)
+            
         }
+        .navigationViewStyle(.stack)
         .background(Color(red: 0.922, green: 0.922, blue: 0.922))
         .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    EditprofileUI()
+    EditprofileUI(screenDismiss: Binding(get: {
+        return true
+    }, set: { _ in
+        
+    }))
 }
 
 struct TopView: View {
-    @Environment(\.dismiss) var dismiss
+    @Binding var screenDismiss: Bool
     var body: some View {
         VStack{
             Rectangle()
@@ -235,7 +242,7 @@ struct TopView: View {
                 .overlay(
                     HStack{
                         Button(action: {
-                            dismiss()
+                            screenDismiss = false
                         }, label: {
                             Image("ic_nav_bar_back")
                                 .resizable()

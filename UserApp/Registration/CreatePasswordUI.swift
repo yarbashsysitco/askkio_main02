@@ -104,6 +104,7 @@ struct CreatePasswordUI: View {
             }
             .edgesIgnoringSafeArea(.all)
         }
+        .navigationViewStyle(.stack)
         .navigationBarHidden(true)
     }
 }

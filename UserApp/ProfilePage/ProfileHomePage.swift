@@ -208,6 +208,7 @@ struct ProfileHomePage: View {
             .background(Color(red: 0.946, green: 0.946, blue: 0.946))
             .edgesIgnoringSafeArea(.top)
         }
+        .navigationViewStyle(.stack)
        }
  }
 
@@ -217,7 +218,7 @@ struct ProfileHomePage: View {
 
 struct TopBar: View {
     @Binding var isScrolling: Bool
-
+    @State var edituishow = false
     var body: some View {
         ZStack {
             VStack {
@@ -252,14 +253,18 @@ struct TopBar: View {
 
             HStack {
                 Spacer()
-                NavigationLink(destination: EditprofileUI()){
-                    Image("ic_pf_edit")
-                        .renderingMode(.template)
-                        .foregroundColor(.white)
-                }
+                Button(action: {
+                    edituishow = true
+                }, label: {
+                    Image("ic_pf_edit")       .renderingMode(.template)  .foregroundColor(.white)
+                })
+                .fullScreenCover(isPresented: $edituishow, content: {
+                    EditprofileUI(screenDismiss: $edituishow)
+                })
             }
             .padding(.top, 40)
             .padding(.trailing, 20)
+            .transition(.move(edge: .trailing))
         }
     }
 }
