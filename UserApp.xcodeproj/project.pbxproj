@@ -17,7 +17,6 @@
 		84A6B4FA2BFDBC6500E46248 /* UserAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6B4F92BFDBC6500E46248 /* UserAppUITests.swift */; };
 		84A6B4FC2BFDBC6500E46248 /* UserAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6B4FB2BFDBC6500E46248 /* UserAppUITestsLaunchTests.swift */; };
 		84A6B5092BFDC40A00E46248 /* OnBoardingUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6B5082BFDC40A00E46248 /* OnBoardingUI.swift */; };
-		A80E07C52C18146100875BB1 /* BookingHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80E07C42C18146100875BB1 /* BookingHomePage.swift */; };
 		A80E07C82C1814A100875BB1 /* WalletHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80E07C72C1814A100875BB1 /* WalletHomePage.swift */; };
 		A80E07CB2C1814BD00875BB1 /* ProfileHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80E07CA2C1814BD00875BB1 /* ProfileHomePage.swift */; };
 		A80E07CE2C1815C700875BB1 /* TabHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80E07CD2C1815C700875BB1 /* TabHomePage.swift */; };
@@ -101,7 +100,6 @@
 		84A6B4FB2BFDBC6500E46248 /* UserAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		84A6B5082BFDC40A00E46248 /* OnBoardingUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingUI.swift; sourceTree = "<group>"; };
 		89776AA83B9C8690B91D5F25 /* Pods-UserApp-UserAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserApp-UserAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-UserApp-UserAppUITests/Pods-UserApp-UserAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A80E07C42C18146100875BB1 /* BookingHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingHomePage.swift; sourceTree = "<group>"; };
 		A80E07C72C1814A100875BB1 /* WalletHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletHomePage.swift; sourceTree = "<group>"; };
 		A80E07CA2C1814BD00875BB1 /* ProfileHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHomePage.swift; sourceTree = "<group>"; };
 		A80E07CD2C1815C700875BB1 /* TabHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabHomePage.swift; sourceTree = "<group>"; };
@@ -266,17 +264,8 @@
 				A8C77CDC2C171AFD00EBC0B4 /* HomePage.swift */,
 				A8276AEE2C21B212004F0DE9 /* ServiceCellUI.swift */,
 				A896736F2C22D97400B40A49 /* HomeMoreoptions.swift */,
-				A80E07C32C18144A00875BB1 /* BookingPage */,
 			);
 			path = Homepage;
-			sourceTree = "<group>";
-		};
-		A80E07C32C18144A00875BB1 /* BookingPage */ = {
-			isa = PBXGroup;
-			children = (
-				A80E07C42C18146100875BB1 /* BookingHomePage.swift */,
-			);
-			path = BookingPage;
 			sourceTree = "<group>";
 		};
 		A80E07C62C18146700875BB1 /* WalletPage */ = {
@@ -594,7 +583,6 @@
 				A89E5AE82C0DB46F00627E00 /* SplashScreenUI.swift in Sources */,
 				A8C7E4B42C11796D00ABF5BC /* CountrySelectionUI.swift in Sources */,
 				A85B06742C1870B400D66B19 /* ProfileSettingsUI.swift in Sources */,
-				A80E07C52C18146100875BB1 /* BookingHomePage.swift in Sources */,
 				84A6B5092BFDC40A00E46248 /* OnBoardingUI.swift in Sources */,
 				84A6B4E12BFDBC6300E46248 /* ContentView.swift in Sources */,
 				A8276AF12C21B37E004F0DE9 /* ServiceDatas.swift in Sources */,
