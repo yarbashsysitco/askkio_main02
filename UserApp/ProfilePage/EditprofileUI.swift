@@ -17,206 +17,207 @@ struct EditprofileUI: View {
     @State private var currency: String = "DOB"
     var body: some View {
         NavigationView{
-            VStack(spacing: 0){
-                TopView()
-                Spacer()
-                VStack{
-                    //MARK: - firstname & lastname -------------------------------------
-                    HStack{
-                        ZStack(alignment: .leading){
-                            Text("First Name")
-                                .font(.custom("Roboto-Regular", size: 18))
-                                .foregroundColor(.gray)
-                                .offset(y: firstName.isEmpty ? 0 : -20)
-                                .scaleEffect(firstName.isEmpty ? 1 : 1.0)
-                            TextField("", text: $firstName)
-                        }
-                        Spacer()
-                        ZStack(alignment: .leading){
-                            Text("Last Name")
-                                .font(.custom("Roboto-Regular", size: 18))
-                                .foregroundColor(.gray)
-                                .offset(y: lastName.isEmpty ? 0 : -20)
-                                .scaleEffect(firstName.isEmpty ? 1 : 1.0)
-                            TextField("", text: $lastName)
-                        }
-                    }
-                    .padding([.leading,.trailing],30)
-                    
-                    HStack{
-                        Rectangle()
-                            .foregroundColor(.gray)
-                            .frame(height: 1)
-                        Spacer()
-                            .frame(width: 30)
-                        Rectangle()
-                            .foregroundColor(.gray)
-                            .frame(height: 1)
-                    }
-                    .padding(.leading,30)
-                    .padding(.trailing,50)
-                    
+            ScrollView {
+                VStack(spacing: 0){
+                    TopView()
                     Spacer()
-                        .frame(height: 50)
-                    //MARK: - emailaddress -----------------------------------------
-                    ZStack(alignment: .leading){
-                        Text("Email Address")
-                            .font(.custom("Roboto-Regular", size: 18))
-                            .foregroundColor(.gray)
-                            .offset(y: emailAddress.isEmpty ? 0 : -18)
-                            .scaleEffect(emailAddress.isEmpty ? 1 : 1.0)
-                        TextField("", text: $emailAddress)
-                    }
-                    
-                    
-                    .padding([.leading,.trailing],30)
-                    Rectangle()
-                        .foregroundColor(.gray)
-                        .frame(height: 1)
-                    
-                        .padding(.leading,30)
-                        .padding(.trailing,30)
-                    Spacer()
-                        .frame(height: 40)
-                    //MARK: - countrycode and mobile------------------------------------
-                    
+                        .frame(height: 100)
                     VStack{
-                        HStack {
-                            Text("Country")
-                                .font(.custom("Roboto-Regular", size: 18))
-                                .foregroundColor(.gray)
-                            Spacer()
-                        }
-                    }
-                    .padding(.leading,30)
-                    HStack{
-                        Button(action: {
-                            showSheet.toggle()
-                        }, label: {
-                            HStack {
-                                Image("CountryFlag")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 30,height: 30)
-                                
-                                Text("+1242")
-                                    .font(.system(size: 14))
-                                    .foregroundColor(.black)
+                        //MARK: - firstname & lastname -------------------------------------
+                        HStack{
+                            ZStack(alignment: .leading){
+                                Text("First Name")
+                                    .font(.custom("Roboto-Regular", size: 18))
+                                    .foregroundColor(.gray)
+                                    .offset(y: firstName.isEmpty ? 0 : -20)
+                                    .scaleEffect(firstName.isEmpty ? 1 : 1.0)
+                                TextField("", text: $firstName)
                             }
-                        })
-                        .sheet(isPresented: $showSheet) {
-                            CountrySelectionUI()
-                                .frame(width: min(UIScreen.main.bounds.width, 600))
-                                .presentationDetents([.height(UIScreen.main.bounds.height - 200)])
+                            Spacer()
+                            ZStack(alignment: .leading){
+                                Text("Last Name")
+                                    .font(.custom("Roboto-Regular", size: 18))
+                                    .foregroundColor(.gray)
+                                    .offset(y: lastName.isEmpty ? 0 : -20)
+                                    .scaleEffect(firstName.isEmpty ? 1 : 1.0)
+                                TextField("", text: $lastName)
+                            }
                         }
+                        .padding([.leading,.trailing],30)
+                        
+                        HStack{
+                            Rectangle()
+                                .foregroundColor(.gray)
+                                .frame(height: 1)
+                            Spacer()
+                                .frame(width: 30)
+                            Rectangle()
+                                .foregroundColor(.gray)
+                                .frame(height: 1)
+                        }
+                        .padding(.leading,30)
+                        .padding(.trailing,50)
+                        
                         Spacer()
-                            .frame(width: 105)
+                            .frame(height: 50)
+                        //MARK: - emailaddress -----------------------------------------
                         ZStack(alignment: .leading){
-                            Text("Mobile")
+                            Text("Email Address")
                                 .font(.custom("Roboto-Regular", size: 18))
                                 .foregroundColor(.gray)
-                                .offset(y: Mobile.isEmpty ? 0 : -20)
-                                .scaleEffect(Mobile.isEmpty ? 1 : 1.0)
-                            TextField("", text: $Mobile)
+                                .offset(y: emailAddress.isEmpty ? 0 : -18)
+                                .scaleEffect(emailAddress.isEmpty ? 1 : 1.0)
+                            TextField("", text: $emailAddress)
                         }
-                    }
-                    .padding([.leading,.trailing],30)
-                    
-                    HStack{
+                        
+                        
+                        .padding([.leading,.trailing],30)
                         Rectangle()
                             .foregroundColor(.gray)
                             .frame(height: 1)
+                        
+                            .padding(.leading,30)
+                            .padding(.trailing,30)
                         Spacer()
-                            .frame(width: 30)
+                            .frame(height: 40)
+                        //MARK: - countrycode and mobile------------------------------------
+                        
+                        VStack{
+                            HStack {
+                                Text("Country")
+                                    .font(.custom("Roboto-Regular", size: 18))
+                                    .foregroundColor(.gray)
+                                Spacer()
+                            }
+                        }
+                        .padding(.leading,30)
+                        HStack{
+                            Button(action: {
+                                showSheet.toggle()
+                            }, label: {
+                                HStack {
+                                    Image("CountryFlag")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 30,height: 30)
+                                    
+                                    Text("+1242")
+                                        .font(.system(size: 14))
+                                        .foregroundColor(.black)
+                                }
+                            })
+                            .sheet(isPresented: $showSheet) {
+                                CountrySelectionUI()
+                                    .frame(width: min(UIScreen.main.bounds.width, 600))
+                                    .presentationDetents([.height(UIScreen.main.bounds.height - 200)])
+                            }
+                            Spacer()
+                                .frame(width: 105)
+                            ZStack(alignment: .leading){
+                                Text("Mobile")
+                                    .font(.custom("Roboto-Regular", size: 18))
+                                    .foregroundColor(.gray)
+                                    .offset(y: Mobile.isEmpty ? 0 : -20)
+                                    .scaleEffect(Mobile.isEmpty ? 1 : 1.0)
+                                TextField("", text: $Mobile)
+                            }
+                        }
+                        .padding([.leading,.trailing],30)
+                        
+                        HStack{
+                            Rectangle()
+                                .foregroundColor(.gray)
+                                .frame(height: 1)
+                            Spacer()
+                                .frame(width: 30)
+                            Rectangle()
+                                .foregroundColor(.gray)
+                                .frame(height: 1)
+                        }
+                        .padding(.leading,30)
+                        .padding(.trailing,30)
+                        //MARK: - Language----------------------------------------
+                        Spacer()
+                            .frame(height: 50)
+                        HStack{
+                            ZStack(alignment: .leading){
+                                Text("Language")
+                                    .font(.custom("Roboto-Regular", size: 18))
+                                    .foregroundColor(.gray)
+                                    .offset(y: language.isEmpty ? 0 : -18)
+                                    .scaleEffect(language.isEmpty ? 1 : 1.0)
+                                TextField("", text: $language)
+                            }
+                            Button(action: {
+                                
+                            }, label: {
+                                Image("ic_arrow_down")
+                                    .resizable()
+                                    .frame(width: 15,height: 15)
+                            })
+                            
+                        }
+                        
+                        .padding([.leading,.trailing],30)
                         Rectangle()
                             .foregroundColor(.gray)
                             .frame(height: 1)
-                    }
-                    .padding(.leading,30)
-                    .padding(.trailing,30)
-                    //MARK: - Language----------------------------------------
-                    Spacer()
-                        .frame(height: 50)
-                    HStack{
-                        ZStack(alignment: .leading){
-                            Text("Language")
-                                .font(.custom("Roboto-Regular", size: 18))
-                                .foregroundColor(.gray)
-                                .offset(y: language.isEmpty ? 0 : -18)
-                                .scaleEffect(language.isEmpty ? 1 : 1.0)
-                            TextField("", text: $language)
+                        
+                            .padding(.leading,30)
+                            .padding(.trailing,30)
+                        Spacer()
+                        //MARK: - Currency--------------------------------------------
+                            .frame(height: 50)
+                        HStack{
+                            ZStack(alignment: .leading){
+                                Text("Currency")
+                                    .font(.custom("Roboto-Regular", size: 18))
+                                    .foregroundColor(.gray)
+                                    .offset(y: language.isEmpty ? 0 : -18)
+                                    .scaleEffect(language.isEmpty ? 1 : 1.0)
+                                TextField("", text: $language)
+                            }
+                            Button(action: {
+                                
+                            }, label: {
+                                Image("ic_arrow_down")
+                                    .resizable()
+                                    .frame(width: 15,height: 15)
+                            })
+                            
                         }
+                        
+                        .padding([.leading,.trailing],30)
+                        Rectangle()
+                            .foregroundColor(.gray)
+                            .frame(height: 1)
+                        
+                            .padding(.leading,30)
+                            .padding(.trailing,30)
+                        Spacer()
+                            .frame(height: 40)
                         Button(action: {
                             
                         }, label: {
-                            Image("ic_arrow_down")
-                                .resizable()
-                                .frame(width: 15,height: 15)
+                            RoundedRectangle(cornerRadius: 5)
+                                .foregroundColor(Color.accentColor)
+                                .frame(height: 60)
+                                .padding([.leading,.trailing],25)
+                                .overlay(
+                                    Text("Update")
+                                        .foregroundColor(.white)
+                                        .font(.custom("Poppins-Medium", size: 15))
+                                )
                         })
-                        
+                        Spacer()
                     }
-                    
-                    .padding([.leading,.trailing],30)
-                    Rectangle()
-                        .foregroundColor(.gray)
-                        .frame(height: 1)
-                    
-                        .padding(.leading,30)
-                        .padding(.trailing,30)
-                    Spacer()
-                    //MARK: - Currency--------------------------------------------
-                        .frame(height: 50)
-                    HStack{
-                        ZStack(alignment: .leading){
-                            Text("Currency")
-                                .font(.custom("Roboto-Regular", size: 18))
-                                .foregroundColor(.gray)
-                                .offset(y: language.isEmpty ? 0 : -18)
-                                .scaleEffect(language.isEmpty ? 1 : 1.0)
-                            TextField("", text: $language)
-                        }
-                        Button(action: {
-                            
-                        }, label: {
-                            Image("ic_arrow_down")
-                                .resizable()
-                                .frame(width: 15,height: 15)
-                        })
-                        
-                    }
-                    
-                    .padding([.leading,.trailing],30)
-                    Rectangle()
-                        .foregroundColor(.gray)
-                        .frame(height: 1)
-                    
-                        .padding(.leading,30)
-                        .padding(.trailing,30)
-                    Spacer()
-                        .frame(height: 40)
-                    Button(action: {
-                        
-                    }, label: {
-                        RoundedRectangle(cornerRadius: 5)
-                            .foregroundColor(Color.accentColor)
-                            .frame(height: 60)
-                            .padding([.leading,.trailing],25)
-                            .overlay(
-                                Text("Update")
-                                    .foregroundColor(.white)
-                                    .font(.custom("Poppins-Medium", size: 15))
-                            )
-                    })
-                    Spacer()
+                    .offset(y: -70)
                 }
-                .offset(y: -70)
-                Spacer()
             }
-            
-            .background(Color(red: 0.922, green: 0.922, blue: 0.922))
-            .edgesIgnoringSafeArea(.all)
+            .edgesIgnoringSafeArea(.top)
         }
-        
+        .background(Color(red: 0.922, green: 0.922, blue: 0.922))
+        .navigationBarBackButtonHidden(true)
     }
 }
 
@@ -290,7 +291,7 @@ struct TopView: View {
                         })
                     )
             }
-            .offset(y: -120)
+            .padding(.top,-120)
         }
     }
 }

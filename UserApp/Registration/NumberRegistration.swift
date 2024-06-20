@@ -248,6 +248,7 @@ struct NavigateButtonClick: View {
             }, label: {
                 Image("nextBarButton")
                     .resizable()
+                    .renderingMode(.template)
                     .foregroundColor(.white)
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 25, height: 25)
