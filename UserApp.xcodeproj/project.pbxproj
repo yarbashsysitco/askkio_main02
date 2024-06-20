@@ -212,7 +212,6 @@
 				A8C7E4B12C11784400ABF5BC /* Onboarding */,
 				A8C7E4B22C1178F600ABF5BC /* Registration */,
 				A80E07C22C18143000875BB1 /* Homepage */,
-				A80E07C32C18144A00875BB1 /* BookingPage */,
 				A80E07C62C18146700875BB1 /* WalletPage */,
 				A80E07C92C1814A600875BB1 /* ProfilePage */,
 				84A6B4E22BFDBC6500E46248 /* Assets.xcassets */,
@@ -267,6 +266,7 @@
 				A8C77CDC2C171AFD00EBC0B4 /* HomePage.swift */,
 				A8276AEE2C21B212004F0DE9 /* ServiceCellUI.swift */,
 				A896736F2C22D97400B40A49 /* HomeMoreoptions.swift */,
+				A80E07C32C18144A00875BB1 /* BookingPage */,
 			);
 			path = Homepage;
 			sourceTree = "<group>";

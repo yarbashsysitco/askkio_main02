@@ -80,7 +80,7 @@ struct ImageView: View {
                 VStack {
                     Image(OnBoardingSteps[index].image)
                         .resizable()
-                        .frame(width: 300, height: 200)
+                        .frame(width: 400, height: 300)
                 }
                 .tag(index)
             }

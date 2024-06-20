@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TabHomePage: View {
     var body: some View {
-        TabView{
+        TabView {
             HomePage()
                 .tabItem {
                     Image("ic_home")
@@ -17,6 +17,7 @@ struct TabHomePage: View {
                         .foregroundColor(.blue)
                     Text("HOME")
                 }
+
             BookingHomePage()
                 .tabItem {
                     Image("ic_home_bookings")
@@ -24,6 +25,7 @@ struct TabHomePage: View {
                         .foregroundColor(.blue)
                     Text("BOOKING")
                 }
+
             WalletHomePage()
                 .tabItem {
                     Image("ic_home_wallet")
@@ -31,6 +33,7 @@ struct TabHomePage: View {
                         .foregroundColor(.blue)
                     Text("WALLET")
                 }
+
             ProfileHomePage()
                 .tabItem {
                     Image("ic_home_profile")
