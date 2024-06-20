@@ -18,7 +18,7 @@ struct TabHomePage: View {
                     Text("HOME")
                 }
 
-            BookingHomePageUI()
+            BookingHomeMainUI()
                 .tabItem {
                     Image("ic_home_bookings")
                         .renderingMode(.template)
