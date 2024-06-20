@@ -1,49 +1,58 @@
 //
-//  BookingHomePage.swift
+//  BookingHomePageUI.swift
 //  UserApp
 //
-//  Created by jizan k on 11/06/24.
+//  Created by admin on 20/06/24.
 //
+//
+//import SwiftUI
+//
+//struct BookingHomePageUI: View {
+//    var body: some View {
+//        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+//    }
+//}
 
+#Preview {
+    BookingHomePageUI()
+}
 import SwiftUI
 
-struct BookingHomePage: View {
-    @State private var selectedTab = "Bookings"
+struct BookingHomePageUI: View {
+    @State private var selectedTab: String = "Bookings" // Current active tab
+
     var body: some View {
         VStack {
-            VStack{
-                TopViews(selectedTab: $selectedTab)
-                
-                    .frame(width: UIScreen.main.bounds.width, height: 40)
-                
-                
+            TopVie(selectedTab: $selectedTab)
+
+            // Content based on selected tab
+            if selectedTab == "Bookings" {
+                Text("Bookings Content") // Example content for Bookings tab
+                    // Add your specific UI elements here for the "Bookings" tab
+            } else if selectedTab == "My Orders" {
+                Text("My Orders Content") // Example content for My Orders tab
+                    // Add your specific UI elements here for the "My Orders" tab
+            } else if selectedTab == "Bide" {
+                Text("Bide Content") // Example content for Bide tab
+                    // Add your specific UI elements here for the "Bide" tab
             }
-            
             Spacer()
-            
         }
-        Spacer()
+        .edgesIgnoringSafeArea(.top)
     }
 }
 
-//#Preview {
-//    BookingHomePage()
-//}
-
-
-
-struct TopViews: View {
+struct TopVie: View {
     @Binding var selectedTab: String
-    @Environment(\.dismiss) var dismiss
+
     var body: some View {
-        VStack{
+        VStack {
             Rectangle()
                 .foregroundColor(Color.accentColor)
                 .frame(height: 140)
                 .overlay(
-                    HStack{
-                        Spacer()
-                            .frame(width: 90)
+                    HStack {
+                        Spacer().frame(width: 90)
                         Text("My Bookings")
                             .font(.custom("Roboto-Regular", size: 20))
                             .foregroundColor(.white)
@@ -51,7 +60,6 @@ struct TopViews: View {
                             .frame(maxWidth: .infinity, alignment: .center)
                         Spacer()
                         Button(action: {
-                            //                            dismiss()
                         }, label: {
                             Image(systemName: "line.3.horizontal")
                                 .resizable()
@@ -61,14 +69,11 @@ struct TopViews: View {
                                 .frame(width: 30,height: 30)
                                 .padding(.top,20)
                                 .padding(.trailing,20)
-                            
-                            
-                            
+                      
                         })
                     }
-       
                 )
-            
+
             ZStack {
                 Rectangle()
                     .frame(height: 50)
@@ -79,11 +84,10 @@ struct TopViews: View {
                         HStack {
                             Spacer().frame(width: 18)
                             Button(action: {
-                                //                                     selectedTab = "Bookings"
+                                selectedTab = "Bookings" // Update selected tab state
                             }) {
                                 Rectangle()
                                     .cornerRadius(20)
-                                
                                     .frame(width: 120, height: 40)
                                     .foregroundColor(selectedTab == "Bookings" ? .accentColor : .white)
                                     .overlay(
@@ -91,12 +95,10 @@ struct TopViews: View {
                                             .foregroundColor(selectedTab == "Bookings" ? .white : .black)
                                     )
                             }
-                            
-                            
                             Spacer().frame(width: 2)
-                            
+
                             Button(action: {
-                                selectedTab = "My Orders"
+                                selectedTab = "My Orders" // Update selected tab state
                             }) {
                                 Rectangle()
                                     .cornerRadius(20)
@@ -107,11 +109,10 @@ struct TopViews: View {
                                             .foregroundColor(selectedTab == "My Orders" ? .white : .black)
                                     )
                             }
-                            
                             Spacer().frame(width: 2)
-                            
+
                             Button(action: {
-                                selectedTab = "Bide"
+                                selectedTab = "Bide" // Update selected tab state
                             }) {
                                 Rectangle()
                                     .cornerRadius(20)
@@ -120,21 +121,14 @@ struct TopViews: View {
                                     .overlay(
                                         Text("Bide")
                                             .foregroundColor(selectedTab == "Bide" ? .white : .black)
-                                        
                                     )
                             }
                             Spacer().frame(width: 18)
-                            
-                        }                    )
+                        }
+                    )
+                    .padding(.top, -35)
+                    .padding(.horizontal, 10)
             }
-            .padding(.top, -35)
-            .padding(.horizontal, 10)
-            
         }
-        .edgesIgnoringSafeArea(.top)
-        
-        
     }
 }
-
-
