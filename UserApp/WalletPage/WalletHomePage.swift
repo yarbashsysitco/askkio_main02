@@ -19,7 +19,7 @@ struct WalletHomePage: View {
                         .clipShape(RoundedCorner(radius: 25, corners: .bottomLeft))
                         .overlay(
                             VStack {
-                                Text("My Wallet")
+                                Text("My Walletss")
                                     .foregroundColor(.white)
                                     .font(.custom("Roboto-Regular", size: 25))
                                 Spacer()

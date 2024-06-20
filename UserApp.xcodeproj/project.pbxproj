@@ -33,6 +33,7 @@
 		A898267E2C0DE4D100A2997D /* LanguageSelectionCellUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A898267D2C0DE4D100A2997D /* LanguageSelectionCellUI.swift */; };
 		A89E5AE62C0DA44C00627E00 /* LanguageSelectionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89E5AE52C0DA44C00627E00 /* LanguageSelectionUI.swift */; };
 		A89E5AE82C0DB46F00627E00 /* SplashScreenUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89E5AE72C0DB46F00627E00 /* SplashScreenUI.swift */; };
+		A89F39FA2C244B4900F6DADE /* BookingHomePageUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89F39F82C244B4900F6DADE /* BookingHomePageUI.swift */; };
 		A8A9BA682C16B7E1003D736B /* ReferralCodeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A9BA632C16B7E0003D736B /* ReferralCodeUI.swift */; };
 		A8A9BA692C16B7E1003D736B /* EmailAddressUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A9BA642C16B7E1003D736B /* EmailAddressUI.swift */; };
 		A8A9BA6A2C16B7E1003D736B /* ChooseProfileUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A9BA652C16B7E1003D736B /* ChooseProfileUI.swift */; };
@@ -117,6 +118,7 @@
 		A898267D2C0DE4D100A2997D /* LanguageSelectionCellUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionCellUI.swift; sourceTree = "<group>"; };
 		A89E5AE52C0DA44C00627E00 /* LanguageSelectionUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageSelectionUI.swift; sourceTree = "<group>"; };
 		A89E5AE72C0DB46F00627E00 /* SplashScreenUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenUI.swift; sourceTree = "<group>"; };
+		A89F39F82C244B4900F6DADE /* BookingHomePageUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingHomePageUI.swift; sourceTree = "<group>"; };
 		A8A9BA632C16B7E0003D736B /* ReferralCodeUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReferralCodeUI.swift; sourceTree = "<group>"; };
 		A8A9BA642C16B7E1003D736B /* EmailAddressUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailAddressUI.swift; sourceTree = "<group>"; };
 		A8A9BA652C16B7E1003D736B /* ChooseProfileUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseProfileUI.swift; sourceTree = "<group>"; };
@@ -296,6 +298,15 @@
 				A89325DB2C1AF43800878320 /* VerifyEmailPopUp.swift */,
 			);
 			path = ProfilePage;
+			sourceTree = "<group>";
+		};
+		A89F39F92C244B4900F6DADE /* BookingPage */ = {
+			isa = PBXGroup;
+			children = (
+				A89F39F82C244B4900F6DADE /* BookingHomePageUI.swift */,
+			);
+			name = BookingPage;
+			path = ../../../Downloads/BookingPage;
 			sourceTree = "<group>";
 		};
 		A8C7E4B12C11784400ABF5BC /* Onboarding */ = {

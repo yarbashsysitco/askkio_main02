@@ -122,14 +122,14 @@ struct HomePage: View {
                         .clipShape(RoundedCorner(radius: 10, corners: [.topLeft,.bottomLeft]))
                         .foregroundColor(.gray)
                         .opacity(0.5)
-                        .frame(height: 150)
+                        .frame(height: 120)
                         .padding(.leading,20)
                         .overlay(
                             HStack{
                                 VStack(spacing: 0){
                                     Image("ic_taxi")
                                         .resizable()
-                                        .frame(width: 80,height: 80)
+                                        .frame(width: 60,height: 60)
                                     Text("TAXI")
                                         .font(.custom("Poppins-Semibold", size: 16))
                                         .foregroundColor(.white)
