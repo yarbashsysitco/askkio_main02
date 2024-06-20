@@ -38,6 +38,7 @@ struct NumberRegistration: View {
             }
             .navigationBarHidden(true) // Hide the navigation bar if needed
         }
+        .navigationViewStyle(.stack)
     }
 
     private func hideKeyboard() {
