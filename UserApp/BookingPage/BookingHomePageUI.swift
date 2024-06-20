@@ -26,7 +26,7 @@ struct BookingHomePageUI: View {
             TopVie(selectedTab: $selectedTab)
 
             // Content based on selected tab
-            if selectedTab == "Bookings" {
+            if selectedTab == "Bookingsss" {
                 Text("Bookings Content") // Example content for Bookings tab
                     // Add your specific UI elements here for the "Bookings" tab
             } else if selectedTab == "My Orders" {
