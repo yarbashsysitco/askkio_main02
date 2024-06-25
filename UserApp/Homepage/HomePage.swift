@@ -368,7 +368,9 @@ struct HomePage: View {
                     .frame(width: UIScreen.main.bounds.width)
             }
         }
+        .navigationViewStyle(.stack)
         .navigationBarBackButtonHidden(true)
+
         }
     
         
