@@ -91,16 +91,6 @@ struct VerifyEmailPopUp: View {
     }
 
 
-struct BlurView: UIViewRepresentable{
-    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
-    }
-    
-    func makeUIView(context: Context) -> UIVisualEffectView {
-        let view =  UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
-        return view
-    }
-
-}
 #Preview {
     VerifyEmailPopUp()
 }

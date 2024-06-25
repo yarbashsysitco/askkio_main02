@@ -33,6 +33,7 @@ struct TabHomePage: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .navigationViewStyle(.stack)
      }
 
      private func tabContent(imageName: String, text: String) -> some View {

@@ -2,6 +2,7 @@
 import SwiftUI
 
 struct WalletHomePage: View {
+    @State private var addMoneySheet = false
     var body: some View {
         ScrollView(showsIndicators: false) {
             ZStack {
@@ -9,13 +10,13 @@ struct WalletHomePage: View {
                     Rectangle()
                         .foregroundColor(.white)
                     Rectangle()
-                        .foregroundColor(.accentColor)
+                        .foregroundColor(Color(red: 0.287, green: 0.665, blue: 0.844))
                 }
                 .edgesIgnoringSafeArea(.all)
                 
                 VStack(spacing: 0){
                     Rectangle()
-                        .foregroundColor(.accentColor)
+                        .foregroundColor(Color(red: 0.287, green: 0.665, blue: 0.844))
                         .clipShape(RoundedCorner(radius: 25, corners: .bottomLeft))
                         .overlay(
                             VStack {
@@ -41,12 +42,18 @@ struct WalletHomePage: View {
                                                 VStack {
                                                     HStack(spacing: 40) {
                                                         Button(action: {
-                                                            
+                                                            addMoneySheet.toggle()
                                                         }, label: {
                                                             Image("ic_wallet_addmoney")
                                                                 .resizable()
                                                                 .frame(width: 55, height: 55)
                                                         })
+                                                        .sheet(isPresented: $addMoneySheet) {
+                                                            AddMoneyPage()
+                                                            .frame(width: min(UIScreen.main.bounds.width, 800))
+                                                               .presentationDetents([.height(UIScreen.main.bounds.height - 500)])
+                                                                                                        }
+                                                        
                                                         
                                                         Button(action: {
                                                             
@@ -117,6 +124,7 @@ struct WalletHomePage: View {
                                     Button(action: {}, label: {
                                         Text("See All")
                                             .font(.custom("Poppins-Semibold", size: 14))
+                                            .foregroundColor(Color(red: 0.287, green: 0.665, blue: 0.844))
                                         Image("nextBarButton")
                                             .renderingMode(.template)
                                             .resizable()
@@ -135,6 +143,7 @@ struct WalletHomePage: View {
                                                 .font(.custom("Roboto-Bold", size: 16))
                                             )
                                             .shadow(radius: 3)
+                                            .foregroundColor(Color(red: 0.287, green: 0.665, blue: 0.844))
                                             .frame(width: 40,height: 30)
                                         
                                     })
@@ -188,10 +197,17 @@ struct WalletHomePage: View {
                 }
                
             }
-            
+            if addMoneySheet {
+            VisualEffectBlur(blurStyle: .systemMaterial) {
+                Color.clear
+                }
+                .edgesIgnoringSafeArea(.all)
+                .transition(.opacity)
+            }
         }
         .navigationBarBackButtonHidden(true)
         .edgesIgnoringSafeArea(.all)
+        .animation(.easeInOut, value: addMoneySheet)
     }
           
 }
@@ -199,3 +215,4 @@ struct WalletHomePage: View {
 #Preview {
     WalletHomePage()
 }
+

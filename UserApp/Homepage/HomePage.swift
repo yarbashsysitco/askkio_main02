@@ -369,6 +369,7 @@ struct HomePage: View {
             }
         }
         .navigationBarBackButtonHidden(true)
+        .navigationViewStyle(.stack)
         }
     
         

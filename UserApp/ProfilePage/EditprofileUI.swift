@@ -194,7 +194,7 @@ struct EditprofileUI: View {
                             
                         }, label: {
                             RoundedRectangle(cornerRadius: 5)
-                                .foregroundColor(Color.accentColor)
+                                .foregroundColor(Color(red: 0.287, green: 0.665, blue: 0.844))
                                 .frame(height: 60)
                                 .padding([.leading,.trailing],25)
                                 .overlay(
@@ -229,7 +229,7 @@ struct TopView: View {
     var body: some View {
         VStack{
             Rectangle()
-                .foregroundColor(Color.accentColor)
+                .foregroundColor(Color(red: 0.287, green: 0.665, blue: 0.844))
                 .frame(height: 180)
                 .overlay(
                     HStack{
@@ -280,7 +280,7 @@ struct TopView: View {
                                     Image("ic_plus")
                                         .resizable()
                                         .renderingMode(.template)
-                                        .foregroundColor(Color.accentColor)
+                                        .foregroundColor(Color(red: 0.287, green: 0.665, blue: 0.844))
                                         .frame(width: 35,height: 35)
                                 )
                                 .frame(width: 40,height: 40)
