@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct ProfileSettingsUI: View {
-    var settings: ProfileSettingsData
+    var settings: ProfileHomePageModel
     var body: some View {
         ZStack(alignment: .bottom) {
             Rectangle()
@@ -44,5 +44,5 @@ struct ProfileSettingsUI: View {
 }
 
 #Preview {
-    ProfileSettingsUI(settings: GeneralList[0])
+    ProfileSettingsUI(settings: ProfileHomePageModel(imageName: "ic_pf_bookings", category: "My Bookings"))
 }

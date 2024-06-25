@@ -17,39 +17,39 @@ struct HomePage: View {
     @State private var Search: String = ""
     var body: some View {
         VStack(spacing: 0) {
-//MARK: -location
+            //MARK: -location
             VStack {
                 Rectangle()
                     .foregroundColor(.accentColor)
                     .overlay{
-                            HStack{
-                                Image("ic_location")
+                        HStack{
+                            Image("ic_location")
+                                .resizable()
+                                .frame(width: 30,height: 30)
+                            Spacer()
+                                .frame(width: 5)
+                            Text("Loading address")
+                                .foregroundColor(.white)
+                                .font(.custom("Poppins-Regular", size: 15))
+                            Spacer()
+                                .frame(width: 8)
+                            Button(action: {}, label: {
+                                Image("ic_arrow_down")
+                                    .renderingMode(.template)
                                     .resizable()
-                                    .frame(width: 30,height: 30)
-                                Spacer()
-                                    .frame(width: 5)
-                                Text("Loading address")
+                                    .frame(width: 18,height: 16)
                                     .foregroundColor(.white)
-                                    .font(.custom("Poppins-Regular", size: 15))
-                                Spacer()
-                                    .frame(width: 8)
-                                Button(action: {}, label: {
-                                    Image("ic_arrow_down")
-                                        .renderingMode(.template)
-                                        .resizable()
-                                        .frame(width: 18,height: 16)
-                                        .foregroundColor(.white)
-                                })
-                                Spacer()
-                            }
-                            .padding(.leading,20)
-                            .padding(.top,50)
+                            })
+                            Spacer()
+                        }
+                        .padding(.leading,20)
+                        .padding(.top,50)
                     }
             }
             .edgesIgnoringSafeArea(.top)
             .frame(width: UIScreen.main.bounds.width, height: 40)
             ScrollView(showsIndicators: false) {
-//MARK: - swipe image
+                //MARK: - swipe image
                 VStack(spacing: 0){
                     VStack {
                         TabView(selection: $currentIndex) {
@@ -122,7 +122,7 @@ struct HomePage: View {
                         .clipShape(RoundedCorner(radius: 10, corners: [.topLeft,.bottomLeft]))
                         .foregroundColor(.gray)
                         .opacity(0.5)
-                        .frame(height: 120)
+                        .frame(height: 130)
                         .padding(.leading,20)
                         .overlay(
                             HStack{
@@ -131,7 +131,7 @@ struct HomePage: View {
                                         .resizable()
                                         .frame(width: 60,height: 60)
                                     Text("TAXI")
-                                        .font(.custom("Poppins-Semibold", size: 16))
+                                        .font(.custom("Poppins-Semibold", size: 14))
                                         .foregroundColor(.white)
                                 }
                                 .padding([.top,.bottom],20)
@@ -142,242 +142,246 @@ struct HomePage: View {
                     ZStack {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 20) {
-                                ForEach(TaxiList.indices, id: \.self) { index in
-                                    ServiceCellUI(serviceDatas: TaxiList[index])
-                                        .padding(.leading, index == 0 ? 140 : 0)
+                                ForEach(taxiList.indices, id: \.self) { index in
+                                    ServiceCellUI(serviceDatas: taxiList[index])
+                                        .padding(.leading, index == 0 ? 120 : 0)
                                 }
                             }
                         }
-                        .padding(.top, -130)
-                    }
-                    .frame(width: UIScreen.main.bounds.width)
-                    
-                    Spacer()
-                        .frame(height: 20)
-                    //MARK: - delivery service
-                    Rectangle()
-                        .clipShape(RoundedCorner(radius: 10, corners: [.topLeft,.bottomLeft]))
-                        .foregroundColor(.gray)
-                        .opacity(0.5)
-                        .frame(height: 150)
-                        .padding(.leading,20)
-                        .overlay(
-                            HStack{
-                                VStack(spacing: 0){
-                                    Image("ic_deliverytruck")
-                                        .resizable()
-                                        .frame(width: 80,height: 80)
-                                    Text("DELIVERY")
-                                        .font(.custom("Poppins-Semibold", size: 16))
-                                        .foregroundColor(.white)
-                                }
-                                .padding([.top,.bottom],20)
-                                Spacer()
-                            }
-                                .padding(.leading,40)
-                        )
-                    ZStack {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 20) {
-                                ForEach(DeliveryList.indices, id: \.self) { index in
-                                    ServiceCellUI(serviceDatas: DeliveryList[index])
-                                        .padding(.leading, index == 0 ? 140 : 0)
-                                }
-                            }
+                            .padding(.top, -125)
                         }
-                        .padding(.top, -130)
-                    }
-                    .frame(width: UIScreen.main.bounds.width)
-                    Spacer()
-                        .frame(height: 20)
-                    //MARK: - proservice
-                    Rectangle()
-                        .clipShape(RoundedCorner(radius: 10, corners: [.topLeft,.bottomLeft]))
-                        .foregroundColor(.gray)
-                        .opacity(0.5)
-                        .frame(height: 150)
-                        .padding(.leading,20)
-                        .overlay(
-                            HStack{
-                                VStack(spacing: 0){
-                                    Image("ic_proservice")
-                                        .resizable()
-                                        .frame(width: 80,height: 80)
-                                    Text("PRO SERVICE")
-                                        .font(.custom("Poppins-Semibold", size: 16))
-                                        .foregroundColor(.white)
-                                }
-                    
-                                .padding([.top,.bottom],20)
-                                Spacer()
-                            }
-                                .padding(.leading,30)
-                        )
-                    ZStack {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 20) {
-                                ForEach(ProServiceList.indices, id: \.self) { index in
-                                    ServiceCellUI(serviceDatas: ProServiceList[index])
-                                        .padding(.leading, index == 0 ? 140 : 0)
-                                }
-                            }
-                        }
-                        .padding(.top, -130)
-                    }
-                    .frame(width: UIScreen.main.bounds.width)
-                    Spacer()
-                        .frame(height: 20)
-                    //MARK: - video consulting
-                    Rectangle()
-                        .clipShape(RoundedCorner(radius: 10, corners: [.topLeft,.bottomLeft]))
-                        .foregroundColor(.gray)
-                        .opacity(0.5)
-                        .frame(height: 160)
-                        .padding(.leading,20)
-                        .overlay(
-                            HStack{
-                                VStack(spacing: 0){
-                                    Image("ic_videoconsulting")
-                                        .resizable()
-                                        .frame(width: 80,height: 80)
-                                    Text("VIDEO \nCONSULTING")
-                                        .font(.custom("Poppins-Semibold", size: 16))
-                                        .multilineTextAlignment(.center)
-                                        .foregroundColor(.white)
-                                        .frame(width: 120,height: 50)
-                                }
-                                .padding([.top,.bottom],20)
-                                Spacer()
-                            }
-                                .padding(.leading,20)
-                        )
-                    ZStack {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 20) {
-                                ForEach(VideoConsultingList.indices, id: \.self) { index in
-                                    ServiceCellUI(serviceDatas: VideoConsultingList[index])
-                                        .padding(.leading, index == 0 ? 140 : 0)
-                                }
-                            }
-                        }
-                        .padding(.top, -130)
-                    }
-                    .frame(width: UIScreen.main.bounds.width)
-                    Spacer()
-                        .frame(height: 20)
-                    //MARK: - Post task service
-                    Rectangle()
-                        .clipShape(RoundedCorner(radius: 10, corners: [.topLeft,.bottomLeft]))
-                        .foregroundColor(.gray)
-                        .opacity(0.5)
-                        .frame(height: 150)
-                        .padding(.leading,20)
-                        .overlay(
-                            HStack{
-                                VStack(spacing: 0){
-                                    Image("ic_postTask")
-                                        .resizable()
-                                        .frame(width: 80,height: 80)
-                                    Text("POST A TASK")
-                                        .font(.custom("Poppins-Semibold", size: 16))
-                                        .foregroundColor(.white)
-                                    
-                                }
-                                .padding([.top,.bottom],20)
-                                Spacer()
-                            }
-                                .padding(.leading,30)
-                        )
-                    ZStack {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 20) {
-                                ForEach(PostTaskList.indices, id: \.self) { index in
-                                    ServiceCellUI(serviceDatas: PostTaskList[index])
-                                        .padding(.leading, index == 0 ? 140 : 0)
-                                }
-                            }
-                        }
-                        .padding(.top, -130)
-                    }
-                    .frame(width: UIScreen.main.bounds.width)
-                    Spacer()
-                        .frame(height: 20)
-        //MARK: - do more with us
-                    VStack{
-                        HStack {
-                            Capsule()
-                                .foregroundColor(.accentColor)
-                                .frame(width: 5,height: 23)
-                            Text("Do More With Us")
-                                .font(.custom("Poppins-Semibold", size: 18))
-                            Spacer()
-                        }
-                        .padding(.leading,20)
-                    }
-//                    .offset(y: -590)
-                    Spacer()
-                        .frame(height: 30)
-                    VStack{
+                        .frame(width: UIScreen.main.bounds.width)
+                        
+                        Spacer()
+                            .frame(height: 15)
+                        //MARK: - delivery service
                         Rectangle()
-                            .foregroundColor(Color(red: 0.914, green: 0.992, blue: 1.0))
+                            .clipShape(RoundedCorner(radius: 10, corners: [.topLeft,.bottomLeft]))
+                            .foregroundColor(.gray)
+                            .opacity(0.5)
+                            .frame(height: 130)
+                            .padding(.leading,20)
                             .overlay(
-                                VStack {
-                                    Image("ic_pickupimage")
-                                        .resizable()
-                                        .padding([.leading,.trailing,.top],10)
-                                        .frame(height: 200)
+                                HStack{
+                                    VStack(spacing: 0){
+                                        Image("ic_deliverytruck")
+                                            .resizable()
+                                            .frame(width: 60,height: 60)
+                                        Text("DELIVERY")
+                                            .font(.custom("Poppins-Semibold", size: 14))
+                                            .foregroundColor(.white)
+                                    }
+                                    .padding([.top,.bottom],20)
                                     Spacer()
-                                        .frame(height: 20)
-                                    ScrollView(.horizontal, showsIndicators: false) {
-                                        HStack(spacing: 0) {
-                                            ForEach(MoreOptionsList.indices, id: \.self) { index in
-                                                HomeMoreoptions(serviceDatas: MoreOptionsList[index])
-                                                    .padding(.leading, index == 0 ? 10 : 0)
-                                            }
-                                        }
+                                }
+                                    .padding(.leading,40)
+                            )
+                        ZStack {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 20) {
+                                    ForEach(deliveryList.indices, id: \.self) { index in
+                                        ServiceCellUI(serviceDatas: deliveryList[index])
+                                            .padding(.leading, index == 0 ? 120 : 0)
+                                    }
+                                }
+                            }
+                            .padding(.top, -125)
+                        }
+                        .frame(width: UIScreen.main.bounds.width)
+                        Spacer()
+                            .frame(height: 15)
+                        //MARK: - proservice
+                        Rectangle()
+                            .clipShape(RoundedCorner(radius: 10, corners: [.topLeft,.bottomLeft]))
+                            .foregroundColor(.gray)
+                            .opacity(0.5)
+                            .frame(height: 130)
+                            .padding(.leading,20)
+                            .overlay(
+                                HStack{
+                                    VStack(spacing: 0){
+                                        Image("ic_proservice")
+                                            .resizable()
+                                            .frame(width: 60,height: 60)
+                                        Spacer()
+                                            .frame(height: 10)
+                                        Text("PRO SERVICE")
+                                            .font(.custom("Poppins-Semibold", size: 12))
+                                            .foregroundColor(.white)
                                     }
                                     
-                                    Button(action: {
-                                        
-                                    }, label: {
-                                        RoundedRectangle(cornerRadius: 5)
-                                            .foregroundColor(Color(red: 0.267, green: 0.663, blue: 0.719))
-                                            .frame(height: 50)
-                                            .shadow(radius: 5)
-                                            .padding([.leading,.trailing],10)
-                                            .overlay(
-                                            Text("Use Genie for All your needs")
-                                                .foregroundColor(.white)
-                                                .font(.custom("Poppins-Semibold", size: 18))
-                                            )
-                                    })
+                                    .padding([.top,.bottom],20)
                                     Spacer()
                                 }
-                             )
-                            .frame(height: 430)
-//                            .offset(y: -550)
-            
+                                    .padding(.leading,30)
+                            )
+                        ZStack {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 20) {
+                                    ForEach(proServiceList.indices, id: \.self) { index in
+                                        ServiceCellUI(serviceDatas: proServiceList[index])
+                                            .padding(.leading, index == 0 ? 120 : 0)
+                                    }
+                                }
+                            }
+                            .padding(.top, -125)
+                        }
+                        .frame(width: UIScreen.main.bounds.width)
+                        Spacer()
+                            .frame(height: 15)
+                        //MARK: - video consulting
+                        Rectangle()
+                            .clipShape(RoundedCorner(radius: 10, corners: [.topLeft,.bottomLeft]))
+                            .foregroundColor(.gray)
+                            .opacity(0.5)
+                            .frame(height: 130)
+                            .padding(.leading,20)
+                            .overlay(
+                                HStack{
+                                    VStack(spacing: 0){
+                                        Image("ic_videoconsulting")
+                                            .resizable()
+                                            .frame(width: 55,height: 55)
+                                        Text("VIDEO \nCONSULTING")
+                                            .font(.custom("Poppins-Semibold", size: 14))
+                                            .multilineTextAlignment(.center)
+                                            .foregroundColor(.white)
+                                            .frame(width: 120,height: 50)
+                                    }
+                                    .padding([.top,.bottom],20)
+                                    Spacer()
+                                }
+                                    .padding(.leading,10)
+                            )
+                        ZStack {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 20) {
+                                    ForEach(videoConsultingList.indices, id: \.self) { index in
+                                        ServiceCellUI(serviceDatas: videoConsultingList[index])
+                                            .padding(.leading, index == 0 ? 120 : 0)
+                                    }
+                                }
+                            }
+                            .padding(.top, -125)
+                        }
+                        .frame(width: UIScreen.main.bounds.width)
+                        Spacer()
+                            .frame(height: 15)
+                        //MARK: - Post task service
+                        Rectangle()
+                            .clipShape(RoundedCorner(radius: 10, corners: [.topLeft,.bottomLeft]))
+                            .foregroundColor(.gray)
+                            .opacity(0.5)
+                            .frame(height: 130)
+                            .padding(.leading,20)
+                            .overlay(
+                                HStack{
+                                    VStack(spacing: 0){
+                                        Image("ic_postTask")
+                                            .resizable()
+                                            .frame(width: 60,height: 60)
+                                        Spacer()
+                                            .frame(height: 10)
+                                        Text("POST A TASK")
+                                            .font(.custom("Poppins-Semibold", size: 14))
+                                            .foregroundColor(.white)
+                                        
+                                    }
+                                    .padding([.top,.bottom],20)
+                                    Spacer()
+                                }
+                                    .padding(.leading,30)
+                            )
+                        ZStack {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 20) {
+                                    ForEach(postTaskList.indices, id: \.self) { index in
+                                        ServiceCellUI(serviceDatas: postTaskList[index])
+                                            .padding(.leading, index == 0 ? 123 : 0)
+                                    }
+                                }
+                            }
+                            .padding(.top, -130)
+                        }
+                        .frame(width: UIScreen.main.bounds.width)
+                        Spacer()
+                            .frame(height: 20)
+                        //MARK: - do more with us
+                        VStack{
+                            HStack {
+                                Capsule()
+                                    .foregroundColor(.accentColor)
+                                    .frame(width: 5,height: 23)
+                                Text("Do More With Us")
+                                    .font(.custom("Poppins-Semibold", size: 18))
+                                Spacer()
+                            }
+                            .padding(.leading,20)
+                        }
+                        //                    .offset(y: -590)
+                        Spacer()
+                            .frame(height: 30)
+                        VStack{
+                            Rectangle()
+                                .foregroundColor(Color(red: 0.914, green: 0.992, blue: 1.0))
+                                .overlay(
+                                    VStack {
+                                        Image("ic_pickupimage")
+                                            .resizable()
+                                            .padding([.leading,.trailing,.top],10)
+                                            .frame(height: 200)
+                                        Spacer()
+                                            .frame(height: 20)
+                                        ScrollView(.horizontal, showsIndicators: false) {
+                                            HStack(spacing: 0) {
+                                                ForEach(moreOptionsList.indices, id: \.self) { index in
+                                                    HomeMoreoptions(serviceDatas: moreOptionsList[index])
+                                                        .padding(.leading, index == 0 ? 10 : 0)
+                                                }
+                                            }
+                                        }
+                                        
+                                        Button(action: {
+                                            
+                                        }, label: {
+                                            RoundedRectangle(cornerRadius: 5)
+                                                .foregroundColor(Color(red: 0.267, green: 0.663, blue: 0.719))
+                                                .frame(height: 50)
+                                                .shadow(radius: 5)
+                                                .padding([.leading,.trailing],10)
+                                                .overlay(
+                                                    Text("Use Genie for All your needs")
+                                                        .foregroundColor(.white)
+                                                        .font(.custom("Poppins-Semibold", size: 18))
+                                                )
+                                        })
+                                        Spacer()
+                                    }
+                                )
+                                .frame(height: 430)
+                            //                            .offset(y: -550)
+                            
+                        }
                     }
                 }
+                .frame(width: UIScreen.main.bounds.width)
             }
-            .frame(width: UIScreen.main.bounds.width)
         }
-    }
     
-    
-    func getIndex()-> Int{
-        let index = Int(round(Double(offset / getWidth())))
         
-        return index
-    }
+        func getIndex()-> Int{
+            let index = Int(round(Double(offset / getWidth())))
+            
+            return index
+        }
 }
-
-extension View{
+        extension View{
+            
+            func getWidth()->CGFloat{
+                return UIScreen.main.bounds.width
+            }
+        }
     
-    func getWidth()->CGFloat{
-        return UIScreen.main.bounds.width
-    }
-}
 #Preview {
     HomePage()
 }

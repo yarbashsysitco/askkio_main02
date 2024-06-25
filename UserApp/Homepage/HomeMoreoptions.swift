@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct HomeMoreoptions: View {
-    var serviceDatas: ServiceDatas
+    var serviceDatas: ServiceData
     var body: some View {
         ZStack {
             VStack{
                 Circle()
                     .shadow(radius: 6)
                     .overlay(
-                        Image(serviceDatas.imageName)
+                        Image(serviceDatas.image)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 70,height: 75)
@@ -23,8 +23,8 @@ struct HomeMoreoptions: View {
                     .frame(width: 60,height: 60)
                 Spacer()
                     .frame(height: 10)
-                Text(serviceDatas.category)
-                    .font(.custom("Popiins-Medium", size: 18))
+                Text(serviceDatas.name)
+                    .font(.custom("Popiins-Medium", size: 16))
                     .multilineTextAlignment(.center)
                     .padding([.leading,.trailing],10)
                     .frame(width: 120,height: 50)
@@ -35,5 +35,5 @@ struct HomeMoreoptions: View {
 }
 
 #Preview {
-    HomeMoreoptions(serviceDatas: MoreOptionsList[0])
+    HomeMoreoptions(serviceDatas: moreOptionsList[0])
 }

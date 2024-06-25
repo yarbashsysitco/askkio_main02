@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct ProfileHomePage: View {
-    var columns = [GridItem(.adaptive(minimum: UIScreen.main.bounds.width),spacing: 0)]
-    @State private var isswitchOn = false
-    @State private var isScrolling = false
+    @StateObject private var viewModel = ProfileHomePageViewModel()
     var body: some View {
         NavigationView{
             VStack(spacing: 0) {
@@ -21,11 +19,11 @@ struct ProfileHomePage: View {
                                 .onChange(of: geometry.frame(in: .global).minY) { minY in
                                     if minY < 0 {
                                         withAnimation {
-                                            isScrolling = true
+                                            viewModel.isScrolling = true
                                         }
                                     } else {
                                         withAnimation {
-                                            isScrolling = false
+                                            viewModel.isScrolling = false
                                         }
                                     }
                                 }
@@ -47,7 +45,7 @@ struct ProfileHomePage: View {
                             .offset(y: -50)
                             .padding(.leading, 25)
                             VStack {
-                                ForEach(GeneralList, id: \.id) { Glists in
+                                ForEach(viewModel.generalList, id: \.id) { Glists in
                                     ProfileSettingsUI(settings: Glists)
                                 }
                             }
@@ -64,7 +62,7 @@ struct ProfileHomePage: View {
                             .offset(y: -5)
                             .padding(.leading, 25)
                             VStack {
-                                ForEach(AccountSettingsList_1, id: \.id) { Glists in
+                                ForEach(viewModel.accountSettingsList1, id: \.id) { Glists in
                                     ProfileSettingsUI(settings: Glists)
                                 }
                             }
@@ -82,7 +80,7 @@ struct ProfileHomePage: View {
                                                 .resizable()
                                                 .frame(width: 40, height: 40)
                                             Spacer().frame(width: 20)
-                                            Toggle("Enable Face ID/Touch ID", isOn: $isswitchOn)
+                                            Toggle("Enable Face ID/Touch ID", isOn: $viewModel.isSwitchOn)
                                                 .tint(Color.green)
                                             Spacer().frame(width: 10)
                                             Image("optional")
@@ -96,7 +94,7 @@ struct ProfileHomePage: View {
                             }
                             .offset(y: 10)
                             VStack {
-                                ForEach(AccountSettingsList_2, id: \.id) { Glists in
+                                ForEach(viewModel.accountSettingsList2, id: \.id) { Glists in
                                     ProfileSettingsUI(settings: Glists)
                                 }
                             }
@@ -113,7 +111,7 @@ struct ProfileHomePage: View {
                             .offset(y: 40)
                             .padding(.leading, 25)
                             VStack {
-                                ForEach(PaymentList, id: \.id) { Glists in
+                                ForEach(viewModel.paymentList, id: \.id) { Glists in
                                     ProfileSettingsUI(settings: Glists)
                                 }
                             }
@@ -130,7 +128,7 @@ struct ProfileHomePage: View {
                             .offset(y: 75)
                             .padding(.leading, 25)
                             VStack {
-                                ForEach(FavouriteLocationsList, id: \.id) { Glists in
+                                ForEach(viewModel.favouriteLocationsList, id: \.id) { Glists in
                                     ProfileSettingsUI(settings: Glists)
                                 }
                             }
@@ -147,7 +145,7 @@ struct ProfileHomePage: View {
                             .offset(y: 105)
                             .padding(.leading, 25)
                             VStack {
-                                ForEach(SupportList, id: \.id) { Glists in
+                                ForEach(viewModel.supportList, id: \.id) { Glists in
                                     ProfileSettingsUI(settings: Glists)
                                 }
                             }
@@ -198,7 +196,7 @@ struct ProfileHomePage: View {
                         }
                     }
                     
-                    TopBar(isScrolling: $isScrolling)
+                    TopBar(isScrolling: $viewModel.isScrolling)
                         .frame(height: 120)
                         .background(Color.accentColor)
                         .zIndex(1) 
@@ -259,7 +257,7 @@ struct TopBar: View {
                     Image("ic_pf_edit")       .renderingMode(.template)  .foregroundColor(.white)
                 })
                 .fullScreenCover(isPresented: $edituishow, content: {
-                    EditprofileUI(screenDismiss: $edituishow)
+//                    EditprofileUI(viewModel: $viewModel.edituishow)
                 })
             }
             .padding(.top, 40)

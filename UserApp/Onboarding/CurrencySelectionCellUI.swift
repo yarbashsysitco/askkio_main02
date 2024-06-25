@@ -1,28 +1,12 @@
+
 import SwiftUI
 
-struct CurrencyItems: Identifiable {
-    var id = UUID()
-    var langCode: String
-    var language: String
-    let color: Color
-}
-
 struct CurrencySelectionCellUI: View {
-    let users = [
-        CurrencyItems(langCode: "EN", language: "English", color: .gray),
-        CurrencyItems(langCode: "TL", language: "Filipino", color: .black),
-        CurrencyItems(langCode: "ID", language: "bahasa indonesia", color: .blue),
-        CurrencyItems(langCode: "DE", language: "German", color: .purple),
-        CurrencyItems(langCode: "BN", language: "Bengali", color: .pink),
-        CurrencyItems(langCode: "ES", language: "Español", color: .cyan),
-        CurrencyItems(langCode: "FA", language: "Persian", color: .orange),
-        CurrencyItems(langCode: "IT", language: "italiano", color: .yellow),
-    ]
-    
+    @StateObject private var currencymodel = CurrencySelectionViewModel()
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                ForEach(users) { CurrencyItems in
+                ForEach(currencymodel.users, id: \.id) { CurrencyItems in
                     HStack {
                         ZStack {
                             Circle()

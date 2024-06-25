@@ -9,40 +9,37 @@ import SwiftUI
 
 struct TabHomePage: View {
     var body: some View {
-        TabView {
-            HomePage()
-                .tabItem {
-                    Image("ic_home")
-                        .renderingMode(.template)
-                        .foregroundColor(.blue)
-                    Text("HOME")
-                }
+         TabView {
+             HomePage()
+                 .tabItem {
+                     tabContent(imageName: "ic_home", text: "HOME")
+                 }
 
-            BookingHomeMainUI()
-                .tabItem {
-                    Image("ic_home_bookings")
-                        .renderingMode(.template)
-                        .foregroundColor(.blue)
-                    Text("BOOKING")
-                }
+             BookingHomeMainUI()
+                 .tabItem {
+                     tabContent(imageName: "ic_home_bookings", text: "BOOKING")
+                 }
 
-            WalletHomePage()
-                .tabItem {
-                    Image("ic_home_wallet")
-                        .renderingMode(.template)
-                        .foregroundColor(.blue)
-                    Text("WALLET")
-                }
+             WalletHomePage()
+                 .tabItem {
+                     tabContent(imageName: "ic_home_wallet", text: "WALLET")
+                 }
 
-            ProfileHomePage()
-                .tabItem {
-                    Image("ic_home_profile")
-                        .renderingMode(.template)
-                        .foregroundColor(.blue)
-                    Text("PROFILE")
-                }
-        }
-    }
+             ProfileHomePage()
+                 .tabItem {
+                     tabContent(imageName: "ic_home_profile", text: "PROFILE")
+                 }
+         }
+     }
+
+     private func tabContent(imageName: String, text: String) -> some View {
+         VStack {
+             Image(imageName)
+                 .renderingMode(.template)
+                 .foregroundColor(.blue)
+             Text(text)
+         }
+     }
 }
 
 #Preview {

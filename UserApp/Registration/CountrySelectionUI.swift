@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct CountrySelectionUI: View {
-    @State private var SearchCountryText: String = ""
-    @State private var isEditing: Bool = false
+    @StateObject private var viewModel = CountrySelectionViewModel()
     var columns = [GridItem(.adaptive(minimum: UIScreen.main.bounds.width),spacing: 10)]
     var body: some View {
         VStack{
@@ -39,7 +38,7 @@ struct CountrySelectionUI: View {
                                 .foregroundColor(.gray)
                                 .font(.system(size: 20))
                             
-                            TextField("Search Country", text: $SearchCountryText)
+                            TextField("Search Country", text: $viewModel.searchCountryText)
                                 .font(.custom("Roboto-Bold", size: 23))
                                 
                                 .fontWeight(.semibold)

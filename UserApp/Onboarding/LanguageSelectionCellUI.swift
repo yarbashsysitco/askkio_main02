@@ -1,28 +1,11 @@
 import SwiftUI
 
-struct User: Identifiable {
-    var id = UUID()
-    var langCode: String
-    var language: String
-    let color: Color
-}
-
 struct LanguageSelectionCellUI: View {
-    let users = [
-        User(langCode: "EN", language: "English", color: .gray),
-        User(langCode: "TL", language: "Filipino", color: .black),
-        User(langCode: "ID", language: "bahasa indonesia", color: .blue),
-        User(langCode: "DE", language: "German", color: .purple),
-        User(langCode: "BN", language: "Bengali", color: .pink),
-        User(langCode: "ES", language: "Español", color: .cyan),
-        User(langCode: "FA", language: "Persian", color: .orange),
-        User(langCode: "IT", language: "italiano", color: .yellow),
-    ]
-    
+    @StateObject private var viewmodel = LanguageSelectionCellViewModel()
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                ForEach(users) { user in
+                ForEach(viewmodel.users, id: \.id) { user in
                     HStack {
                         ZStack {
                             Circle()

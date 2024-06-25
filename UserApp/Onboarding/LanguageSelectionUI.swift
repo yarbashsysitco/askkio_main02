@@ -14,28 +14,7 @@ struct LanguageSelectionUI: View {
             
             Color.white
                 .edgesIgnoringSafeArea(.all)
-//            VStack {
-//                HStack {
-//                    Spacer()
-//                    Button(action: {
-//                        presentationMode.wrappedValue.dismiss()
-//                            
-//                    }) {
-//                        ZStack {
-//                            Circle()
-//                                .fill(Color.white)
-//                                .frame(width: 50, height: 50)
-//                            
-//                            Image("Close")
-//                            
-//                        }
-//                    }
-//                    .padding([.top, .trailing], 20)
-//                    
-//                }
-//                
-//                .background(Color(hue: 1.0, saturation: 0.019, brightness: 0.736, opacity: 0.015))
-//                .frame(width: UIScreen.main.bounds.width)
+
                 
                 VStack {
                     

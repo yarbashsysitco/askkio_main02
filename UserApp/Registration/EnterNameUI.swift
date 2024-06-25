@@ -9,9 +9,7 @@ import SwiftUI
 
 struct EnterNameUI: View {
     @Environment(\.dismiss) private var dismiss
-    @State private var frstname: String = ""
-    @State private var lastname: String = ""
-    @State private var isPasswordVisible: Bool = false
+    @StateObject private var viewmodel = EnterNameViewModel()
     var body: some View {
         NavigationView{
             VStack{
@@ -45,12 +43,12 @@ struct EnterNameUI: View {
                     Spacer()
                         .frame(height: 50)
                     HStack{
-                        TextField("First Name", text: $frstname)
+                        TextField("First Name", text: $viewmodel.frstname)
                             .font(.custom("Poppins-Regular", size: 18))
                             .padding(.leading,30)
                         Spacer()
                             .frame(width: 10)
-                        TextField("Last Name", text: $lastname)
+                        TextField("Last Name", text: $viewmodel.lastname)
                             .font(.custom("Poppins-Regular", size: 18))
                         //                        .padding(.leading,30)
                     }

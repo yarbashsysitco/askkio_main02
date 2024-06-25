@@ -9,13 +9,15 @@ import SwiftUI
 
 struct CurrencySelectionUI: View {
     @Environment(\.presentationMode) var presentationMode
+    @StateObject private var viewModel = CurrencySelectionUiViewModel()
+    
     var body: some View {
         ZStack {
             VStack {
                 HStack {
                     Spacer()
                     Button(action: {
-                        presentationMode.wrappedValue.dismiss()
+                        viewModel.dismissView(presentationMode: presentationMode)
                     }) {
                         ZStack {
                             Circle()
@@ -23,20 +25,25 @@ struct CurrencySelectionUI: View {
                                 .frame(width: 50, height: 50)
                             
                             Image("Close")
-                            
+                                .resizable()
+                                .frame(width: 30, height: 30)
                         }
                     }
                     .padding([.top, .trailing], 20)
                 }
                 .background(Color(hue: 1.0, saturation: 0.019, brightness: 0.736, opacity: 0.015))
                 .frame(width: UIScreen.main.bounds.width)
-
                 
                 VStack(alignment: .leading) {
-                    TitleText
+                    Text(viewModel.titleText.capitalized)
+                        .font(.system(size: 20, weight: .semibold))
+                    
                     Spacer()
                         .frame(height: 7)
-                    BottomText
+                    
+                    Text(viewModel.bottomText)
+                        .font(.system(size: 16, weight: .regular))
+                    
                     Spacer()
                         .frame(height: 10)
                 }
@@ -51,18 +58,6 @@ struct CurrencySelectionUI: View {
     }
 }
 
-var TitleText: some View {
-    Text("select Currency".capitalized)
-        .font(.system(size: 20,weight: .semibold))
-}
-
-var BottomText: some View {
-    Text("Which currency do you prefer?")
-        .font(.system(size: 16,weight: .regular))
-}
-
-
 #Preview {
     CurrencySelectionUI()
 }
-

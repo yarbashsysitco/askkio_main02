@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ReferralCodeUI: View {
     @Environment(\.dismiss) private var dismiss
-    @State private var ReferralText: String = ""
+   @StateObject private var viewmodel = ReferralCodeViewModel()
     @State private var isPasswordVisible: Bool = false
     var body: some View {
         NavigationView{
@@ -44,7 +44,7 @@ struct ReferralCodeUI: View {
                     Spacer()
                         .frame(height: 40)
                     HStack{
-                        TextField("Referral Code", text: $ReferralText)
+                        TextField("Referral Code", text: $viewmodel.referralText)
                             .font(.custom("Poppins-Regular", size: 20))
                             .padding(.leading,30)
                         

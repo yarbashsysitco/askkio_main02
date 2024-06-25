@@ -8,21 +8,14 @@
 import SwiftUI
 
 struct EditprofileUI: View {
+ @ObservedObject var viewModel: EditProfileViewModel
     @Binding var screenDismiss: Bool
-    @State private var showSheet = false
-    @State private var firstName: String = ""
-    @State private var lastName: String = ""
-    @State private var emailAddress: String = ""
-    @State private var Mobile: String = ""
-    @State private var language: String = "English"
-    @State private var currency: String = "DOB"
     var body: some View {
         NavigationView{
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 0){
-                    TopView(screenDismiss: $screenDismiss)
-                    Spacer()
-                        .frame(height: 100)
+                    TopView(viewModel: viewModel, screenDismiss: $screenDismiss)
+                    Spacer().frame(height: 100)
                     VStack{
                         //MARK: - firstname & lastname -------------------------------------
                         HStack{
@@ -30,18 +23,18 @@ struct EditprofileUI: View {
                                 Text("First Name")
                                     .font(.custom("Roboto-Regular", size: 18))
                                     .foregroundColor(.gray)
-                                    .offset(y: firstName.isEmpty ? 0 : -20)
-                                    .scaleEffect(firstName.isEmpty ? 1 : 1.0)
-                                TextField("", text: $firstName)
+                                    .offset(y: viewModel.firstName.isEmpty ? 0 : -20)
+                                    .scaleEffect(viewModel.firstName.isEmpty ? 1 : 1.0)
+                                TextField("", text: $viewModel.firstName)
                             }
                             Spacer()
                             ZStack(alignment: .leading){
                                 Text("Last Name")
                                     .font(.custom("Roboto-Regular", size: 18))
                                     .foregroundColor(.gray)
-                                    .offset(y: lastName.isEmpty ? 0 : -20)
-                                    .scaleEffect(firstName.isEmpty ? 1 : 1.0)
-                                TextField("", text: $lastName)
+                                    .offset(y: viewModel.lastName.isEmpty ? 0 : -20)
+                                    .scaleEffect(viewModel.firstName.isEmpty ? 1 : 1.0)
+                                TextField("", text: $viewModel.lastName)
                             }
                         }
                         .padding([.leading,.trailing],30)
@@ -66,9 +59,9 @@ struct EditprofileUI: View {
                             Text("Email Address")
                                 .font(.custom("Roboto-Regular", size: 18))
                                 .foregroundColor(.gray)
-                                .offset(y: emailAddress.isEmpty ? 0 : -18)
-                                .scaleEffect(emailAddress.isEmpty ? 1 : 1.0)
-                            TextField("", text: $emailAddress)
+                                .offset(y: viewModel.emailAddress.isEmpty ? 0 : -18)
+                                .scaleEffect(viewModel.emailAddress.isEmpty ? 1 : 1.0)
+                            TextField("", text: $viewModel.emailAddress)
                         }
                         
                         
@@ -94,7 +87,7 @@ struct EditprofileUI: View {
                         .padding(.leading,30)
                         HStack{
                             Button(action: {
-                                showSheet.toggle()
+                                viewModel.showSheet.toggle()
                             }, label: {
                                 HStack {
                                     Image("CountryFlag")
@@ -107,7 +100,7 @@ struct EditprofileUI: View {
                                         .foregroundColor(.black)
                                 }
                             })
-                            .sheet(isPresented: $showSheet) {
+                            .sheet(isPresented: $viewModel.showSheet) {
                                 CountrySelectionUI()
                                     .frame(width: min(UIScreen.main.bounds.width, 600))
                                     .presentationDetents([.height(UIScreen.main.bounds.height - 200)])
@@ -118,9 +111,9 @@ struct EditprofileUI: View {
                                 Text("Mobile")
                                     .font(.custom("Roboto-Regular", size: 18))
                                     .foregroundColor(.gray)
-                                    .offset(y: Mobile.isEmpty ? 0 : -20)
-                                    .scaleEffect(Mobile.isEmpty ? 1 : 1.0)
-                                TextField("", text: $Mobile)
+                                    .offset(y: viewModel.mobile.isEmpty ? 0 : -20)
+                                    .scaleEffect(viewModel.mobile.isEmpty ? 1 : 1.0)
+                                TextField("", text: $viewModel.mobile)
                             }
                         }
                         .padding([.leading,.trailing],30)
@@ -145,9 +138,9 @@ struct EditprofileUI: View {
                                 Text("Language")
                                     .font(.custom("Roboto-Regular", size: 18))
                                     .foregroundColor(.gray)
-                                    .offset(y: language.isEmpty ? 0 : -18)
-                                    .scaleEffect(language.isEmpty ? 1 : 1.0)
-                                TextField("", text: $language)
+                                    .offset(y: viewModel.language.isEmpty ? 0 : -18)
+                                    .scaleEffect(viewModel.language.isEmpty ? 1 : 1.0)
+                                TextField("", text: $viewModel.language)
                             }
                             Button(action: {
                                 
@@ -174,9 +167,9 @@ struct EditprofileUI: View {
                                 Text("Currency")
                                     .font(.custom("Roboto-Regular", size: 18))
                                     .foregroundColor(.gray)
-                                    .offset(y: language.isEmpty ? 0 : -18)
-                                    .scaleEffect(language.isEmpty ? 1 : 1.0)
-                                TextField("", text: $language)
+                                    .offset(y: viewModel.language.isEmpty ? 0 : -18)
+                                    .scaleEffect(viewModel.language.isEmpty ? 1 : 1.0)
+                                TextField("", text: $viewModel.language)
                             }
                             Button(action: {
                                 
@@ -225,14 +218,11 @@ struct EditprofileUI: View {
 }
 
 #Preview {
-    EditprofileUI(screenDismiss: Binding(get: {
-        return true
-    }, set: { _ in
-        
-    }))
+    EditprofileUI(viewModel: EditProfileViewModel(), screenDismiss: .constant(true))
 }
 
 struct TopView: View {
+    @ObservedObject var viewModel: EditProfileViewModel
     @Binding var screenDismiss: Bool
     var body: some View {
         VStack{
@@ -242,7 +232,7 @@ struct TopView: View {
                 .overlay(
                     HStack{
                         Button(action: {
-                            screenDismiss = false
+                            viewModel.screenDismiss = false
                         }, label: {
                             Image("ic_nav_bar_back")
                                 .resizable()
