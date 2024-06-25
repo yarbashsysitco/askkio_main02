@@ -190,6 +190,7 @@ struct WalletHomePage: View {
             }
             
         }
+        .navigationBarBackButtonHidden(true)
         .edgesIgnoringSafeArea(.all)
     }
           

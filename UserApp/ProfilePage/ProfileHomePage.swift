@@ -216,7 +216,8 @@ struct ProfileHomePage: View {
 
 struct TopBar: View {
     @Binding var isScrolling: Bool
-    @State var edituishow = false
+    @State private var edituishow = false
+    @StateObject private var viewModels = EditProfileViewModel()
     var body: some View {
         ZStack {
             VStack {
@@ -252,13 +253,13 @@ struct TopBar: View {
             HStack {
                 Spacer()
                 Button(action: {
-                    edituishow = true
+                    edituishow.toggle()
                 }, label: {
                     Image("ic_pf_edit")       .renderingMode(.template)  .foregroundColor(.white)
                 })
-                .fullScreenCover(isPresented: $edituishow, content: {
-//                    EditprofileUI(viewModel: $viewModel.edituishow)
-                })
+                .fullScreenCover(isPresented: $edituishow) {
+                        EditprofileUI(viewModel: viewModels)
+                                }
             }
             .padding(.top, 40)
             .padding(.trailing, 20)

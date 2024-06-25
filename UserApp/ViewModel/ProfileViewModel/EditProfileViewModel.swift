@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class EditProfileViewModel: ObservableObject {
-    @Published var screenDismiss: Bool = false
+//    @Published var screenDismiss: Bool = false
     @Published var showSheet: Bool = false
     @Published var firstName: String = ""
     @Published var lastName: String = ""

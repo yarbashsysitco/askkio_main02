@@ -81,8 +81,9 @@ struct EmailAddressUI: View {
                     Spacer()
                 }
                 .edgesIgnoringSafeArea(.all)
-                .navigationBarBackButtonHidden(true)
+              
             }
+            .navigationBarBackButtonHidden(true)
             .navigationViewStyle(.stack)
         }
 }

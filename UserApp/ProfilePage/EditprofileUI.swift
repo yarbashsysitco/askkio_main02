@@ -9,12 +9,12 @@ import SwiftUI
 
 struct EditprofileUI: View {
  @ObservedObject var viewModel: EditProfileViewModel
-    @Binding var screenDismiss: Bool
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView{
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 0){
-                    TopView(viewModel: viewModel, screenDismiss: $screenDismiss)
+                    TopView(viewModel: viewModel, dismiss: { presentationMode.wrappedValue.dismiss() })
                     Spacer().frame(height: 100)
                     VStack{
                         //MARK: - firstname & lastname -------------------------------------
@@ -208,22 +208,24 @@ struct EditprofileUI: View {
                     .offset(y: -70)
                 }
             }
+            .navigationBarBackButtonHidden(true)
             .edgesIgnoringSafeArea(.top)
             
         }
+        .navigationBarBackButtonHidden(true)
         .navigationViewStyle(.stack)
         .background(Color(red: 0.922, green: 0.922, blue: 0.922))
-        .navigationBarBackButtonHidden(true)
+        
     }
 }
 
 #Preview {
-    EditprofileUI(viewModel: EditProfileViewModel(), screenDismiss: .constant(true))
+    EditprofileUI(viewModel: EditProfileViewModel())
 }
 
 struct TopView: View {
     @ObservedObject var viewModel: EditProfileViewModel
-    @Binding var screenDismiss: Bool
+    var dismiss: () -> Void
     var body: some View {
         VStack{
             Rectangle()
@@ -232,7 +234,7 @@ struct TopView: View {
                 .overlay(
                     HStack{
                         Button(action: {
-                            viewModel.screenDismiss = false
+                            dismiss()
                         }, label: {
                             Image("ic_nav_bar_back")
                                 .resizable()

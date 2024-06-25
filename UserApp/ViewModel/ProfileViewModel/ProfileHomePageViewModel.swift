@@ -12,6 +12,7 @@ class ProfileHomePageViewModel: ObservableObject {
     @Published var isSwitchOn = false
     @Published var isScrolling = false
     
+    
     let generalList = [
         ProfileHomePageModel(imageName: "ic_pf_bookings", category: "My Bookings"),
         ProfileHomePageModel(imageName: "ic_pf_busi_pro", category: "Business Profile"),

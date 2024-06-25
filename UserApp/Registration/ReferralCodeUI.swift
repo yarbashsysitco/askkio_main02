@@ -93,8 +93,9 @@ struct ReferralCodeUI: View {
             }
             .edgesIgnoringSafeArea(.all)
         }
-        .navigationViewStyle(.stack)
         .navigationBarBackButtonHidden(true)
+        .navigationViewStyle(.stack)
+        
 }
 }
 

@@ -9,27 +9,30 @@ import SwiftUI
 
 struct TabHomePage: View {
     var body: some View {
-         TabView {
-             HomePage()
-                 .tabItem {
-                     tabContent(imageName: "ic_home", text: "HOME")
-                 }
+        NavigationView {
+            TabView {
+                 HomePage()
+                     .tabItem {
+                         tabContent(imageName: "ic_home", text: "HOME")
+                     }
 
-             BookingHomeMainUI()
-                 .tabItem {
-                     tabContent(imageName: "ic_home_bookings", text: "BOOKING")
-                 }
+                 BookingHomeMainUI()
+                     .tabItem {
+                         tabContent(imageName: "ic_home_bookings", text: "BOOKING")
+                     }
 
-             WalletHomePage()
-                 .tabItem {
-                     tabContent(imageName: "ic_home_wallet", text: "WALLET")
-                 }
+                 WalletHomePage()
+                     .tabItem {
+                         tabContent(imageName: "ic_home_wallet", text: "WALLET")
+                     }
 
-             ProfileHomePage()
-                 .tabItem {
-                     tabContent(imageName: "ic_home_profile", text: "PROFILE")
-                 }
-         }
+                 ProfileHomePage()
+                     .tabItem {
+                         tabContent(imageName: "ic_home_profile", text: "PROFILE")
+                     }
+            }
+        }
+        .navigationBarBackButtonHidden(true)
      }
 
      private func tabContent(imageName: String, text: String) -> some View {
