@@ -57,6 +57,7 @@ struct WalletHomePage: View {
                                                         })
                                                         
                                                         Button(action: {
+                                                            TransactionView()
                                                             
                                                         }, label: {
                                                             Image("ic_wallet_transaction")

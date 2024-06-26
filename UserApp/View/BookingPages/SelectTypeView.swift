@@ -2,63 +2,67 @@ import SwiftUI
 
 struct SelectTypeView: View {
     @Binding var isShown: Bool
-    @State private var accountName: String = ""
-    @State private var userName: String = ""
-    @State private var password: String = ""
-    @State private var showingAlert = false // To control showing validation alert
-
+    @State private var selectedButton: String? = nil
+    
+    let buttons = ["in process", "upcoming", "past", "expired", "All"] // List of buttons
+    
     var body: some View {
         ZStack(alignment: .top) {
-            VStack(spacing: 24) {
-                EmptyView() // Placeholder for any top element or spacer
-                TextField("Account Name", text: $accountName)
-                    .textFieldStyle(.roundedBorder)
-                TextField("Username/Email", text: $userName)
-                    .textFieldStyle(.roundedBorder)
-                SecureField("Password", text: $password)
-                    .textFieldStyle(.roundedBorder)
-                Button(action: {
-                    if isValidInput() {
-                        // Handle adding account logic here
-                        // For demonstration, you can print the values
-                        print("Adding Account:")
-                        print("Account Name: \(accountName)")
-                        print("Username/Email: \(userName)")
-                        // NOTE: Avoid printing passwords or handle securely
-                        // You might want to save them securely instead
-                        print("Password: \(password)")
-                    } else {
-                        showingAlert = true
+            VStack(spacing: 5) {
+                
+                // Header with title and close button
+                HStack {
+                    Text("Select Type")
+                        .fontWeight(.bold)
+                        .padding(.horizontal, 10)
+
+                    Spacer()
+                    Button(action: {
+                        isShown = false // Action to close the view
+                    }) {
+                        Image(systemName: "x.circle")
+                            .font(.title3)
+                            .foregroundColor(.black)
+                            .padding(5)
                     }
-                }) {
-                    HStack {
-                        Spacer()
-                        Text("Add New Account")
-                            .font(Font.system(size: 16, weight: .bold, design: .rounded))
-                            .foregroundColor(Color.white)
-                            .padding()
-                        Spacer()
-                    }
-                    .frame(height: 44)
-                    .background(Color.blue) // Use your preferred button color
-                    .cornerRadius(12)
-                    .padding(.horizontal, 40) // Adjust padding as needed
+                    .buttonStyle(PlainButtonStyle())
+                    .padding(.horizontal, 10)
                 }
+                Divider() 
+                    .background(Color.gray)
+                // Horizontal line
+                
+                // Buttons ("in process", "upcoming", "past", "expired", "All")
+                ForEach(buttons, id: \.self) { button in
+                    Button(action: {
+                        selectedButton = button
+                    }) {
+                        HStack {
+                            Text(button)
+                                .fontWeight(.regular)
+//                                .padding(.horizontal, 5)
+                                .foregroundColor(selectedButton == button ? .blue : .black) // Change text color to blue if selected
+                                .padding(.horizontal, 10)
+
+                            Spacer()
+                            Image(systemName: "checkmark.circle")
+                                .font(.title3)
+                                .foregroundColor(selectedButton == button ? .blue : .black) // Change icon color to blue if selected
+                                .padding(10)
+                        }
+                        .background(selectedButton == button ? Color.gray.opacity(0.2) : Color.clear)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .padding(.horizontal, 5)
+                }
+                
+                Spacer()
             }
-            .padding(.horizontal, 16)
+//            .padding(10) // Padding to the entire VStack
+//            .cornerRadius(20)
             
-            // Alert for validation
-            .alert(isPresented: $showingAlert) {
-                Alert(title: Text("Incomplete Information"),
-                      message: Text("Please fill in all fields to add the account."),
-                      dismissButton: .default(Text("OK")))
-            }
         }
         .background(Color.white) // Optional: Set background color for entire view
-    }
-
-    private func isValidInput() -> Bool {
-        return !accountName.isEmpty && !userName.isEmpty && !password.isEmpty
     }
 }
 

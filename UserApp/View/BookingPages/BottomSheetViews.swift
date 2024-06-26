@@ -36,7 +36,7 @@ struct BottomSheetViews<Content: View>: View {
     @State private var isKeyboardPresented = false
     @State private var keyboardHeight: CGFloat = 0 // Track keyboard height
     @Binding var isShown: Bool
-    var modalHeight: CGFloat = 400
+    var modalHeight: CGFloat = 380
     var cornerRadius: CGFloat = 0
     var isEnableTapBackLayer: Bool = true
     var isEnableDrag: Bool = true
