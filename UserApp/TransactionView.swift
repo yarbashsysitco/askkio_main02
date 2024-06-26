@@ -1,7 +1,14 @@
+//
+//  TransactionView.swift
+//  UserApp
+//
+//  Created by admin on 26/06/24.
+//
+
 import SwiftUI
 
-struct BookingHomeMainUI: View {
-    @State private var selectedTab: String = "Bookings" 
+struct TransactionView: View {
+    @State private var selectedTab: String = "All"
     @State private var showSheet: Bool = false
     @State private var isPresenting: Bool = false
     @State private var isShowpoup: Bool = false
@@ -11,49 +18,31 @@ struct BookingHomeMainUI: View {
             Color.colorEDEDED
                 .ignoresSafeArea(.all)
             VStack {
-                TopVie2(selectedTab: $selectedTab)
-                HStack {
-                    Spacer()
-                    Text("Past")
-                        .font(.headline)
-                    Button(action: {
-                        isPresenting.toggle()
-                    }) {
-                        // Button content
-                        HStack {
-                            Image(systemName: "chevron.down")
-                                .font(.title3)
-                                .foregroundColor(.black)
-                                .padding(10) // Larger padding for image
-                        }
-                        
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                }
-                .padding(.horizontal)
+                TransactionViewTopView(selectedTab: $selectedTab)
+        
                 Spacer()
-                if selectedTab == "Bookings" {
+                if selectedTab == "All" {
                     VStack {
                         Spacer()
-                        Text("No bookings available.")
+                        Text("No Transaction found.")
                             .font(.custom("Roboto-Regular", size: 18))
                             .fontWeight(.regular)
                         Spacer()
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else if selectedTab == "My Orders" {
+                } else if selectedTab == "Credit" {
                     VStack {
                         Spacer()
-                        Text("No Orders found")
+                        Text("No Transaction found.")
                             .font(.custom("Roboto-Regular", size: 18))
                             .fontWeight(.regular)
                         Spacer()
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else if selectedTab == "Bide" {
+                } else if selectedTab == "Debit" {
                     VStack {
                         Spacer()
-                        Text("No Bide found")
+                        Text("No Transaction found.")
                             .font(.custom("Roboto-Regular", size: 18))
                             .fontWeight(.regular)
                         Spacer()
@@ -64,10 +53,10 @@ struct BookingHomeMainUI: View {
                 
             }
             .edgesIgnoringSafeArea(.top)
-            .overlay(
-                BottomSheetViews(isShown: $isPresenting, cornerRadius: 12) {
-                    SelectTypeView(isShown: $isPresenting)
-                })
+//            .overlay(
+//                BottomSheetViews(isShown: $isPresenting, cornerRadius: 12) {
+//                    SelectTypeView(isShown: $isPresenting)
+//                })
             
             // Bottom sheet for adding new credential
         
@@ -89,7 +78,11 @@ struct BookingHomeMainUI: View {
         
     }
 }
-struct TopVie2: View {
+#Preview {
+    TransactionView()
+}
+
+struct TransactionViewTopView: View {
     @Binding var selectedTab: String
     
     var body: some View {
@@ -101,8 +94,19 @@ struct TopVie2: View {
                         .frame(height: 140)
                         .overlay(
                             HStack {
+                                Button(action: {
+                                }, label: {
+                                    Image(systemName: "arrow.left")
+                                        .resizable()
+                                        .renderingMode(.template)
+                                        .foregroundColor(.white)
+                                        .frame(width: 20, height: 20)
+                                        .padding(.top, 20)
+                                        .padding(.leading, 20)
+                                })
+
                                 Spacer().frame(width: geometry.size.width * 0.1)
-                                Text("My Bookings")
+                                Text("My Transaction")
                                     .font(.custom("Roboto-Regular", size: 20))
                                     .foregroundColor(.white)
                                     .padding(.top, 20)
@@ -110,7 +114,7 @@ struct TopVie2: View {
                                 Spacer()
                                 Button(action: {
                                 }, label: {
-                                    Image(systemName: "line.3.horizontal")
+                                    Image(systemName: "")
                                         .resizable()
                                         .renderingMode(.template)
                                         .foregroundColor(.white)
@@ -131,43 +135,43 @@ struct TopVie2: View {
                                 HStack {
                                     Spacer().frame(width: 18)
                                     Button(action: {
-                                        selectedTab = "Bookings" // Update selected tab state
+                                        selectedTab = "All" // Update selected tab state
                                     }) {
                                         Rectangle()
                                             .cornerRadius(20)
                                             .frame(width: geometry.size.width * 0.3, height: 40)
-                                            .foregroundColor(selectedTab == "Bookings" ? .accentColor : .white)
+                                            .foregroundColor(selectedTab == "All" ? .accentColor : .white)
                                             .overlay(
-                                                Text("Bookings")
-                                                    .foregroundColor(selectedTab == "Bookings" ? .white : .black)
+                                                Text("All")
+                                                    .foregroundColor(selectedTab == "All" ? .white : .black)
                                             )
                                     }
                                     Spacer().frame(width: 2)
                                     
                                     Button(action: {
-                                        selectedTab = "My Orders" // Update selected tab state
+                                        selectedTab = "Credit" // Update selected tab state
                                     }) {
                                         Rectangle()
                                             .cornerRadius(20)
                                             .frame(width: geometry.size.width * 0.3, height: 40)
-                                            .foregroundColor(selectedTab == "My Orders" ? .accentColor : .white)
+                                            .foregroundColor(selectedTab == "Credit" ? .accentColor : .white)
                                             .overlay(
-                                                Text("My Orders")
-                                                    .foregroundColor(selectedTab == "My Orders" ? .white : .black)
+                                                Text("Credit")
+                                                    .foregroundColor(selectedTab == "Credit" ? .white : .black)
                                             )
                                     }
                                     Spacer().frame(width: 2)
                                     
                                     Button(action: {
-                                        selectedTab = "Bide" // Update selected tab state
+                                        selectedTab = "Debit" // Update selected tab state
                                     }) {
                                         Rectangle()
                                             .cornerRadius(20)
                                             .frame(width: geometry.size.width * 0.3, height: 40)
-                                            .foregroundColor(selectedTab == "Bide" ? .accentColor : .white)
+                                            .foregroundColor(selectedTab == "Debit" ? .accentColor : .white)
                                             .overlay(
-                                                Text("Bide")
-                                                    .foregroundColor(selectedTab == "Bide" ? .white : .black)
+                                                Text("Debit")
+                                                    .foregroundColor(selectedTab == "Debit" ? .white : .black)
                                             )
                                     }
                                     Spacer().frame(width: 18)
@@ -181,8 +185,4 @@ struct TopVie2: View {
             .frame(height: 200)
         }
     }
-}
-
-#Preview {
-    BookingHomeMainUI()
 }

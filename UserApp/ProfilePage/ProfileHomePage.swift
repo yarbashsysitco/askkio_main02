@@ -9,205 +9,231 @@ import SwiftUI
 
 struct ProfileHomePage: View {
     @StateObject private var viewModel = ProfileHomePageViewModel()
+    @State private var isShowpoup: Bool = false
+
     var body: some View {
-        NavigationView{
-            VStack(spacing: 0) {
-                ZStack(alignment: .top) {
-                    ScrollView(showsIndicators: false) {
-                        GeometryReader { geometry in
-                            Color.clear
-                                .onChange(of: geometry.frame(in: .global).minY) { minY in
-                                    if minY < 0 {
-                                        withAnimation {
-                                            viewModel.isScrolling = true
-                                        }
-                                    } else {
-                                        withAnimation {
-                                            viewModel.isScrolling = false
+        
+        ZStack{
+            
+            NavigationView{
+                VStack(spacing: 0) {
+                    ZStack(alignment: .top) {
+                        ScrollView(showsIndicators: false) {
+                            GeometryReader { geometry in
+                                Color.clear
+                                    .onChange(of: geometry.frame(in: .global).minY) { minY in
+                                        if minY < 0 {
+                                            withAnimation {
+                                                viewModel.isScrolling = true
+                                            }
+                                        } else {
+                                            withAnimation {
+                                                viewModel.isScrolling = false
+                                            }
                                         }
                                     }
-                                }
-                        }
-                        .frame(height: 0)
-                        
-                        VStack(spacing: 0) {
-                            Spacer().frame(height: 120)
+                            }
+                            .frame(height: 0)
                             
-                            Userdetails()
-                            WalletbalanceView()
-                            VStack {
-                                HStack {
-                                    Text("General Settings")
-                                        .font(.custom("Poppins-Semibold", size: 18))
-                                    Spacer()
+                            VStack(spacing: 0) {
+                                Spacer().frame(height: 120)
+                                
+                                Userdetails(isShowpoup: $isShowpoup)
+                                WalletbalanceView()
+                                VStack {
+                                    HStack {
+                                        Text("General Settings")
+                                            .font(.custom("Poppins-Semibold", size: 18))
+                                        Spacer()
+                                    }
                                 }
-                            }
-                            .offset(y: -50)
-                            .padding(.leading, 25)
-                            VStack {
-                                ForEach(viewModel.generalList, id: \.id) { Glists in
-                                    ProfileSettingsUI(settings: Glists)
+                                .offset(y: -50)
+                                .padding(.leading, 25)
+                                VStack {
+                                    ForEach(viewModel.generalList, id: \.id) { Glists in
+                                        ProfileSettingsUI(settings: Glists)
+                                    }
                                 }
-                            }
-                            .frame(width: UIScreen.main.bounds.width)
-                            .offset(y: -30)
-                            
-                            VStack {
-                                HStack {
-                                    Text("Account Setting")
-                                        .font(.custom("Poppins-Semibold", size: 18))
-                                    Spacer()
+                                .frame(width: UIScreen.main.bounds.width)
+                                .offset(y: -30)
+                                
+                                VStack {
+                                    HStack {
+                                        Text("Account Setting")
+                                            .font(.custom("Poppins-Semibold", size: 18))
+                                        Spacer()
+                                    }
                                 }
-                            }
-                            .offset(y: -5)
-                            .padding(.leading, 25)
-                            VStack {
-                                ForEach(viewModel.accountSettingsList1, id: \.id) { Glists in
-                                    ProfileSettingsUI(settings: Glists)
+                                .offset(y: -5)
+                                .padding(.leading, 25)
+                                VStack {
+                                    ForEach(viewModel.accountSettingsList1, id: \.id) { Glists in
+                                        ProfileSettingsUI(settings: Glists)
+                                    }
                                 }
-                            }
-                            .frame(width: UIScreen.main.bounds.width)
-                            .offset(y: 5)
-                            
-                            VStack {
-                                Rectangle()
-                                    .foregroundColor(.white)
-                                    .frame(height: 50)
-                                    .overlay(
-                                        HStack {
-                                            Spacer().frame(width: 20)
-                                            Image("ic_pf_finger-print")
-                                                .resizable()
-                                                .frame(width: 40, height: 40)
-                                            Spacer().frame(width: 20)
-                                            Toggle("Enable Face ID/Touch ID", isOn: $viewModel.isSwitchOn)
-                                                .tint(Color.green)
-                                            Spacer().frame(width: 10)
-                                            Image("optional")
-                                                .resizable()
-                                                .renderingMode(.template)
-                                                .foregroundColor(Color.accentColor)
-                                                .frame(width: 30, height: 30)
-                                                .padding(.trailing, 15)
-                                        }
-                                    )
-                            }
-                            .offset(y: 10)
-                            VStack {
-                                ForEach(viewModel.accountSettingsList2, id: \.id) { Glists in
-                                    ProfileSettingsUI(settings: Glists)
-                                }
-                            }
-                            .frame(width: UIScreen.main.bounds.width)
-                            .offset(y: 15)
-                            
-                            VStack {
-                                HStack {
-                                    Text("Payment")
-                                        .font(.custom("Poppins-Semibold", size: 18))
-                                    Spacer()
-                                }
-                            }
-                            .offset(y: 40)
-                            .padding(.leading, 25)
-                            VStack {
-                                ForEach(viewModel.paymentList, id: \.id) { Glists in
-                                    ProfileSettingsUI(settings: Glists)
-                                }
-                            }
-                            .frame(width: UIScreen.main.bounds.width)
-                            .offset(y: 55)
-                            
-                            VStack {
-                                HStack {
-                                    Text("Favourite Locations")
-                                        .font(.custom("Poppins-Semibold", size: 18))
-                                    Spacer()
-                                }
-                            }
-                            .offset(y: 75)
-                            .padding(.leading, 25)
-                            VStack {
-                                ForEach(viewModel.favouriteLocationsList, id: \.id) { Glists in
-                                    ProfileSettingsUI(settings: Glists)
-                                }
-                            }
-                            .frame(width: UIScreen.main.bounds.width)
-                            .offset(y: 85)
-                            
-                            VStack {
-                                HStack {
-                                    Text("Support")
-                                        .font(.custom("Poppins-Semibold", size: 18))
-                                    Spacer()
-                                }
-                            }
-                            .offset(y: 105)
-                            .padding(.leading, 25)
-                            VStack {
-                                ForEach(viewModel.supportList, id: \.id) { Glists in
-                                    ProfileSettingsUI(settings: Glists)
-                                }
-                            }
-                            .frame(width: UIScreen.main.bounds.width)
-                            .offset(y: 115)
-                            
-                            VStack {
-                                HStack {
-                                    Text("Others")
-                                        .font(.custom("Poppins-Semibold", size: 18))
-                                    Spacer()
-                                }
-                            }
-                            .offset(y: 145)
-                            .padding(.leading, 25)
-                            
-                            VStack {
-                                Rectangle()
-                                    .foregroundColor(.white)
-                                    .frame(height: 50)
-                                    .overlay(
-                                        HStack {
-                                            Spacer().frame(width: 20)
-                                            Image("ic_pf_logout")
-                                                .resizable()
-                                                .frame(width: 40, height: 40)
-                                            Spacer().frame(width: 20)
-                                            Text("Logout")
-                                            Spacer()
-                                            Button(action: {
-                                                
-                                            }, label: {
-                                                Image("ic_arrow_right 1")
+                                .frame(width: UIScreen.main.bounds.width)
+                                .offset(y: 5)
+                                
+                                VStack {
+                                    Rectangle()
+                                        .foregroundColor(.white)
+                                        .frame(height: 50)
+                                        .overlay(
+                                            HStack {
+                                                Spacer().frame(width: 20)
+                                                Image("ic_pf_finger-print")
+                                                    .resizable()
+                                                    .frame(width: 40, height: 40)
+                                                Spacer().frame(width: 20)
+                                                Toggle("Enable Face ID/Touch ID", isOn: $viewModel.isSwitchOn)
+                                                    .tint(Color.green)
+                                                Spacer().frame(width: 10)
+                                                Image("optional")
                                                     .resizable()
                                                     .renderingMode(.template)
-                                                    .foregroundColor(.gray)
+                                                    .foregroundColor(Color.accentColor)
                                                     .frame(width: 30, height: 30)
                                                     .padding(.trailing, 15)
-                                            })
-                                        }
-                                    )
-                                Rectangle()
-                                    .foregroundColor(Color(red: 0.946, green: 0.946, blue: 0.946))
-                                    .frame(height: 150)
+                                            }
+                                        )
+                                }
+                                .offset(y: 10)
+                                VStack {
+                                    ForEach(viewModel.accountSettingsList2, id: \.id) { Glists in
+                                        ProfileSettingsUI(settings: Glists)
+                                    }
+                                }
+                                .frame(width: UIScreen.main.bounds.width)
+                                .offset(y: 15)
                                 
+                                VStack {
+                                    HStack {
+                                        Text("Payment")
+                                            .font(.custom("Poppins-Semibold", size: 18))
+                                        Spacer()
+                                    }
+                                }
+                                .offset(y: 40)
+                                .padding(.leading, 25)
+                                VStack {
+                                    ForEach(viewModel.paymentList, id: \.id) { Glists in
+                                        ProfileSettingsUI(settings: Glists)
+                                    }
+                                }
+                                .frame(width: UIScreen.main.bounds.width)
+                                .offset(y: 55)
+                                
+                                VStack {
+                                    HStack {
+                                        Text("Favourite Locations")
+                                            .font(.custom("Poppins-Semibold", size: 18))
+                                        Spacer()
+                                    }
+                                }
+                                .offset(y: 75)
+                                .padding(.leading, 25)
+                                VStack {
+                                    ForEach(viewModel.favouriteLocationsList, id: \.id) { Glists in
+                                        ProfileSettingsUI(settings: Glists)
+                                    }
+                                }
+                                .frame(width: UIScreen.main.bounds.width)
+                                .offset(y: 85)
+                                
+                                VStack {
+                                    HStack {
+                                        Text("Support")
+                                            .font(.custom("Poppins-Semibold", size: 18))
+                                        Spacer()
+                                    }
+                                }
+                                .offset(y: 105)
+                                .padding(.leading, 25)
+                                VStack {
+                                    ForEach(viewModel.supportList, id: \.id) { Glists in
+                                        ProfileSettingsUI(settings: Glists)
+                                    }
+                                }
+                                .frame(width: UIScreen.main.bounds.width)
+                                .offset(y: 115)
+                                
+                                VStack {
+                                    HStack {
+                                        Text("Others")
+                                            .font(.custom("Poppins-Semibold", size: 18))
+                                        Spacer()
+                                    }
+                                }
+                                .offset(y: 145)
+                                .padding(.leading, 25)
+                                
+                                VStack {
+                                    Rectangle()
+                                        .foregroundColor(.white)
+                                        .frame(height: 50)
+                                        .overlay(
+                                            HStack {
+                                                Spacer().frame(width: 20)
+                                                Image("ic_pf_logout")
+                                                    .resizable()
+                                                    .frame(width: 40, height: 40)
+                                                Spacer().frame(width: 20)
+                                                Text("Logout")
+                                                Spacer()
+                                                Button(action: {
+                                                    
+                                                }, label: {
+                                                    Image("ic_arrow_right 1")
+                                                        .resizable()
+                                                        .renderingMode(.template)
+                                                        .foregroundColor(.gray)
+                                                        .frame(width: 30, height: 30)
+                                                        .padding(.trailing, 15)
+                                                })
+                                            }
+                                        )
+                                    Rectangle()
+                                        .foregroundColor(Color(red: 0.946, green: 0.946, blue: 0.946))
+                                        .frame(height: 150)
+                                    
+                                }
+                                .offset(y: 155)
                             }
-                            .offset(y: 155)
                         }
+                        
+                        TopBar(isScrolling: $viewModel.isScrolling)
+                            .frame(height: 120)
+                            .background(Color.accentColor)
+                            .zIndex(1)
                     }
-                    
-                    TopBar(isScrolling: $viewModel.isScrolling)
-                        .frame(height: 120)
-                        .background(Color.accentColor)
-                        .zIndex(1) 
+                    Spacer()
                 }
-                Spacer()
+                .background(Color(red: 0.946, green: 0.946, blue: 0.946))
+                .edgesIgnoringSafeArea(.top)
             }
-            .background(Color(red: 0.946, green: 0.946, blue: 0.946))
-            .edgesIgnoringSafeArea(.top)
+            .navigationViewStyle(.stack)
+            
+            if isShowpoup {
+                ZStack{
+                    Color.black.opacity(0.8)
+//                    VStack{
+                    VerifyEmailPopUp(isShowpoup: $isShowpoup)
+                        
+//                    }
+//                    .background(Color.white)
+                    
+                }
+                .edgesIgnoringSafeArea(.all)
+                
+            }
+            
         }
-        .navigationViewStyle(.stack)
-       }
+    }
+    
+//    if popscreen{
+//   //                                                                VerifyEmailPopUp()
+//   //                                                            }
+//    
  }
 
 #Preview {
@@ -271,6 +297,8 @@ struct TopBar: View {
 
 struct Userdetails: View {
     @State private var popscreen = false
+    @Binding var  isShowpoup: Bool
+
     var body: some View {
         VStack{
             Rectangle()
@@ -316,7 +344,7 @@ struct Userdetails: View {
                             .frame(width: 2)
                         VStack{
                             Button(action: {
-                                popscreen = true
+                                isShowpoup = true
                             }, label: {
                                 Image("ic_error")
                                     .resizable()
@@ -324,17 +352,21 @@ struct Userdetails: View {
                                     .cornerRadius(11)
                                     .frame(width: 20,height: 20)
                             })
-                            .alert(isPresented: $popscreen) {
-                                        Alert(
-                                            title: Text("Alert Title"),
-                                            message: Text("This is the alert message."),
-                                            primaryButton: .default(Text("OK")),
-                                            secondaryButton: .cancel()
-                                        )
-                                    }
-//                            if popscreen{
-//                                VerifyEmailPopUp()
-//                            }
+//                            .alert(isPresented: $popscreen) {
+//                                
+//                                
+//                                                            if popscreen{
+//                                                                VerifyEmailPopUp()
+//                                                            }
+////                                
+////                                        Alert(
+////                                            title: Text("Alert Title"),
+////                                            message: Text("This is the alert message."),
+////                                            primaryButton: .default(Text("OK")),
+////                                            secondaryButton: .cancel()
+////                                        )
+//                                    }
+
                             Spacer()
                                 .frame(height: 95)
                         }

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct VerifyEmailPopUp: View {
     @State private var offset: CGFloat = 1000
-    
+    @Binding  var isShowpoup: Bool
+
         var body: some View {
             ZStack {
                 VStack{
@@ -84,13 +85,27 @@ struct VerifyEmailPopUp: View {
         }
     
     func close() {
+        
         withAnimation(.spring()){
             offset = 1000
+            isShowpoup = false
+
         }
       }
     }
 
 
-#Preview {
-    VerifyEmailPopUp()
+
+struct BlurView: UIViewRepresentable{
+    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
+    }
+    
+    func makeUIView(context: Context) -> UIVisualEffectView {
+        let view =  UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
+        return view
+    }
+
 }
+//#Preview {
+//    VerifyEmailPopUp(isShowpoup: $isShowpoup)
+//}

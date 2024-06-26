@@ -16,7 +16,7 @@ struct ContentView: View {
                SplashScreenUI()
                     .transition(.opacity)
             } else {
-                OnBoardingUI()
+                TransactionView()
             }
         }
         .onAppear {

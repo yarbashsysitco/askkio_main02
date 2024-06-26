@@ -17,6 +17,9 @@
 		84A6B4F02BFDBC6500E46248 /* UserAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6B4EF2BFDBC6500E46248 /* UserAppTests.swift */; };
 		84A6B4FA2BFDBC6500E46248 /* UserAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6B4F92BFDBC6500E46248 /* UserAppUITests.swift */; };
 		84A6B4FC2BFDBC6500E46248 /* UserAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6B4FB2BFDBC6500E46248 /* UserAppUITestsLaunchTests.swift */; };
+		84C378CC2C2C07F6003D8F94 /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C378CB2C2C07F6003D8F94 /* TransactionView.swift */; };
+		84F733812C2AD9030083A57F /* BottomSheetViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F733802C2AD9030083A57F /* BottomSheetViews.swift */; };
+		84F733832C2ADFC20083A57F /* SelectTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F733822C2ADFC20083A57F /* SelectTypeView.swift */; };
 		A801BA1C2C254DD900E6C4C7 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A801BA1B2C254DD900E6C4C7 /* OnboardingViewModel.swift */; };
 		A801BA1E2C254EE700E6C4C7 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A801BA1D2C254EE700E6C4C7 /* OnboardingModel.swift */; };
 		A801BA222C25556300E6C4C7 /* OnBoardingUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A801BA212C25556300E6C4C7 /* OnBoardingUI.swift */; };
@@ -122,6 +125,9 @@
 		84A6B4F52BFDBC6500E46248 /* UserAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A6B4F92BFDBC6500E46248 /* UserAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAppUITests.swift; sourceTree = "<group>"; };
 		84A6B4FB2BFDBC6500E46248 /* UserAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		84C378CB2C2C07F6003D8F94 /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionView.swift; path = UserApp/TransactionView.swift; sourceTree = SOURCE_ROOT; };
+		84F733802C2AD9030083A57F /* BottomSheetViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetViews.swift; sourceTree = "<group>"; };
+		84F733822C2ADFC20083A57F /* SelectTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTypeView.swift; sourceTree = "<group>"; };
 		89776AA83B9C8690B91D5F25 /* Pods-UserApp-UserAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserApp-UserAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-UserApp-UserAppUITests/Pods-UserApp-UserAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A801BA1B2C254DD900E6C4C7 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		A801BA1D2C254EE700E6C4C7 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
@@ -226,6 +232,8 @@
 		84393B1F2C244C7A00EE0990 /* BookingPages */ = {
 			isa = PBXGroup;
 			children = (
+				84F733822C2ADFC20083A57F /* SelectTypeView.swift */,
+				84F733802C2AD9030083A57F /* BottomSheetViews.swift */,
 				84393B202C244CBA00EE0990 /* BookingHomeMainUI.swift */,
 			);
 			path = BookingPages;
@@ -398,8 +406,10 @@
 			isa = PBXGroup;
 			children = (
 				A801BA542C25566F00E6C4C7 /* WalletHomePage.swift */,
+				
 				A880F0C62C2AC7A200EB4A13 /* AddMoneyPage.swift */,
 				A8AE82B92C2BDCF200ED7E56 /* TranferMoneyPage.swift */,
+				84C378CB2C2C07F6003D8F94 /* TransactionView.swift */,
 			);
 			path = WalletPage;
 			sourceTree = "<group>";
@@ -756,15 +766,18 @@
 				A801BA222C25556300E6C4C7 /* OnBoardingUI.swift in Sources */,
 				A801BA4F2C25565300E6C4C7 /* VerifyEmailPopUp.swift in Sources */,
 				A81E5CE02C2A916F008E9D6D /* ProfileHomePageViewModel.swift in Sources */,
+				84F733812C2AD9030083A57F /* BottomSheetViews.swift in Sources */,
 				A801BA762C258FFA00E6C4C7 /* CountrySelectionViewModel.swift in Sources */,
 				A801BA602C255E5D00E6C4C7 /* LanguageSelectionCellViewModel.swift in Sources */,
 				A801BA5A2C25581000E6C4C7 /* CurrencySelectionViewModel.swift in Sources */,
 				A801BA552C25566F00E6C4C7 /* WalletHomePage.swift in Sources */,
 				A801BA3B2C2555EC00E6C4C7 /* NumberRegistration.swift in Sources */,
+				84C378CC2C2C07F6003D8F94 /* TransactionView.swift in Sources */,
 				A801BA6C2C25797C00E6C4C7 /* EnterNameViewModel.swift in Sources */,
 				A801BA3C2C2555EC00E6C4C7 /* PrivacyPolicyUI.swift in Sources */,
 				A801BA3F2C2555EC00E6C4C7 /* CountryCell.swift in Sources */,
 				A89E5AE82C0DB46F00627E00 /* SplashScreenUI.swift in Sources */,
+				84F733832C2ADFC20083A57F /* SelectTypeView.swift in Sources */,
 				A801BA3A2C2555EC00E6C4C7 /* LoginOptionsUI.swift in Sources */,
 				A801BA392C2555EC00E6C4C7 /* ChooseProfileUI.swift in Sources */,
 				A801BA1C2C254DD900E6C4C7 /* OnboardingViewModel.swift in Sources */,
