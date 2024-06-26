@@ -14,13 +14,13 @@ struct ServiceData: Identifiable {
 }
 
 let taxiList = [
-    ServiceData(id: UUID(), image: "delivery", name: "Taxi"),
-    ServiceData(id: UUID(), image: "delivery", name: "Hourly Driver")
+    ServiceData(id: UUID(), image: "taxi", name: "Taxi"),
+    ServiceData(id: UUID(), image: "Hourly Driver", name: "Hourly Driver")
 ]
 
 let deliveryList = [
-    ServiceData(id: UUID(), image: "delivery", name: "Parcel Delivery"),
-    ServiceData(id: UUID(), image: "delivery", name: "Errand Helper"),
+    ServiceData(id: UUID(), image: "Parcel Delivery", name: "Parcel Delivery"),
+    ServiceData(id: UUID(), image: "Errand Help", name: "Errand Helper"),
     ServiceData(id: UUID(), image: "delivery", name: "Delivery Runner")
 ]
 

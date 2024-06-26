@@ -50,3 +50,33 @@ struct RoundedCorner: Shape {
         return Path(path.cgPath)
     }
 }
+
+
+
+struct VisualEffectBlur<Content: View>: UIViewRepresentable {
+    var blurStyle: UIBlurEffect.Style
+    @ViewBuilder var content: () -> Content
+
+    func makeUIView(context: Context) -> UIVisualEffectView {
+        let view = UIVisualEffectView(effect: UIBlurEffect(style: blurStyle))
+        let hostingController = UIHostingController(rootView: content())
+        hostingController.view.backgroundColor = .clear
+        view.contentView.addSubview(hostingController.view)
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            hostingController.view.leadingAnchor.constraint(equalTo: view.contentView.leadingAnchor),
+            hostingController.view.trailingAnchor.constraint(equalTo: view.contentView.trailingAnchor),
+            hostingController.view.topAnchor.constraint(equalTo: view.contentView.topAnchor),
+            hostingController.view.bottomAnchor.constraint(equalTo: view.contentView.bottomAnchor),
+        ])
+        
+        return view
+    }
+
+    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
+        if let hostingController = uiView.contentView.subviews.first as? UIHostingController<Content> {
+            hostingController.rootView = content()
+        }
+    }
+}

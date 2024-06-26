@@ -62,7 +62,7 @@ struct HomePage: View {
                                 }
                             }
                             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                            .frame(height: 200)
+                            .frame(height: 225)
                             .onReceive(timer) { _ in
                                 withAnimation {
                                     currentIndex = (currentIndex + 1) % homepageSteps.count
@@ -81,14 +81,14 @@ struct HomePage: View {
                             RoundedRectangle(cornerRadius: 10.0)
                                 .foregroundColor(.black)
                                 .opacity(0.2)
-                                .frame(width: 65,height: 18)
+                                .frame(width: 65,height: 16)
                         )
                         .offset(y: -20)
                         
                         ZStack{
                             RoundedRectangle(cornerRadius: 5)
                                 .foregroundColor(.white)
-                                .frame(height: 40)
+                                .frame(height: 41)
                                 .overlay(
                                     HStack{
                                         Image("ic_search")
@@ -110,7 +110,7 @@ struct HomePage: View {
                             HStack {
                                 Capsule()
                                     .foregroundColor(.accentColor)
-                                    .frame(width: 5,height: 20)
+                                    .frame(width: 8,height: 33)
                                 Text("Book a Service")
                                     .font(.custom("Poppins-Semibold", size: 18))
                                 Spacer()
@@ -123,8 +123,8 @@ struct HomePage: View {
                             .clipShape(RoundedCorner(radius: 10, corners: [.topLeft,.bottomLeft]))
                             .foregroundColor(.gray)
                             .opacity(0.5)
-                            .frame(height: 130)
-                            .padding(.leading,20)
+                            .frame(height: 144)
+                            .padding(.leading,18)
                             .overlay(
                                 HStack{
                                     VStack(spacing: 0){
@@ -149,18 +149,18 @@ struct HomePage: View {
                                     }
                                 }
                             }
-                                .padding(.top, -125)
+                                .padding(.top, -130)
                             }
                             .frame(width: UIScreen.main.bounds.width)
                             
                             Spacer()
-                                .frame(height: 15)
+                                .frame(height: 26)
                             //MARK: - delivery service
                             Rectangle()
                                 .clipShape(RoundedCorner(radius: 10, corners: [.topLeft,.bottomLeft]))
                                 .foregroundColor(.gray)
                                 .opacity(0.5)
-                                .frame(height: 130)
+                                .frame(height: 144)
                                 .padding(.leading,20)
                                 .overlay(
                                     HStack{
@@ -186,17 +186,17 @@ struct HomePage: View {
                                         }
                                     }
                                 }
-                                .padding(.top, -125)
+                                .padding(.top, -130)
                             }
                             .frame(width: UIScreen.main.bounds.width)
                             Spacer()
-                                .frame(height: 15)
+                                .frame(height: 26)
                             //MARK: - proservice
                             Rectangle()
                                 .clipShape(RoundedCorner(radius: 10, corners: [.topLeft,.bottomLeft]))
                                 .foregroundColor(.gray)
                                 .opacity(0.5)
-                                .frame(height: 130)
+                                .frame(height: 144)
                                 .padding(.leading,20)
                                 .overlay(
                                     HStack{
@@ -225,17 +225,17 @@ struct HomePage: View {
                                         }
                                     }
                                 }
-                                .padding(.top, -125)
+                                .padding(.top, -130)
                             }
                             .frame(width: UIScreen.main.bounds.width)
                             Spacer()
-                                .frame(height: 15)
+                                .frame(height: 26)
                             //MARK: - video consulting
                             Rectangle()
                                 .clipShape(RoundedCorner(radius: 10, corners: [.topLeft,.bottomLeft]))
                                 .foregroundColor(.gray)
                                 .opacity(0.5)
-                                .frame(height: 130)
+                                .frame(height: 144)
                                 .padding(.leading,20)
                                 .overlay(
                                     HStack{
@@ -263,17 +263,17 @@ struct HomePage: View {
                                         }
                                     }
                                 }
-                                .padding(.top, -125)
+                                .padding(.top, -130)
                             }
                             .frame(width: UIScreen.main.bounds.width)
                             Spacer()
-                                .frame(height: 15)
+                                .frame(height: 26)
                             //MARK: - Post task service
                             Rectangle()
                                 .clipShape(RoundedCorner(radius: 10, corners: [.topLeft,.bottomLeft]))
                                 .foregroundColor(.gray)
                                 .opacity(0.5)
-                                .frame(height: 130)
+                                .frame(height: 144)
                                 .padding(.leading,20)
                                 .overlay(
                                     HStack{
@@ -306,7 +306,7 @@ struct HomePage: View {
                             }
                             .frame(width: UIScreen.main.bounds.width)
                             Spacer()
-                                .frame(height: 20)
+                                .frame(height: 26)
                             //MARK: - do more with us
                             VStack{
                                 HStack {
@@ -370,7 +370,6 @@ struct HomePage: View {
         }
         .navigationViewStyle(.stack)
         .navigationBarBackButtonHidden(true)
-
         }
     
         
