@@ -64,6 +64,8 @@
 		A85B06762C18711700D66B19 /* ProfileSettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B06752C18711700D66B19 /* ProfileSettingsData.swift */; };
 		A880F0C72C2AC7A200EB4A13 /* AddMoneyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880F0C62C2AC7A200EB4A13 /* AddMoneyPage.swift */; };
 		A89E5AE82C0DB46F00627E00 /* SplashScreenUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89E5AE72C0DB46F00627E00 /* SplashScreenUI.swift */; };
+		A8AE82BA2C2BDCF200ED7E56 /* TranferMoneyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE82B92C2BDCF200ED7E56 /* TranferMoneyPage.swift */; };
+		A8AE82BD2C2BE69A00ED7E56 /* TransferMoneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AE82BC2C2BE69A00ED7E56 /* TransferMoneyViewModel.swift */; };
 		A8C7E4B72C117E0F00ABF5BC /* ColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C7E4B62C117E0F00ABF5BC /* ColorExtention.swift */; };
 		A8E430362C11BB5300A31364 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8E430242C11BB5300A31364 /* Poppins-Bold.ttf */; };
 		A8E430372C11BB5300A31364 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8E430252C11BB5300A31364 /* Poppins-Light.ttf */; };
@@ -168,6 +170,8 @@
 		A85B06752C18711700D66B19 /* ProfileSettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsData.swift; sourceTree = "<group>"; };
 		A880F0C62C2AC7A200EB4A13 /* AddMoneyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoneyPage.swift; sourceTree = "<group>"; };
 		A89E5AE72C0DB46F00627E00 /* SplashScreenUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenUI.swift; sourceTree = "<group>"; };
+		A8AE82B92C2BDCF200ED7E56 /* TranferMoneyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranferMoneyPage.swift; sourceTree = "<group>"; };
+		A8AE82BC2C2BE69A00ED7E56 /* TransferMoneyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferMoneyViewModel.swift; sourceTree = "<group>"; };
 		A8C7E4B62C117E0F00ABF5BC /* ColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtention.swift; sourceTree = "<group>"; };
 		A8E430242C11BB5300A31364 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		A8E430252C11BB5300A31364 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
@@ -318,6 +322,7 @@
 		A801BA192C254CDC00E6C4C7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A8AE82BB2C2BE67A00ED7E56 /* WalletViewModel */,
 				A81E5CD92C2A8806008E9D6D /* ProfileViewModel */,
 				A801BA622C2563C300E6C4C7 /* OnboardingsViewModel */,
 				A801BA642C25669400E6C4C7 /* RegistrationViewModel */,
@@ -394,6 +399,7 @@
 			children = (
 				A801BA542C25566F00E6C4C7 /* WalletHomePage.swift */,
 				A880F0C62C2AC7A200EB4A13 /* AddMoneyPage.swift */,
+				A8AE82B92C2BDCF200ED7E56 /* TranferMoneyPage.swift */,
 			);
 			path = WalletPage;
 			sourceTree = "<group>";
@@ -465,6 +471,14 @@
 				A81E5CDD2C2A90F7008E9D6D /* ProfileHomePageModel.swift */,
 			);
 			path = ProfileModel;
+			sourceTree = "<group>";
+		};
+		A8AE82BB2C2BE67A00ED7E56 /* WalletViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A8AE82BC2C2BE69A00ED7E56 /* TransferMoneyViewModel.swift */,
+			);
+			path = WalletViewModel;
 			sourceTree = "<group>";
 		};
 		A8C7E4B52C117DC900ABF5BC /* Extensions */ = {
@@ -730,6 +744,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8AE82BA2C2BDCF200ED7E56 /* TranferMoneyPage.swift in Sources */,
 				A801BA5C2C255D8800E6C4C7 /* CurrencySelectionUiViewModel.swift in Sources */,
 				A801BA742C258EB100E6C4C7 /* EmailAddressModel.swift in Sources */,
 				A801BA282C2555A700E6C4C7 /* CurrencySelectionUI.swift in Sources */,
@@ -758,6 +773,7 @@
 				A81E5CDB2C2A883D008E9D6D /* EditProfileViewModel.swift in Sources */,
 				A801BA782C25902600E6C4C7 /* CountrySelectionModel.swift in Sources */,
 				A801BA1E2C254EE700E6C4C7 /* OnboardingModel.swift in Sources */,
+				A8AE82BD2C2BE69A00ED7E56 /* TransferMoneyViewModel.swift in Sources */,
 				A801BA482C25563100E6C4C7 /* HomeMoreoptions.swift in Sources */,
 				A801BA522C25565300E6C4C7 /* ProfileSettingsUI.swift in Sources */,
 				84A6B4DF2BFDBC6300E46248 /* UserAppApp.swift in Sources */,

@@ -16,16 +16,16 @@ struct ServiceCellUI: View {
                     .cornerRadius(10)
                     .foregroundColor(.white)
                     .shadow(radius: 8)
-                    .frame(width: 100,height: 130)
+                    .frame(width: 144,height: 144)
                     .overlay(
                         VStack{
                             Image(serviceDatas.image)
                                 .resizable()
-                                .frame(width: 50,height: 50)
+                                .frame(width: 50,height: 60)
                             Spacer()
                                 .frame(height: 10)
                             Text(serviceDatas.name)
-                                .font(.custom("Poppins-Semibold", size: 14))
+                                .font(.custom("Poppins-Semibold", size: 16))
                                 .foregroundColor(.black)
                                 .multilineTextAlignment(.center)
                                 .padding([.leading,.trailing],10)
@@ -34,7 +34,7 @@ struct ServiceCellUI: View {
                     )
             }
         }
-        .frame(height: 160)
+        .frame(height: 154)
     }
 }
 

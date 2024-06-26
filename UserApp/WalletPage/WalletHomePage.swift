@@ -3,6 +3,8 @@ import SwiftUI
 
 struct WalletHomePage: View {
     @State private var addMoneySheet = false
+    @State private var transferMOneySheet = false
+    @State private var selectedButton: String? = "All"
     var body: some View {
         ScrollView(showsIndicators: false) {
             ZStack {
@@ -10,13 +12,13 @@ struct WalletHomePage: View {
                     Rectangle()
                         .foregroundColor(.white)
                     Rectangle()
-                        .foregroundColor(Color(red: 0.287, green: 0.665, blue: 0.844))
+                        .foregroundColor(Color(hex: "#00AAD6"))
                 }
                 .edgesIgnoringSafeArea(.all)
                 
                 VStack(spacing: 0){
                     Rectangle()
-                        .foregroundColor(Color(red: 0.287, green: 0.665, blue: 0.844))
+                        .foregroundColor(Color(hex: "#00AAD6"))
                         .clipShape(RoundedCorner(radius: 25, corners: .bottomLeft))
                         .overlay(
                             VStack {
@@ -56,12 +58,17 @@ struct WalletHomePage: View {
                                                         
                                                         
                                                         Button(action: {
-                                                            
+                                                            transferMOneySheet.toggle()
                                                         }, label: {
                                                             Image("ic_wallet_transfer")
                                                                 .resizable()
                                                                 .frame(width: 55, height: 55)
                                                         })
+                                                        .sheet(isPresented: $transferMOneySheet) {
+                                                            TranferMoneyPage()
+                                                            .frame(width: min(UIScreen.main.bounds.width, 800))
+                                                               .presentationDetents([.height(UIScreen.main.bounds.height - 360)])
+                                                                                                        }
                                                         
                                                         Button(action: {
                                                             
@@ -124,40 +131,45 @@ struct WalletHomePage: View {
                                     Button(action: {}, label: {
                                         Text("See All")
                                             .font(.custom("Poppins-Semibold", size: 14))
-                                            .foregroundColor(Color(red: 0.287, green: 0.665, blue: 0.844))
+                                            .foregroundColor(Color(hex: "#00AAD6"))
                                         Image("nextBarButton")
                                             .renderingMode(.template)
                                             .resizable()
-                                            .foregroundColor(.accentColor)
+                                            .foregroundColor(Color(hex: "#00AAD6"))
                                             .frame(width: 6,height: 10)
                                     })
                                 }
                                 Spacer()
                                     .frame(height: 20)
                                 HStack{
-                                    Button(action: {}, label: {
+                                    Button(action: {
+                                        selectedButton = "All"
+                                    }, label: {
                                         RoundedRectangle(cornerRadius: 15)
+                                            .fill(selectedButton == "All" ? Color(hex: "#00AAD6") : Color.white)
                                             .overlay(
                                             Text("All")
-                                                .foregroundColor(.white)
+                                                .foregroundColor(selectedButton == "All" ? Color.white : Color.black)
                                                 .font(.custom("Roboto-Bold", size: 16))
                                             )
                                             .shadow(radius: 3)
-                                            .foregroundColor(Color(red: 0.287, green: 0.665, blue: 0.844))
                                             .frame(width: 40,height: 30)
                                         
                                     })
                                     Spacer()
                                         .frame(width: 20)
-                                    Button(action: {}, label: {
+                                    Button(action: {
+                                        selectedButton = "Credit"
+                                    }, label: {
                                         RoundedRectangle(cornerRadius: 20)
+                                            .fill(selectedButton == "Credit" ? Color(hex: "#00AAD6") : Color.white)
                                             .overlay(
                                                 HStack{
                                                     Image("ic_credit_new")
                                                         .resizable()
                                                         .frame(width: 18,height: 18)
                                                     Text("Credit")
-                                                        .foregroundColor(.black)
+                                                        .foregroundColor(selectedButton == "Credit" ? Color.white : Color.black)
                                                         .font(.custom("Poppins-Semibold", size: 16))
                                                 }
                                             )
@@ -168,15 +180,18 @@ struct WalletHomePage: View {
                                     })
                                     Spacer()
                                         .frame(width: 20)
-                                    Button(action: {}, label: {
+                                    Button(action: {
+                                        selectedButton = "Debit"
+                                    }, label: {
                                         RoundedRectangle(cornerRadius: 20)
+                                            .fill(selectedButton == "Debit" ? Color(hex: "#00AAD6") : Color.white)
                                             .overlay(
                                                 HStack{
                                                     Image("ic_debit_new")
                                                         .resizable()
                                                         .frame(width: 15,height: 15)
                                                     Text("Debit")
-                                                        .foregroundColor(.black)
+                                                        .foregroundColor(selectedButton == "Debit" ? Color.white : Color.black)
                                                         .font(.custom("Poppins-Semibold", size: 16))
                                                 }
                                             )

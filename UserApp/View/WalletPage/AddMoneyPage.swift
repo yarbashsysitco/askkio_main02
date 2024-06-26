@@ -40,10 +40,11 @@ struct AddMoneyPage: View {
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
                     RoundedRectangle(cornerRadius: 5)
+                        .foregroundColor(Color(hex: "#00AAD6"))
                         .frame(width: 350,height: 50)
                         .overlay(
                             Text("DONE")
-                                .font(.custom("Poppins-Regular", size: 18))
+                                .font(.custom("Poppins-Semibold", size: 18))
                                 .foregroundColor(.white)
                         )
                 })
@@ -53,7 +54,7 @@ struct AddMoneyPage: View {
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text("Cancel")
-                        .font(.custom("Poppins-Medium", size: 18))
+                        .font(.custom("Poppins-Semibold", size: 18))
                         .foregroundColor(.gray)
                 })
             }
@@ -83,7 +84,7 @@ struct PriceIncrementView: View {
                 Image("ic_minusmoney")
                     .renderingMode(.template)
                     .resizable()
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(Color(hex: "#00AAD6"))
                     .frame(width: 50,height: 50)
             })
             Spacer().frame(width: 60)
@@ -98,7 +99,7 @@ struct PriceIncrementView: View {
                 Image("ic_addmoney")
                     .renderingMode(.template)
                     .resizable()
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(Color(hex: "#00AAD6"))
                     .frame(width: 50,height: 50)
             })
         }
