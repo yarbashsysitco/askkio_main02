@@ -122,7 +122,7 @@
 		84A6B4F52BFDBC6500E46248 /* UserAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A6B4F92BFDBC6500E46248 /* UserAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAppUITests.swift; sourceTree = "<group>"; };
 		84A6B4FB2BFDBC6500E46248 /* UserAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		84C378CB2C2C07F6003D8F94 /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionView.swift; path = UserApp/TransactionView.swift; sourceTree = SOURCE_ROOT; };
+		84C378CB2C2C07F6003D8F94 /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransactionView.swift; path = UserApp/View/WalletPage/TransactionView.swift; sourceTree = SOURCE_ROOT; };
 		84F733802C2AD9030083A57F /* BottomSheetViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomSheetViews.swift; sourceTree = "<group>"; };
 		84F733822C2ADFC20083A57F /* SelectTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTypeView.swift; sourceTree = "<group>"; };
 		89776AA83B9C8690B91D5F25 /* Pods-UserApp-UserAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserApp-UserAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-UserApp-UserAppUITests/Pods-UserApp-UserAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -133,24 +133,24 @@
 		A801BA252C2555A600E6C4C7 /* LanguageSelectionUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguageSelectionUI.swift; path = UserApp/Onboarding/LanguageSelectionUI.swift; sourceTree = SOURCE_ROOT; };
 		A801BA262C2555A600E6C4C7 /* LanguageSelectionCellUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguageSelectionCellUI.swift; path = UserApp/Onboarding/LanguageSelectionCellUI.swift; sourceTree = SOURCE_ROOT; };
 		A801BA272C2555A700E6C4C7 /* CurrencySelectionCellUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrencySelectionCellUI.swift; path = UserApp/Onboarding/CurrencySelectionCellUI.swift; sourceTree = SOURCE_ROOT; };
-		A801BA2D2C2555EC00E6C4C7 /* CreatePasswordUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePasswordUI.swift; path = UserApp/Registration/CreatePasswordUI.swift; sourceTree = SOURCE_ROOT; };
-		A801BA2E2C2555EC00E6C4C7 /* EnterNameUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnterNameUI.swift; path = UserApp/Registration/EnterNameUI.swift; sourceTree = SOURCE_ROOT; };
-		A801BA2F2C2555EC00E6C4C7 /* ChooseProfileUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChooseProfileUI.swift; path = UserApp/Registration/ChooseProfileUI.swift; sourceTree = SOURCE_ROOT; };
-		A801BA302C2555EC00E6C4C7 /* LoginOptionsUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginOptionsUI.swift; path = UserApp/Registration/LoginOptionsUI.swift; sourceTree = SOURCE_ROOT; };
-		A801BA312C2555EC00E6C4C7 /* NumberRegistration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumberRegistration.swift; path = UserApp/Registration/NumberRegistration.swift; sourceTree = SOURCE_ROOT; };
-		A801BA322C2555EC00E6C4C7 /* PrivacyPolicyUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrivacyPolicyUI.swift; path = UserApp/Registration/PrivacyPolicyUI.swift; sourceTree = SOURCE_ROOT; };
-		A801BA332C2555EC00E6C4C7 /* CountrySelectionUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountrySelectionUI.swift; path = UserApp/Registration/CountrySelectionUI.swift; sourceTree = SOURCE_ROOT; };
-		A801BA342C2555EC00E6C4C7 /* ReferralCodeUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReferralCodeUI.swift; path = UserApp/Registration/ReferralCodeUI.swift; sourceTree = SOURCE_ROOT; };
-		A801BA352C2555EC00E6C4C7 /* CountryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountryCell.swift; path = UserApp/Registration/CountryCell.swift; sourceTree = SOURCE_ROOT; };
-		A801BA362C2555EC00E6C4C7 /* EmailAddressUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailAddressUI.swift; path = UserApp/Registration/EmailAddressUI.swift; sourceTree = SOURCE_ROOT; };
-		A801BA422C25563100E6C4C7 /* TabHomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabHomePage.swift; path = UserApp/Homepage/TabHomePage.swift; sourceTree = SOURCE_ROOT; };
-		A801BA432C25563100E6C4C7 /* HomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePage.swift; path = UserApp/Homepage/HomePage.swift; sourceTree = SOURCE_ROOT; };
-		A801BA442C25563100E6C4C7 /* HomeMoreoptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeMoreoptions.swift; path = UserApp/Homepage/HomeMoreoptions.swift; sourceTree = SOURCE_ROOT; };
-		A801BA452C25563100E6C4C7 /* ServiceCellUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceCellUI.swift; path = UserApp/Homepage/ServiceCellUI.swift; sourceTree = SOURCE_ROOT; };
-		A801BA4B2C25565300E6C4C7 /* VerifyEmailPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerifyEmailPopUp.swift; path = UserApp/ProfilePage/VerifyEmailPopUp.swift; sourceTree = SOURCE_ROOT; };
-		A801BA4C2C25565300E6C4C7 /* EditprofileUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditprofileUI.swift; path = UserApp/ProfilePage/EditprofileUI.swift; sourceTree = SOURCE_ROOT; };
-		A801BA4D2C25565300E6C4C7 /* ProfileHomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileHomePage.swift; path = UserApp/ProfilePage/ProfileHomePage.swift; sourceTree = SOURCE_ROOT; };
-		A801BA4E2C25565300E6C4C7 /* ProfileSettingsUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSettingsUI.swift; path = UserApp/ProfilePage/ProfileSettingsUI.swift; sourceTree = SOURCE_ROOT; };
+		A801BA2D2C2555EC00E6C4C7 /* CreatePasswordUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreatePasswordUI.swift; path = UserApp/View/Registration/CreatePasswordUI.swift; sourceTree = SOURCE_ROOT; };
+		A801BA2E2C2555EC00E6C4C7 /* EnterNameUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnterNameUI.swift; path = UserApp/View/Registration/EnterNameUI.swift; sourceTree = SOURCE_ROOT; };
+		A801BA2F2C2555EC00E6C4C7 /* ChooseProfileUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChooseProfileUI.swift; path = UserApp/View/Registration/ChooseProfileUI.swift; sourceTree = SOURCE_ROOT; };
+		A801BA302C2555EC00E6C4C7 /* LoginOptionsUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginOptionsUI.swift; path = UserApp/View/Registration/LoginOptionsUI.swift; sourceTree = SOURCE_ROOT; };
+		A801BA312C2555EC00E6C4C7 /* NumberRegistration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumberRegistration.swift; path = UserApp/View/Registration/NumberRegistration.swift; sourceTree = SOURCE_ROOT; };
+		A801BA322C2555EC00E6C4C7 /* PrivacyPolicyUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrivacyPolicyUI.swift; path = UserApp/View/Registration/PrivacyPolicyUI.swift; sourceTree = SOURCE_ROOT; };
+		A801BA332C2555EC00E6C4C7 /* CountrySelectionUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountrySelectionUI.swift; path = UserApp/View/Registration/CountrySelectionUI.swift; sourceTree = SOURCE_ROOT; };
+		A801BA342C2555EC00E6C4C7 /* ReferralCodeUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReferralCodeUI.swift; path = UserApp/View/Registration/ReferralCodeUI.swift; sourceTree = SOURCE_ROOT; };
+		A801BA352C2555EC00E6C4C7 /* CountryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CountryCell.swift; path = UserApp/View/Registration/CountryCell.swift; sourceTree = SOURCE_ROOT; };
+		A801BA362C2555EC00E6C4C7 /* EmailAddressUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailAddressUI.swift; path = UserApp/View/Registration/EmailAddressUI.swift; sourceTree = SOURCE_ROOT; };
+		A801BA422C25563100E6C4C7 /* TabHomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabHomePage.swift; path = UserApp/View/HomePage/TabHomePage.swift; sourceTree = SOURCE_ROOT; };
+		A801BA432C25563100E6C4C7 /* HomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePage.swift; path = UserApp/View/HomePage/HomePage.swift; sourceTree = SOURCE_ROOT; };
+		A801BA442C25563100E6C4C7 /* HomeMoreoptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeMoreoptions.swift; path = UserApp/View/HomePage/HomeMoreoptions.swift; sourceTree = SOURCE_ROOT; };
+		A801BA452C25563100E6C4C7 /* ServiceCellUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceCellUI.swift; path = UserApp/View/HomePage/ServiceCellUI.swift; sourceTree = SOURCE_ROOT; };
+		A801BA4B2C25565300E6C4C7 /* VerifyEmailPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerifyEmailPopUp.swift; path = UserApp/View/ProfilePage/VerifyEmailPopUp.swift; sourceTree = SOURCE_ROOT; };
+		A801BA4C2C25565300E6C4C7 /* EditprofileUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditprofileUI.swift; path = UserApp/View/ProfilePage/EditprofileUI.swift; sourceTree = SOURCE_ROOT; };
+		A801BA4D2C25565300E6C4C7 /* ProfileHomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileHomePage.swift; path = UserApp/View/ProfilePage/ProfileHomePage.swift; sourceTree = SOURCE_ROOT; };
+		A801BA4E2C25565300E6C4C7 /* ProfileSettingsUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileSettingsUI.swift; path = UserApp/View/ProfilePage/ProfileSettingsUI.swift; sourceTree = SOURCE_ROOT; };
 		A801BA542C25566F00E6C4C7 /* WalletHomePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WalletHomePage.swift; path = UserApp/WalletPage/WalletHomePage.swift; sourceTree = SOURCE_ROOT; };
 		A801BA572C25576400E6C4C7 /* CurrencySelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectionModel.swift; sourceTree = "<group>"; };
 		A801BA592C25581000E6C4C7 /* CurrencySelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectionViewModel.swift; sourceTree = "<group>"; };
@@ -223,6 +223,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84172F9F2C2C146200A5C17F /* ProfilePage */ = {
+			isa = PBXGroup;
+			children = (
+				A801BA4C2C25565300E6C4C7 /* EditprofileUI.swift */,
+				A801BA4D2C25565300E6C4C7 /* ProfileHomePage.swift */,
+				A801BA4E2C25565300E6C4C7 /* ProfileSettingsUI.swift */,
+				A801BA4B2C25565300E6C4C7 /* VerifyEmailPopUp.swift */,
+			);
+			path = ProfilePage;
+			sourceTree = "<group>";
+		};
+		84172FA02C2C149000A5C17F /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				A801BA312C2555EC00E6C4C7 /* NumberRegistration.swift */,
+				A801BA2D2C2555EC00E6C4C7 /* CreatePasswordUI.swift */,
+				A801BA2E2C2555EC00E6C4C7 /* EnterNameUI.swift */,
+				A801BA2F2C2555EC00E6C4C7 /* ChooseProfileUI.swift */,
+				A801BA362C2555EC00E6C4C7 /* EmailAddressUI.swift */,
+				A801BA342C2555EC00E6C4C7 /* ReferralCodeUI.swift */,
+				A801BA352C2555EC00E6C4C7 /* CountryCell.swift */,
+				A801BA332C2555EC00E6C4C7 /* CountrySelectionUI.swift */,
+				A801BA302C2555EC00E6C4C7 /* LoginOptionsUI.swift */,
+				A801BA322C2555EC00E6C4C7 /* PrivacyPolicyUI.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		84172FA12C2C14AB00A5C17F /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				A801BA422C25563100E6C4C7 /* TabHomePage.swift */,
+				A801BA432C25563100E6C4C7 /* HomePage.swift */,
+				A801BA452C25563100E6C4C7 /* ServiceCellUI.swift */,
+				A801BA442C25563100E6C4C7 /* HomeMoreoptions.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
 		84393B1F2C244C7A00EE0990 /* BookingPages */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,11 +373,11 @@
 		A801BA1A2C254D0800E6C4C7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84172FA12C2C14AB00A5C17F /* HomePage */,
+				84172FA02C2C149000A5C17F /* Registration */,
+				84172F9F2C2C146200A5C17F /* ProfilePage */,
 				A801BA532C25565800E6C4C7 /* WalletPage */,
-				A801BA4A2C25564400E6C4C7 /* ProfilePage */,
 				A801BA232C25557A00E6C4C7 /* Onboardings */,
-				A801BA2C2C2555C600E6C4C7 /* Registration */,
-				A801BA412C25562000E6C4C7 /* HomePage */,
 				84393B1F2C244C7A00EE0990 /* BookingPages */,
 			);
 			path = View;
@@ -354,45 +393,6 @@
 				A801BA252C2555A600E6C4C7 /* LanguageSelectionUI.swift */,
 			);
 			path = Onboardings;
-			sourceTree = "<group>";
-		};
-		A801BA2C2C2555C600E6C4C7 /* Registration */ = {
-			isa = PBXGroup;
-			children = (
-				A801BA312C2555EC00E6C4C7 /* NumberRegistration.swift */,
-				A801BA2D2C2555EC00E6C4C7 /* CreatePasswordUI.swift */,
-				A801BA2E2C2555EC00E6C4C7 /* EnterNameUI.swift */,
-				A801BA2F2C2555EC00E6C4C7 /* ChooseProfileUI.swift */,
-				A801BA362C2555EC00E6C4C7 /* EmailAddressUI.swift */,
-				A801BA342C2555EC00E6C4C7 /* ReferralCodeUI.swift */,
-				A801BA352C2555EC00E6C4C7 /* CountryCell.swift */,
-				A801BA332C2555EC00E6C4C7 /* CountrySelectionUI.swift */,
-				A801BA302C2555EC00E6C4C7 /* LoginOptionsUI.swift */,
-				A801BA322C2555EC00E6C4C7 /* PrivacyPolicyUI.swift */,
-			);
-			path = Registration;
-			sourceTree = "<group>";
-		};
-		A801BA412C25562000E6C4C7 /* HomePage */ = {
-			isa = PBXGroup;
-			children = (
-				A801BA422C25563100E6C4C7 /* TabHomePage.swift */,
-				A801BA432C25563100E6C4C7 /* HomePage.swift */,
-				A801BA452C25563100E6C4C7 /* ServiceCellUI.swift */,
-				A801BA442C25563100E6C4C7 /* HomeMoreoptions.swift */,
-			);
-			path = HomePage;
-			sourceTree = "<group>";
-		};
-		A801BA4A2C25564400E6C4C7 /* ProfilePage */ = {
-			isa = PBXGroup;
-			children = (
-				A801BA4C2C25565300E6C4C7 /* EditprofileUI.swift */,
-				A801BA4D2C25565300E6C4C7 /* ProfileHomePage.swift */,
-				A801BA4E2C25565300E6C4C7 /* ProfileSettingsUI.swift */,
-				A801BA4B2C25565300E6C4C7 /* VerifyEmailPopUp.swift */,
-			);
-			path = ProfilePage;
 			sourceTree = "<group>";
 		};
 		A801BA532C25565800E6C4C7 /* WalletPage */ = {

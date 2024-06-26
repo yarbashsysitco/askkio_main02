@@ -25,7 +25,7 @@ struct TransactionView: View {
                     VStack {
                         Spacer()
                         Text("No Transaction found.")
-                            .font(.custom("Roboto-Regular", size: 18))
+                            .font(.custom("Roboto-Regular", size: 17))
                             .fontWeight(.regular)
                         Spacer()
                     }
