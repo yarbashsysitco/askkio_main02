@@ -16,12 +16,13 @@ struct ServiceCellUI: View {
                     .cornerRadius(10)
                     .foregroundColor(.white)
                     .shadow(radius: 8)
-                    .frame(width: 144,height: 144)
+                    .frame(width: 144,height: 150)
                     .overlay(
                         VStack{
+                            Spacer().frame(height: 25)
                             Image(serviceDatas.image)
                                 .resizable()
-                                .frame(width: 50,height: 60)
+                                .frame(width: 66,height: 71)
                             Spacer()
                                 .frame(height: 10)
                             Text(serviceDatas.name)
@@ -34,7 +35,7 @@ struct ServiceCellUI: View {
                     )
             }
         }
-        .frame(height: 154)
+        .frame(height: 164)
     }
 }
 
