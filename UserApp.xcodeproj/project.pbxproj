@@ -10,6 +10,9 @@
 		736BA51DC53DED990E1067D8 /* Pods_UserApp_UserAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137C062725C0EA1988FF962B /* Pods_UserApp_UserAppUITests.framework */; };
 		80CFD3A63BBBB53FAD2817E4 /* Pods_UserAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38D2B1EC38C3EF35D8C070FB /* Pods_UserAppTests.framework */; };
 		84393B212C244CBA00EE0990 /* BookingHomeMainUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84393B202C244CBA00EE0990 /* BookingHomeMainUI.swift */; };
+		846895C62C2D3A34004A6CF9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846895C52C2D3A34004A6CF9 /* MapView.swift */; };
+		846895C82C2D431B004A6CF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846895C72C2D431B004A6CF9 /* AppDelegate.swift */; };
+		846895CA2C2D4493004A6CF9 /* GoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846895C92C2D4493004A6CF9 /* GoogleMapView.swift */; };
 		84A6B4DF2BFDBC6300E46248 /* UserAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6B4DE2BFDBC6300E46248 /* UserAppApp.swift */; };
 		84A6B4E12BFDBC6300E46248 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6B4E02BFDBC6300E46248 /* ContentView.swift */; };
 		84A6B4E32BFDBC6500E46248 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A6B4E22BFDBC6500E46248 /* Assets.xcassets */; };
@@ -115,6 +118,9 @@
 		38D2B1EC38C3EF35D8C070FB /* Pods_UserAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UserAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		444070A1692BA08F1125A6E4 /* Pods-UserApp-UserAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UserApp-UserAppUITests.release.xcconfig"; path = "Target Support Files/Pods-UserApp-UserAppUITests/Pods-UserApp-UserAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		84393B202C244CBA00EE0990 /* BookingHomeMainUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingHomeMainUI.swift; sourceTree = "<group>"; };
+		846895C52C2D3A34004A6CF9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		846895C72C2D431B004A6CF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		846895C92C2D4493004A6CF9 /* GoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapView.swift; sourceTree = "<group>"; };
 		84A6B4DB2BFDBC6300E46248 /* UserApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A6B4DE2BFDBC6300E46248 /* UserAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAppApp.swift; sourceTree = "<group>"; };
 		84A6B4E02BFDBC6300E46248 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -304,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				A8E430492C11C7EE00A31364 /* Info.plist */,
+				846895C72C2D431B004A6CF9 /* AppDelegate.swift */,
 				84A6B4DE2BFDBC6300E46248 /* UserAppApp.swift */,
 				84A6B4E02BFDBC6300E46248 /* ContentView.swift */,
 				A89E5AE72C0DB46F00627E00 /* SplashScreenUI.swift */,
@@ -380,6 +387,8 @@
 		A801BA1A2C254D0800E6C4C7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				846895C92C2D4493004A6CF9 /* GoogleMapView.swift */,
+				846895C52C2D3A34004A6CF9 /* MapView.swift */,
 				84172FA12C2C14AB00A5C17F /* HomePage */,
 				84172FA02C2C149000A5C17F /* Registration */,
 				84172F9F2C2C146200A5C17F /* ProfilePage */,
@@ -406,7 +415,6 @@
 			isa = PBXGroup;
 			children = (
 				A801BA542C25566F00E6C4C7 /* WalletHomePage.swift */,
-				
 				A880F0C62C2AC7A200EB4A13 /* AddMoneyPage.swift */,
 				A8AE82B92C2BDCF200ED7E56 /* TranferMoneyPage.swift */,
 				84C378CB2C2C07F6003D8F94 /* TransactionView.swift */,
@@ -546,6 +554,7 @@
 				84A6B4D72BFDBC6200E46248 /* Sources */,
 				84A6B4D82BFDBC6200E46248 /* Frameworks */,
 				84A6B4D92BFDBC6200E46248 /* Resources */,
+				97884423CB97BE98BDA13895 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -583,6 +592,7 @@
 				84A6B4F12BFDBC6500E46248 /* Sources */,
 				84A6B4F22BFDBC6500E46248 /* Frameworks */,
 				84A6B4F32BFDBC6500E46248 /* Resources */,
+				466DBC271B4BA3E7619060C4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -703,6 +713,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		466DBC271B4BA3E7619060C4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UserApp-UserAppUITests/Pods-UserApp-UserAppUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UserApp-UserAppUITests/Pods-UserApp-UserAppUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UserApp-UserAppUITests/Pods-UserApp-UserAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7AADBE4A278E896C6D5CFB37 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -723,6 +750,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97884423CB97BE98BDA13895 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UserApp/Pods-UserApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UserApp/Pods-UserApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UserApp/Pods-UserApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F3168D4E106C62DD2B1BA1C4 /* [CP] Check Pods Manifest.lock */ = {
@@ -756,8 +800,10 @@
 			files = (
 				A8AE82BA2C2BDCF200ED7E56 /* TranferMoneyPage.swift in Sources */,
 				A801BA5C2C255D8800E6C4C7 /* CurrencySelectionUiViewModel.swift in Sources */,
+				846895CA2C2D4493004A6CF9 /* GoogleMapView.swift in Sources */,
 				A801BA742C258EB100E6C4C7 /* EmailAddressModel.swift in Sources */,
 				A801BA282C2555A700E6C4C7 /* CurrencySelectionUI.swift in Sources */,
+				846895C82C2D431B004A6CF9 /* AppDelegate.swift in Sources */,
 				A801BA502C25565300E6C4C7 /* EditprofileUI.swift in Sources */,
 				A801BA6A2C25788200E6C4C7 /* CreatePasswordViewModel.swift in Sources */,
 				A801BA512C25565300E6C4C7 /* ProfileHomePage.swift in Sources */,
@@ -788,6 +834,7 @@
 				A801BA1E2C254EE700E6C4C7 /* OnboardingModel.swift in Sources */,
 				A8AE82BD2C2BE69A00ED7E56 /* TransferMoneyViewModel.swift in Sources */,
 				A801BA482C25563100E6C4C7 /* HomeMoreoptions.swift in Sources */,
+				846895C62C2D3A34004A6CF9 /* MapView.swift in Sources */,
 				A801BA522C25565300E6C4C7 /* ProfileSettingsUI.swift in Sources */,
 				84A6B4DF2BFDBC6300E46248 /* UserAppApp.swift in Sources */,
 				A801BA3D2C2555EC00E6C4C7 /* CountrySelectionUI.swift in Sources */,
@@ -883,7 +930,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -946,7 +993,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -976,6 +1023,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"UserApp/Preview Content\"";
 				DEVELOPMENT_TEAM = S66869V3YZ;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UserApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1007,6 +1055,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"UserApp/Preview Content\"";
 				DEVELOPMENT_TEAM = S66869V3YZ;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UserApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

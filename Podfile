@@ -7,6 +7,9 @@ target 'UserApp' do
 
   # Pods for UserApp
 
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
+
   target 'UserAppTests' do
     inherit! :search_paths
     # Pods for testing
